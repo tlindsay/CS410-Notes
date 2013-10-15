@@ -1,0 +1,45 @@
+To-Do
+======
+Due Thursday, August 29
+-----------------------
+	- Read Chapter 1
+Due Monday, September 30
+------------------------
+	- Have all sources gathered
+		* Especially any ILL sources *
+Due Tuesday, October 1
+----------------------
+	- Read Chapters 2 & 3
+Due Thursday, October 10
+------------------------
+	- Pg. 236/6,7,8,9,12
+	- Read Chapter 5
+Due Sometime
+------------
+	- Implement CSS for [ul.procon]
+TEST OCTOBER 15
+===============
+	- Review attribute grammars
+
+Done
+=====
+Due Thursday, October 3
+-----------------------
+	- BNF Worksheet
+Due Tuesday, September 10
+-------------------------
+	- Have at least 5 sources
+Due Tuesday, September 3
+------------------------
+	- Find 3 sources, good, bad and iffy
+Due Thursday, August 29
+-----------------------
+	- 6:00 PM: Meet in the basement of Collier for Research Training
+Due Tuesday, August 27
+----------------------
+	- Prepare proposal for Research Paper
+		Submit via Angel DropBox
+	- Turn in Angel Syllabus contract thing.
+Due Sometime
+------------
+	- Get folder for class

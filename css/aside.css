@@ -1,0 +1,131 @@
+.aside {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  background-color: #fafafa;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border-color: #5bc0de #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.aside:after {
+  content: "Aside";
+  position: absolute;
+  top:  15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #5bc0de;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.aside + .highlight {
+  margin: -15px -15px 15px;
+  border-radius: 0;
+  border-width: 0 0 1px;
+}
+
+/* Make the examples and snippets not full-width */
+@media screen and (min-width: 768px) {
+.aside {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+  }
+.aside + .highlight {
+    margin-top: -16px;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+/* Tweak content of examples for optimum awesome */
+.aside > p:last-child,
+.aside > ul:last-child,
+.aside > ol:last-child,
+.aside > blockquote:last-child,
+.aside > .form-control:last-child,
+.aside > .table:last-child,
+.aside > .navbar:last-child,
+.aside > .jumbotron:last-child,
+.aside > .alert:last-child,
+.aside > .panel:last-child,
+.aside > .list-group:last-child,
+.aside > .well:last-child,
+.aside > .progress:last-child,
+.aside > .table-responsive:last-child > .table {
+  margin-bottom: 0;
+}
+.aside > p > .close {
+  float: none;
+}
+
+/* Typography */
+.aside-type .table td:last-child {
+  color: #999;
+  vertical-align: middle;
+}
+.aside-type .table td {
+  padding: 15px 0;
+  border-color: #eee;
+}
+.aside-type .table tr:first-child td {
+  border-top: 0;
+}
+.aside-type h1,
+.aside-type h2,
+.aside-type h3,
+.aside-type h4,
+.aside-type h5,
+.aside-type h6 {
+  margin: 0;
+}
+
+/* Images */
+.aside > .img-circle,
+.aside > .img-rounded,
+.aside > .img-thumbnail {
+  margin: 5px;
+}
+
+/* Buttons */
+.aside > .btn,
+.aside > .btn-group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.aside > .btn-toolbar + .btn-toolbar {
+  margin-top: 10px;
+}
+
+/* Forms */
+.aside-control-sizing select,
+.aside-control-sizing input[type="text"] + input[type="text"] {
+  margin-top: 10px;
+}
+.aside-form .input-group {
+  margin-bottom: 10px;
+}
+.aside > textarea.form-control {
+  resize: vertical;
+}
+
+/* List groups */
+.aside > .list-group {
+  max-width: 400px;
+}
+
+/* Navbars */
+.aside .navbar:last-child {
+  margin-bottom: 0;
+}

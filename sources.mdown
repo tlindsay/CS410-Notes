@@ -1,0 +1,15 @@
+Sources
+=======
+Good Sources
+------------
+- [The Perl Timeline](http://history.perl.org/PerlTimeline.html)
+- [Perl and Apache: Your Visual Blueprint for Developing Dynamic Web Content](http://ezproxy.una.edu:2560/toc.aspx?bookid=40768&refid=U2OKK) (Books24x7)
+- [The Perl Debugger](http://dl.acm.org/citation.cfm?id=327377&CFID=359706718&CFTOKEN=45050055#) (ACM)
+- [Professional Perl Programming](https://dl.acm.org/citation.cfm?id=558232&coll=DL&dl=GUIDE&CFID=359706718&CFTOKEN=45050055) (ACM)
+- [Programming Web Services with PERL](https://dl.acm.org/citation.cfm?id=558232&coll=DL&dl=GUIDE&CFID=359706718&CFTOKEN=45050055) (ACM)
+
+Okay Sources
+------------
+- [The Perl Cookbook](https://dl.acm.org/citation.cfm?id=291217&coll=DL&dl=GUIDE&CFID=359706718&CFTOKEN=45050055) (ACM)
+- [Perl Best Practices](https://dl.acm.org/citation.cfm?id=1210206&coll=DL&dl=GUIDE&CFID=359706718&CFTOKEN=45050055) (ACM)
+- [Perl for System Administration: Managing Multi-platform Environments with Perl](https://dl.acm.org/citation.cfm?id=556396&coll=DL&dl=GUIDE&CFID=359706718&CFTOKEN=45050055) (ACM)

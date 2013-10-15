@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Programming Languages Notes</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/example.css" />
+		<link rel="stylesheet" href="css/question.css">
+		<link rel="stylesheet" href="css/aside.css">
+		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css" />
+		<script src="js/require.js"></script>
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/showdown.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="hero-unit">
+					<h1 class="title">CS 410W - Programming Languages</h1>
+				</div>
+				<div class="col-lg-3">
+					<div data-spy="affix" class="TOContents affix" id="TOC">
+						<h1>Table of Contents</h1>
+						<ul>
+							<li>
+								<a href="#notes">Chapters</a>
+								<ol class="chapters">
+									<li><a href="#chapter1">Why?</a></li>
+									<li><a href="#chapter2">What makes a programming language "good"?</a></li>
+									<li><a href="#chapter3">Research Tips</a></li>
+									<li><a href="#chapter4">Design of a Programming Language</a></li>
+									<li><a href="#chapter5">Languages, As Told by Dr. Roden</a></li>
+									<li><a href="#chapter6">Syntax &amp; Semantics</a></li>
+									<li><a href="#chapter7">Declarations &amp; Binding</a></li>
+									<li><a href="#chapter8">Data Types</a></li>
+								</ol>
+							</li>
+							<li><a href="#glossary">Glossary</a></li>
+							<li>
+								<a href="#languages">Languages</a>
+								<ul>
+									
+								</ul>
+							</li>
+						</ul>
+						<a href="#current-location" class="btn btn-primary btn-lg btn-block">Bottom of Notes &darr;</a>
+					</div>
+					<div data-spy="affix" id="todo-list" class="todo affix">
+						<div markdown="1">
+							<script>
+								var todoMD = $().load('Todo.mdown').text();
+								// var todoMD = todoMD.text();
+								var converter = new Showdown.converter();
+								var todoHTML = converter.makeHtml(todoMD);
+								$('#todo-list').html(todoHTML);
+								// document.write()
+							</script>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div class="content" data-spy="scroll" data-target="#TOC">
+						<section id="notes">
+							<div id="chapter1">
+								<h1>Why?</h1><h3>August 22, 2013</h3>
+								<div class="question">
+									Why study programming languages?
+									<ul>
+										<li>To aid in learning new languages</li>
+										<li>Increase our language vocabulary</li>
+										<li>Improve our algorithm development</li>
+										<li>To aid in the design of a new language</li>
+										<li>To aid in the choice of a language to use to implement a project</li>
+										<li>To increase the understanding of the languages you are using</li>
+										<li>To better be able to differentiate the "good" languages from the "bad" ones</li>
+									</ul>
+								</div>
+							</div>
+							<hr />
+							<div id="chapter2">
+								<h1>Attributes of Programming Languages</h1>
+								<h3>August 27, 2013</h3>
+								<p>
+									<h4>What makes a programming language "good"?</h4>
+									<ol>
+										<li>Readability</li>
+										<ol>
+											<li>Overall simplicity (Small set of language constructs)</li>
+											<li>
+												Lack of feature multiplicty (redundancy)
+												<div class="example">
+													<pre><code>
+														x=x+1
+														x++
+														++x
+														x+=1
+													</code></pre>
+													This is redundant and, therefore, less readable.
+												</div>
+											</li>
+											<li>Lack of user-created operator overloading</li>
+											<li><a href="#orthogonality">Orthogonality</a></li>
+											<li>Adequate data structures and data types provided by the language</li>
+											<li>
+												Syntax (description of the form of sentences in a language)
+												<ul>
+													<li>Special Words (<a href="#keyword">Keywords</a> vs. <a href="#reserveWord">Reserve Words</a>)</li>
+													<li>Special ending words or one generic ending word or symbol.</li>
+													<li>Fixed field vs Semi-Fixed Field vs. Free Format</li>
+													<li>
+														Treatment of White Space
+														<ul>
+															<li>Totally ignored</li>
+															<li>Used as a separator</li>
+															<li>Used as an operator</li>
+														</ul>
+													</li>
+													<li>
+														Method of Commenting
+														<ul>
+															<li>Special symbol in column 1 to end of line</li>
+															<li>Special symbol to end of line</li>
+															<li>Special beginning and ending symbol</li>
+														</ul>
+													</li>
+													<li><a href="#noiseWord">Noise Words</a></li>
+													<li>
+														Rules for Forming <a href="#identifier">Identifiers</a>
+														<ol>
+															<li>
+																How long they may be:
+																<ul>
+																	<li>Fixed</li>
+																	<li>Unlimited, but only consider a fixed length for differentiation</li>
+																	<li>Unlimited</li>
+																</ul>
+															</li>
+															<li>What must it begin with?</li>
+															<li>What else may it contain?</li>
+														</ol>
+													</li>
+												</ul>
+											</li>
+										</ol>
+										<li>
+											Writeability 
+											<ol>
+												<li>Simplicity</li>
+												<li>Orthogonality</li>
+												<li>
+													Support of <a href="#abstraction">abstraction</a>
+													<ul>
+														<li>Process Abstraction (Subprograms)</li>
+														<li>Data Abstraction (Classes and Structs)</li>
+													</ul>
+												</li>
+												<li><a href="#expressivity">Expressivity</a></li>
+											</ol>
+										</li>
+										<li>
+											<a href="#reliability">Reliability</a>
+											<ol>
+												<li>Perform type checking at compile-time, not at runtime.</li>
+												<li>Supports <a href="#exception">exception</a> handling</li>
+												<li>Lack of <a href="#aliasing">aliasing</a></li>
+											</ol>
+										</li>
+										<li>
+											Naturalness for the Application
+											<ol>
+												<li>Provides appropriate data structures or types</li>
+												<li>Provides appropriate control structures</li>
+											</ol>
+										</li>
+										<li>Ease of Program Verification</li>
+										<li>
+											Programming Environment
+											<ul>
+												<li>Special Editor</li>
+												<li>Special Debugging Tools</li>
+												<li>Version Control</li>
+												<li>Testing Packages</li>
+												<li>Etc.</li>
+											</ul>
+										</li>
+										<li><a href="#portability">Portability</a></li>
+										<li>Well-defined description of syntax and semantics (Good user's manual)</li>
+										<li><a href="#generality">Generality</a></li>
+										<li>
+											Cost to Use
+											<ol>
+												<li>Cost to learn and train - <a class="good" href="#pascal">Pascal</a> or <a class="good" href="#basic">BASIC</a></li>
+												<li>Cost to write a program</li>
+												<li>Cost to translate a program - <a href="#pascal" class="good">Pascal</a> or <a href="#pl1" class="bad">PL1</a> (87 passes to compile)</li>
+												<li>Cost to execute - <a href="#fortran" class="good">FORTRAN</a> or <a href="#cobol" class="bad">COBOL</a></li>
+												<li>Cost of translator (compiler/interpreter) - <a class="good" href="#pascal">Pascal</a> or <a href="#ada" class="bad">Ada</a></li>
+												<li>Cost of poor reliability - <a href="#ada" class="good">Ada</a> or <a href="#c" class="bad">C</a></li>
+												<li>Cost of maintenance - <a href="" class="good"></a></li>
+											</ol>
+										</li>
+									</ol>
+								</p>
+							</div> <!-- </Chapter 2> -->
+							<div class="chapter" id="chapter3">
+								<h1>Research Tips</h1>
+								<h3>August 29, 2013</h3>
+								<p>
+									<h4>Tips</h4>
+									<ul>
+										<li>Always clear sources with <a href="mailto:plroden@una.edu">Dr. Roden</a>.</li>
+										<li>Use <a href="https://una.illiad.oclc.org/illiad/logon.html">ILL</a>.</li>
+									</ul>
+									<hr />
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												<h4>Good Sources</h4>
+												<ul>
+													<li>Books</li>
+													<li>Journal Articles (Peer Reviewed)</li>
+													<li><a href="http://dl.acm.org">ACM Database</a></li>
+													<li><a href="http://library.books24x7.com/login.asp?ic=0">Books 24x7</a></li>
+												</ul>
+											</div>
+											<div class="col-lg-6">
+												<h4>Bad Sources</h4>
+												<ul>
+													<li>Blogs</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</p>
+							</div> <!-- </Chapter 3> -->
+							<div class="chapter" id="chapter4">
+								<h1>Language Design</h1>
+								<h3>September 3, 2013</h3>
+								<p>
+									<h4>Influences on Language Design</h4>
+									<ol>
+										<li>Computer Architecture <br /> 
+											von Neumann design of the Fetch/Decode/Execute machine cycle computer led to the creation of the imperative languages.</li>
+										<li>Programming Design Methodologies <br /> 
+											The shift from using the procedural oriented method to the data oriented method or shift from structure oriented to object oriented</li>
+									</ol>
+									<hr />
+									<h4>Language Categories</h4>
+									<ol>
+										<li>Imperative Language <br />
+											Depends on the changes of the contents of memory for its effect.</li>
+										<li>Functional Language (Applicative Language) <br />
+											Depends on the application of functions for its effect.</li>
+										<li>Logic Language <br />
+											Depends on the application of programming logic for its effect.</li>
+										<li>Object-Oriented Language <br />
+											Depends on the definition and creation of instances of objects along with messages (methods) sent to those objects. <small><a href="#smalltalk">SmallTalk</a></small></li>
+									</ol>
+									<hr />
+									<h4>Language Tradeoffs</h4>
+									<h5>When designing a programming language, decisions must be made concerning what is most important.</h5>
+									<ol>
+										<li>Reliability (<a href="#java">Java</a>) vs. Cost of Execution (<a href="#c">C</a>)</li>
+										<li>Writeability (<a href="#apl">APL</a>) vs. Readability (<a href="#cobol">Cobol</a>)</li>
+										<li>Writeability (<a href="#c++">C++</a>) vs. Reliability (<a href="#ada">Ada</a> or <a href="#java">Java</a>)</li>
+									</ol>
+									<hr />
+									<h4>Methods for <a href="#implementation">Implementing</a> a Programming Language</h4>
+									<ol>
+										<li>Pure Compilation <br />
+											The source program written in a programming language is submitted to a compiler to be translated into an equivalent object program in a target language, usually machine code. <br />
+											<small><a href="#ada">Ada</a></small></li>
+										<li>Pure Interpretation <br />
+											The interpreter acts as a software simulator for the machine running the program/</li>
+										<li>Hybrid Interpretation <br />
+											Performs the first steps as does a compiler (lexical, syntactic and intermediate code generation) which is then given to a simpler interpreter.</li>
+										<li>Preprocessor (Macro Processor) <br />
+											The source program is first given to the preprocessor which recognizes the definition and expansion of macros before it is given to a compiler.</li>
+									</ol>
+									<hr />
+									Environments within which a program is developed include tools for translation, debugging, pretty printing (structured editor tied to language feature).
+									<div class="example">
+										<ol>
+											<li>UNIX</li>
+											<li>Borland JBuilder</li>
+											<li>Microsoft Visual Studio .NET</li>
+											<li>NetBeans</li>
+										</ol>
+									</div>
+								</p>
+							</div> <!-- </Chapter 4> -->
+							<div class="chapter" id="chapter5">
+								<h1>History of Programming Languages</h1>
+								<h3>September 3, 2013</h3>
+								<p>
+									<ol>
+										<li>
+											<h4>Zuse's Plankalk&uuml;l <small>1945</small></h4>
+											<p>
+												Programming language with features of 2's complement integers, floats, arrays, records, for loop.
+												<div class="example">
+													<i>Took three lines to code an instruction.</i>
+													<pre><code>
+														    | A + 1 => A
+														  v | 4        5
+														  s | 1.n      1.n	
+													</code></pre>
+												</div>
+											</p>
+										</li>
+										<li>
+											<h4>Pseudo Codes</h4>
+											<ol>
+												<li>Short code by John Mauchly <small>1949</small></li>
+												<li>Speed code by John Backus</li>
+											</ol>
+										</li>
+										<li id="history-fortran">
+											<h4><a href="#fortran">FORTRAN</a> <small>(FORmula TRANslation)</small></h4>
+											<p>
+												John Backus led a team that developed a high-level langague for the IBM 704. <br />
+												This language was developed in a very different environment from today:
+												<ul>
+													<li>Computers were slow and unreliable</li>
+													<li>Most use of computers was for scientific calculations</li>
+													<li>Labor costs were low, but hardware costs were high</li>
+													<li>Programming was being performed using assembly language or machine code</li>
+													<li>There were no acceptable "high level languages".</li>
+												</ul>
+											</p>
+											<p>
+												<h5>Evolution of FORTRAN</h5>
+												<ul>
+													<li>
+														FORTRAN 0 <small>1954 - <a href="http://en.wikipedia.org/wiki/John_Backus">John Backus</a></small>
+														<ul>
+															<li>Variable names were 2 characters</li>
+															<li>Counter controlled loop was posttest</li>
+														</ul>
+													</li>
+													<li>
+														FORTRAN I <small>1955-1957</small>
+														<ul>
+															<li>Took 18 worker-years to create</li>
+															<li>Variable names are 6 characters</li>
+															<li>Implicit typing (Variables beginning with anything i-n means integer and all others are real (float) type)</li>
+														</ul>
+													</li>
+													<li>
+														FORTRAN II <small>1958</small>
+														<ul>
+															<li>Independent compilation for subprograms (subroutines or functions)</li>
+														</ul>
+													</li>
+													<li>
+														FORTRAN III - <i>Never widely used</i>
+													</li>
+													<li>
+														FORTRAN IV <small>1960-1962</small>
+														<ul>
+															<li>Explicity type declarations</li>
+															<li>
+																Logical IF
+																<div class="example">
+																	<code>
+																		IF ([arithmetic expression]) [line label 1], [line label 2], [line label 3]
+																	</code>
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li>
+														FORTRAN 77 <small>1978</small>
+														<ul>
+															<li>Character strings (Very powerful, included pattern matching)</li>
+															<li>IF/ELSE</li>
+														</ul>
+													</li>
+													<div class="aside">
+														To this point, all FORTRAN was semi-fixed field, <u>non-recursive</u>, no dynamic storage allocation, no pointers, but very execution efficient
+													</div>
+													<li>
+														Fortran 90 <small>1990</small>
+														<ul>
+															<li>Added recursion</li>
+															<li>Added pointers</li>
+															<li>Added CASE tools</li>
+															<li>Added dynamically allocated arrays</li>
+															<li>Removed fixed format</li>
+														</ul>
+													</li>
+													<li>
+														Fortran 95 <small>1997</small>
+														<ul>
+															<li>
+																Added FORALL construct to support parallel execution on an array
+															</li>
+														</ul>
+													</li>
+													<li>
+														Fortran 2003 <small>2004</small>
+														<ul>
+															<b>Added</b>
+															<li>Object-Oriented Programming</li>
+															<li>parameterized derived types</li>
+															<li>Procedure pointers</li>
+															<li>Interoperability with C</li>
+														</ul>
+													</li>
+													<li>
+														Fortran 2008 <small>2010</small>
+														<ul>
+															<li>Added blocks for local scope</li>
+															<li>Added co-arrays and DO CONCURRENT</li>
+														</ul>
+													</li>
+												</ul>
+												<div class="aside">
+													<h4 class="question">Why did FORTRAN initially succeed?</h4>
+													<ol>
+														<li>IBM supported it</li>
+														<li>Allowed for highly optimized compilation, since nothing is delayed until runtime.</li>
+														<li>Strong support for scientific functions</li>
+														<li></li>
+													</ol>
+												</div>
+											</p>
+										</li>
+										<li>
+											<h4><a href="#lisp">LISP</a> <small>LISt Processing - <a href="http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy</a> MIT 1960</small></h4>
+											<ul>
+												<li>Not standardized for many years leading to a pethora of dialects</li>
+												<ul>
+													<li>COMMON</li>
+													<li>IQ</li>
+													<li>X</li>
+													<li>GOLDEN</li>
+													<li>INTER</li>
+													<li>Schemer <small>Led to Scheme</small></li>
+												</ul>
+												<li>Functional or Applicative language</li>
+												<li>Slow execution</li>
+												<li>Poor memory management</li>
+												<li>
+													Uses prefix notation for expressions
+													<div class="example">
+														<code>
+															(+ A B)	
+														</code>
+													</div>
+												</li>
+												<li>Useful for AI applications</li>
+												<li>Equivalence of code and data. This means a program can take itself as data and change itself to learn.</li>
+											</ul>
+										</li>
+										<li>
+											<h4><a href="#algol">ALGOL</a> <small><a href="http://en.wikipedia.org/wiki/Peter_Naur">Peter Naur</a> - 1958</small></h4>
+											<p>
+												Because Europe feared that IBM was going to dominate the computer industry, an international committee led by Peter Naur was formed and a language was developed. The language was first called IAL and later changed to ALGOL.
+											</p>
+											<h5>Design Goals</h5>
+											<ol>
+												<li>Close to mathematical standards</li>
+												<li>Able to be compiled</li>
+												<li>Useful for describing algorithms</li>
+												<li>Should not be tied to anyone computer architecture</li>
+											</ol>
+											<p>ALGOL never became successful, itself, but it probably has more descendants than any other language.</p>
+											<h5>Contributions to the Programming Language Landscape</h5>
+											<ol>
+												<li>Formalized the concept of a data type</li>
+												<li>Added the compound statement</li>
+												<li>Recursion</li>
+												<li>Parameter passing - by value or by name</li>
+												<li>Assignment operator was <code>:=</code></li>
+												<li>Unlimited length identifiers</li>
+												<li>Lower bound of array subscripts may be specified</li>
+												<li>Any number of array dimensions</li>
+												<li>Method for specifying the syntax of a programming language BNF</li>
+											</ol>
+
+											ALGOL should have survived because:
+											<ol>
+												<li>The international committee created it</li>
+												<li>It was machine independent</li>
+												<li>Syntax was formally described</li>
+											</ol>
+											But instead, it died as a useful language because:
+											<ol>
+												<li>Too flexible</li>
+												<li>Lack of I/O support</li>
+												<li>Lack of commercial support</li>
+											</ol>
+										</li>
+										<li>
+											<h4><a href="#cobol">COBOL</a><small>(COmmon Business Oriented Language) - <a href="http://en.wikipedia.org/wiki/Grace_hopper">Grace Hopper</a> 1953-1955</small></h4>
+											<p>
+												Grace Hopper believed that "mathematical programs should be written in mathematical notation; data processing programs should be written in English statements."
+											</p>
+											In 1959, the US Department of Defense determined a new language was needed with the following goals:
+											<ol>
+												<li>Use English as much as possible.</li>
+												<li>Make it easy to use, at the expense of execution efficiency.</li>
+												<li>Design should not be restricted by any implementation problem.</li>
+												<li>Do it quickly.</li>
+											</ol>
+											A Short Range Committee produced a document which they thought was a preliminary design; however, it was taken as the language description.
+											<ol>
+												Decisions of the Short Range Committee:
+												<li>Separate the data description from the executable portion</li>
+												<li>Use word connectors (hypens), long words, and noise words</li>
+												<li>Static runtime structure</li>
+												<ul>
+													This led to:
+													<li>No pointers</li>
+													<li>No recursion</li>
+													<li>No anything that couldn't be determined at compile-time</li>
+												</ul>
+												<li>Records - Heterogeneous data structure with a hierarchy</li>
+											</ol>
+											<br />
+											<ol>
+												Contributions:
+												<li>First High Level language to have a construct for use of macros</li>
+												<li>First to implement a hierarchical data structure</li>
+												<li>First to have word connectors (hyphens)</li>
+											</ol>
+											<br />
+											<ol>
+												Why did COBOL succeed?
+												<li>Met its design goals</li>
+												<li>DoD supported</li>
+											</ol>
+										</li>
+										<li>
+											<h4><a href="#basic">BASIC</a> <small>(Beginner's All-Purpose Symbolic Instruction Code) - Dartmouth College</small></h4>
+											<p>
+												John Kemeny and Thomas Kurtz (mathematicians) developed a language for students to use in their dorm rooms with remote access, time-sharing to complete their homework.
+											</p>
+											<h5>Design Goals</h5>
+											<ol>
+												<li>Easy for non-STEM students to learn and use</li>
+												<li>"Pleasant and friendly"</li>
+												<li>Fast turnaround time</li>
+												<li>Allow for free and private access</li>
+												<li>User time is more important than the computer's time</li>
+												The last three contribute to the time-sharing aspect of BASIC.
+											</ol>
+										</li>
+										<li>
+											<h4><a href="pl1">PL/I</a> <small>- "Everything for Everybody"</small></h4>
+											<p>
+												Developed by IBM for all areas of application. Tried to take the best features from ALGOL, FORTRAN, and COBOL.
+												<ul>
+													<li>
+														<u>FORTRAN</u>
+														<p>
+															Separate compilation and the common (aliasing two variable names to the same storage location)
+														</p>
+													</li>
+													<li>
+														<u>COBOL</u>
+														<p>Records, report generation, I/O</p>
+													</li>
+													<li>
+														<u>ALGOL</u>
+														<p>Recursion and block structure</p>
+													</li>
+												</ul>
+												<br />
+												<h5>Contributions</h5>
+												<ul>
+													<li>First to create concurrent executing tasks</li>
+													<li>First to allow specification of whether a subprogram was recursive (to allow for more efficient code)</li>
+													<li>First to have pointers</li>
+													<li>First to have cross sections of arrays (array slices)</li>
+												</ul>
+											</p>
+										</li>
+										<li>
+											<h1>APL GOES HERE</h1>
+										</li>
+										<li>
+											<h4><a href="#snobol">SNOBOL 4</a> <small>- 1960s</small></h4>
+											<p>
+												<ul>
+													<li>Semi-Fixed Format: Col 1 denotes label</li>
+													<li>Every statement in SNOBOL has the same structure.</li>
+													<div class="example">
+														<code>[Label] [Statement Body] [Goto Field]</code>
+														<br />
+															<small>A <code>*</code> in the Label Field denotes a comment line.</small>
+															<small>Goto Field must begin with a <code>:</code></small><br />
+															<small><code>:S</code> denotes Goto on Success</small><br />
+															<small><code>:F</code> denotes Goto on Failure</small><br />
+															<small><code>:S(label1)F(label2)</code> gives commands for either case.</small>
+													</div>
+													<li>Labels must begin with alphabetic and may contain alphanumeric</li>
+													<li>SNOBOL is not case sensitive</li>
+												</ul>
+												<h5>Data Types</h5>
+												<ol>
+													<li>Integers</li>
+													<li>Reals</li>
+													<li>Strings</li>
+													<ol>
+														<li>Special null string - a string with 0 length</li>
+														<li>May use single or double quotes as delimiters, as long as they match.</li>
+													</ol>
+												</ol>
+												<h5>Simple Operators</h5>
+												<h6>Binary <small>Surrounded by Blanks</small></h6>
+												<ul>
+													<li>Assignment <code>=</code></li>
+													<li>Arithmetic <code>+, -, *, /, **</code></li>
+													<li>Concatenation <code>blank</code></li>
+												</ul>
+												<h6>Special Functions</h6>
+												<table class="table table-striped table-bordered">
+													<th>Function</th>
+													<th>Success Condition</th>
+													<tr>
+														<td>
+															<code>Differ(S,T)</code>
+														</td>
+														<td>
+															If S and T are different.
+														</td>
+													</tr>
+													<tr>
+														<td><code>EQ(S,T)</code></td>
+														<td>If S and T are </td>
+													</tr>
+													<tr>
+														<td><code>GE(S,T)</code></td>
+														<td>If S &ge; T</td>
+													</tr>
+													<tr>
+														<td><code>LE(S,T)</code></td>
+														<td>If S &le; T</td>
+													</tr>
+													<tr>
+														<td><code>GT(S,T)</code></td>
+														<td>If S &gt; T</td>
+													</tr>
+													<tr>
+														<td><code>LT(S,T)</code></td>
+														<td>If S &lt; T</td>
+													</tr>
+													<tr>
+														<td><code>NE(S,T)</code></td>
+														<td>If S &ne; T</td>
+													</tr>
+													<tr>
+														<td><code>LGT(S,T)</code></td>
+														<td>If S is lexicographically greater than T</td>
+													</tr>
+													<tr>
+														<td><code>IDENT(S,T)</code></td>
+														<td>If S is identical to T</td>
+													</tr>
+													<tr>
+														<td><code>INTEGER(S,T)</code></td>
+														<td>If X is an integer</td>
+													</tr>
+													<tr>
+														<td><code>CHOP(X)</code></td>
+														<td>Removes the fractional part of a real X making an integer</td>
+													</tr>
+													<tr>
+														<td><code>EXP(X)</code></td>
+														<td>Raises e<sup>x</sup></td>
+													</tr>
+													<tr>
+														<td><code>LN(X)</code></td>
+														<td>Natural log of X</td>
+													</tr>
+													<tr>
+														<td><code>REMDR(X,Y)</code></td>
+														<td>Modulus</td>
+													</tr>
+													<tr>
+														<td><code>REPLACE(S1,S2,S3)</code></td>
+														<td>Replaces S2's characters in S1 with corresponding characters in S3</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="example">
+																<pre><code>
+																	X = 'THIS IS THE DAY THAT GOES ON FOREVER'
+																	LOWER = 'aeiou'
+																	UPPER = 'AEIOU'
+																	X = REPLACE(X,UPPER,LOWER)
+																		=> THiS iS THe DaY THaT GoeS oN FoReVeR
+																	X = REPLACE(X,'AEIO',LOWER)
+																		=> [Failure]
+																</code></pre>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td><code>REVERSE(X)</code></td>
+														<td>Returns the reverse of the input string</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="example">
+																<pre><code>
+																	X = 'RACECAR'
+																	IDENT(X,REVERSE(X))
+																		=> [Success]
+																</code></pre>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td><code>X = INPUT</code></td>
+														<td>
+															Gets input from the keyboard and assigns to <code>X</code>
+															<br />
+															<small>May assign a variable name to associante it with an external file using <code>INPUT('[VARNAME]', UNIT, OPTIONS, '[EXTERNAL_FILE_NAME]')</code></small>
+														</td>
+													</tr>
+													<tr>
+														<td><code>OUTPUT = X</code></td>
+														<td>
+															Prints contents of <code>X</code> to the screen.
+															<br />
+															<small>
+																To send output to a file, use the OUTPUT function:
+																<br />
+																<code>OUTPUT('[VARNAME',UNIT,OPTIONS,'[FILE_NAME]')</code>
+															</small>
+														</td>
+													</tr>
+												</table>
+												<div class="example">
+													Example Program - Counts number of lines in a file.
+													<pre><code>
+														        INPUT('IN',1,,'DATA1.TXT')
+														TOP     LINE = IN			:F(BOTTOM)
+														        LINECOUNT = LINECOUNT + 1	:
+														        OUTPUT = LINE			:(TOP)
+														BOTTOM  OUTPUT = 'THERE WERE ' LINECOUNT ' LINES'
+														END
+													</code></pre>
+												</div>
+											</p>
+											<h5>Pattern Matching in SNOBOL4</h5>
+<div class="example">
+	<pre><code>
+		A	=	'TUESDAY'
+		B	=	'ES'
+		A 	B
+		   => SUCCESS
+	</code></pre>
+	In this case, the blank is a pattern matching operator.
+	<hr />
+	<pre><code>
+		COLOR	=	('RED' | 'BLUE') . HUE
+		CRITTER	=	('FISH' | 'BIRD') . ANIMAL
+			A	=	'BLUEBIRD'
+			A		(COLOR CRITTER)
+		OUTPUT	=	HUE
+			=>BLUE
+		OUTPUT	=	ANIMAL
+			=>BIRD
+	</code></pre>
+	<pre><code>
+		VOWEL = 'AEIOU' . WHAT
+		WORD  = 'WASHING'
+		WORD VOWEL
+		OUTPUT = WHAT
+	</code></pre>
+	<pre><code>
+		VOWEL = ANY('AEIOU') . WHAT
+		WORD = 'WASHING'
+		WORD VOWEL =
+		OUTPUT = WHAT
+	</code></pre>
+	<pre><code>
+		'THE WINTER WINDS' 'WIN' REM . OUTPUT
+			=> TER WINDS
+	</code></pre>
+	<pre><code>
+		LEN(n)
+			=> Will match a string of length 'n'.
+	</code></pre>
+	This example will count the number of words in an input file.
+	<pre><code>
+					INPUT('IN',2,,'[FILENAME]')
+					UPPERS	= 'A..Z'
+					LOWERS	= 'a..z'
+					WORDPAT = SPAN(UPPERS)
+		*****************************
+		*   		THIS LOOP CONVERTS ENTIRE FILE TO UPPERCASE
+		TOP 		LINE	= IN				:F(PRNTCOUNT)
+					LINE = REPLACE(LINE, LOWERS, UPPERS)
+					LINE WORDPAT =
+					WORDCOUNT = WORDCOUNT + 1	:(TOP)
+		*****************************
+		PRNTCOUNT	OUTPUT = 'THE NUMBER OF WORDS WAS ' COUNT
+		END
+	</code></pre>
+</div>
+										</li>
+									</ol>
+								</p>
+							</div> <!-- </Chapter 5> -->
+						<div class="chapter" id="chapter6">
+							<h1>Syntax &amp; Semantics</h1>
+							<h3>September 24, 2013</h3>
+							<dl>
+								<dt id="syntax">Syntax</dt>
+									<dd>The Description of the structure of sentences in a language.</dd>
+								<dt id="semantics">Semantics</dt>
+									<dd>The description of the meaning of the sentences of a language.</dd>
+								<dt id="language-def">Language</dt>
+									<dd>Set of strings of finite length made up of characters from a chosen fixed set (alphabet - usually a subset from the collating sequence used to code characters)</dd>
+								<dt id="lexeme">Lexeme</dt>
+									<dd>Smallest recognizable unit of a programming language (numeric literals, operators, special words, identifiers).</dd>
+								<dt id="token">Token</dt>
+									<dd>Category of lexemes</dd>
+								<dt id="metalanguage">Metalanguage</dt>
+									<dd>Language used to describe another language</dd>
+							</dl>
+
+							<p>
+								There are two methods for formally defining a programming language:
+								<ol>
+									<li>Language Recognizer</li>
+									<li>Language Generator</li>
+								</ol>
+							</p>
+							<p>
+								Grammar - 4-tuple (N, T, P, S)
+								<ul>
+									<li>N - Set of nonterminals (abstractions to be defined further)</li>
+									<li>T - Set of terminals or tokens</li>
+									<li>P - Set of production rules</li>
+									<li>S - Start symbol; S is an element of N</li>
+								</ul>
+								<small>N and T are disjoint</small>
+								<br />
+								A grammar is a formal method of defining the syntax of a programming language with the rules specifying the sequence of tokens or lexemes.
+							</p>
+							<div id="chomsky">
+								<h2><a href="http://en.wikipedia.org/wiki/Chomsky">Chomsky</a> Hierarchy</h2>
+								<table class="table table-bordered">
+									<th>Language Type</th>
+									<th>Language Generator</th>
+									<th>Language Recognizer</th>
+									<th>Type of Grammar Rules</th>
+									<tr>
+										<td>3</td>
+										<td>Regular Grammar</td>
+										<td>Finite State Automaton</td>
+										<td>A -> a <br /> or <br /> A -> bB</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Context-Free Grammar</td>
+										<td>Push-down Automaton</td>
+										<td>a -> &alpha;</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Context-Sensitive Grammar</td>
+										<td>Linear Bounded Automaton</td>
+										<td>&alpha; B -> &alpha; &tau; B</td>
+									</tr>
+									<tr>
+										<td>0</td>
+										<td>Unrestricted Grammar</td>
+										<td>Turing Machine</td>
+										<td>&alpha; -> B <br /> &alpha; ≠ [empty]</td>
+									</tr>
+								</table>
+							</div>
+							<hr />
+							<h3>Syntax Description</h3>
+							There are two methods for practical application of describing the syntax of a programming language:
+							<ol>
+								<li>Syntax Diagrams - a graphical representation of the syntax, using rectangles to enclose nonterminals, rounded shapes to enclose terminals with arrow connectors. There is a separate diagram for each syntactic category (nonterminal)</li>
+								<li>
+									<h4>Backus-Naur Form</h4>
+									<table class="table table-striped table-bordered">
+										<tr>
+											<th>Symbol</th>
+											<th>Meaning</th>
+										</tr>
+										<tr>
+											<td><code>::=</code> OR <code>&rarr;</code></td>
+											<td>"Is defined as"</td>
+										</tr>
+										<tr>
+											<td><code>< ></code></td>
+											<td>Used to enclose nonterminals</td>
+										</tr>
+										<tr>
+											<td><code>|</code></td>
+											<td>"Or"</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<b>Extended BNF added the following:</b>
+											</td>
+										</tr>
+										<tr>
+											<td><code>[ ]</code></td>
+											<td>Enclose something optional</td>
+										</tr>
+										<tr>
+											<td><code>{ }*</code></td>
+											<td>Kleene Closure - <i>"0 or more instances of"</i></td>
+										</tr>
+									</table>
+								</li>
+							</ol>
+
+							<p>
+								<dl>
+									<dt>Derivation</dt>
+										<dd>Sequence of application of grammar rules of a language beginning with the start symbol until we reach a string containing only terminals (tokens/lexemes)</dd>
+									<dt>Sentential Form</dt>
+										<dd>One of the steps generated within a derivation</dd>
+									<dt>Sentence</dt>
+										<dd>Final sentential form, containing only terminals</dd>
+									<dt>Parse Tree</dt>
+										<dd>Graphical representation or hierarchical structure representing the steps in a derivation in reverse order.</dd>
+									<dt>Ambiguous Grammar</dt>
+										<dd>A grammar in which at least one sentence may be represented by two or more distinct parse trees</dd>
+										<div class="example">
+<pre><code>
+&lt;expression&gt; &rarr; &lt;term&gt; + &lt;factor&gt; | &lt;term&gt; * &lt;factor&gt;
+&lt;term&gt; &rarr; &lt;term&gt; + &lt;term&gt; | &lt;term&gt; * &lt;term&gt; | &lt;factor&gt;
+&lt;factor&gt; &rarr; A|B|C
+
+		A*B+C
+	// This can be represented by trees equivalent to ((A*B)+C) OR (A*(B+C))
+</code></pre>
+<p>Operator Precedence is defined by the grammar rules.</p>
+										</div>
+								</dl>
+								<h4>Attribute Grammar</h4>
+								<p>
+									Method of describing the syntax along witht the static semantics (meaning is known at compile time) using BNF grammar rules, along with:
+									<ol>
+										<li>Associated with each grammar symbol will be a set <code>X</code> of attributes <code>A(X)</code> where <code>A(X) = S(X) &cup; I(X)</code> where S(X) is the set of synthesized attributes used to pass information up the tree and <code>I(X)</code> is the set of inherited attributes used to pass information down from a parent or across to a sibling in the tree</li>
+										<li>Associated with each grammar rule a set of semantic functions and a possibly empty set of predicate functions over the attributes.</li>
+									</ol>
+								</p>
+							</p>
+							<hr />
+							<h3>Tricksy Syntactic Elements</h3>
+							<p>
+								Elements of a language which need to be discovered and often are not evident in BNF or syntax diagrams:
+								<ol>
+									<li>Character Set - symbols used to create identifiers, literals, reserved words, etc.</li>
+									<li>Rules for forming the names of identifiers</li>
+										<ol>
+											<li>What must it begin with?</li>
+											<li>What can it contain?</li>
+											<li>How long can it be?</li>
+										</ol>
+									<li>Operator Symbols</li>
+									<li><a href="#keyword">Keywords</a> v. <a href="#reserveWord">Reserved Words</a></li>
+									<li>Noise Words</li>
+									<li>Comments</li>
+										<ol>
+											<li>Special line comments</li>
+											<li>Special paragraph comments</li>
+											<li>Special symbol to end of line</li>
+											<li>Combination of any of the above.</li>
+										</ol>
+									<li>Blank use</li>
+										<ol>
+											<li>Ignored (<a href="#fortran">FORTRAN</a>)</li>
+											<li>Separator (<a href="#lisp">LISP</a>)</li>
+											<li>Operator (<a href="#snobol">SNOBOL</a>)</li>
+										</ol>
+									<li>Delimiters (Grouping Symbols)</li>
+									<li>Format of lines</li>
+										<ol>
+											<li>Free Format</li>
+											<li>Fixed Format</li>
+											<li>Semi-Fixed Format</li>
+										</ol>
+									<li>Expressions</li>
+										<ol>
+											<li>Prefix</li>
+											<li>Infix</li>
+											<li>Postfix</li>
+											<li>Comibination</li>
+										</ol>
+									<li>Statement Format</li>
+										<ol>
+											<li>One basic format</li>
+											<li>Similar but different</li>
+											<li>Diverse formats</li>
+											<li>Nested statements or not</li>
+										</ol>
+									<li>Program Structure</li>
+									<ol>
+										<li>Separate program definition</li>
+										<li>Separate data definition</li>
+										<li>Nested subprogram defintions</li>
+										<li>Separate Interface edition</li>
+										<li>Separated data and executable sections</li>
+										<li>Unseparated (no programs)</li>
+									</ol>
+								</ol>
+							</p>
+							<div class="aside">
+								<p class="question">
+									<ul>
+										<li>Give an example of a language with no subprograms.</li>
+										<li></li>
+									</ul>
+								</p>
+							</div>
+							<h3>Semantics</h3>
+							<p>
+								Methods for formally describing the semantics of a programming language:
+							</p>
+							<ol>
+								<li>
+									<h5>Operational Semantics</h5>
+									Define how a program works in relation to a virtual machine. Useful to compiler designers and users, alike.<br />
+									Ex. Vienna Definition Language (VDL)
+								</li>
+								<li>
+									<h5>Applicative or Denotational Semantics</h5>
+									Construct a definition for a program. Created by Scott and Strachey. Useful to compiler designers.
+								</li>
+								<li>
+									<h5>Axiomatic Semantics</h5>
+									Define the semantics as axioms or rules of inference (depends on logic with preconditions and postconditions).
+								</li>
+							</ol>
+							<div class="aside">
+								<h3>Homework Due October 1, 2013</h3>
+								Data Object - Container (location) which holds a value and has associated with it a set of attributes.
+								<br />
+								Possible Attributes:
+								<ul>
+									<li>Type</li>
+									<li>Address</li>
+									<li>Value</li>
+									<li>Name</li>
+									<li>Components with subscripts or field names</li>
+								</ul>
+								<code>
+									var x:integer
+								</code>
+							</div>
+							<h5>Identifiers:</h5>
+								<ol>
+									<li>Variables - named data object defined by the programmer whose value may be changed by assignment or input.</li>
+									<li>Constants - named data object whose value is fixed during the life of the program</li>
+									<li>Subprograms</li>
+								</ol>
+								Note: A literal is a constant data object whose name is the written representation of its value.
+								<br />
+								<h5>Data Types</h5>
+								We can consider data types on three levels:
+								<ol>
+									<li>Specification</li>
+									<ul>
+										<li>Attributse</li>
+										<li>Possible values</li>
+										<li>Operations on data objects of that type</li>
+									</ul>
+									<li>Implementation</li>
+									<ul>
+										<li>Storage representation</li>
+										<li>Algorithm for implementing the operations</li>
+									</ul>
+									<li>Declarations</li>
+									<li>Value Representations</li>
+								</ol>
+								Binding - the action of fixing or setting the value of an attribute for a language component (making an association of a value for an attribute).
+								<br />
+								<h5>Possible Binding Times</h5>
+								<ol>
+									<li>Language Design</li>
+									<li>Language Implementation (Constructing the Translator)</li>
+									<li>Program Translation</li>
+									<li>Load Time</li>
+									<li>Execution Time</li>
+								</ol>
+								A programming language which attempts to bind as much as possible as early as possible is called an "Early Binding Language" and is generally compiled.
+								<br />
+								A language which delays binding until the last moment is called a "Late" or "Fluid Binding Language" and is generally interpreted.
+								<br />
+								When considering the data type to tbe bound to a data object, we need to ask:
+								<ol>
+									<li>What are the built-in or language supported data types?</li>
+									<ol>
+										<li>Elementatry (Hold one value)</li>
+										<li>Structured (Holds multiple values)</li>
+									</ol>
+									<li>What are the operations on those types?</li>
+									<ol>
+										<li>Dyadic or Monadic (Binary or Unary)</li>
+										<li>Prefix, postfix, or infix</li>
+									</ol>
+									<li>How and where are <a href="#declaration">declarations</a> made for variables?</li>
+								</ol>
+						</div>
+						<div class="chapter" id="chapter7">
+							<h1>Declarations and Binding</h1>
+							<h3>October 3, 2013</h3>
+							
+							<h3>Purpose of Declarations</h3>
+							<ol>
+								<li>Translator may be able to manage storage representation more easily</li>
+								<li>Give the lifetime of the data object (time between allocation and deallocation).</li>
+								<li>Resolve overloaded operators</li>
+								<li>Allows for static type-checking</li>
+								<ol>
+									Categories of Type Checking:
+									<li>Dynamic Type Checking - performed at runtime</li>
+									<ul>
+										<li>Advantage: Flexibility</li>
+										<li>Disadvantages:</li>
+										<ul>
+											<li>Difficult to debug</li>
+											<li>Requires extra storage for a type tag</li>
+											<li>Each operation must be implemented using some software routine</li>
+											<li><b>Loss of execution efficiency</b></li>
+										</ul>
+									</ul>
+									<li>Static Type Checking - performed at compile-time</li>
+									<ul>
+										<li>Advantages:</li>
+										<ul>
+											<li>All paths are checked at translation</li>
+											<li>Does not require type tags</li>
+											<li>Execution efficiency</li>
+											<li>May be able to to directly use hardware operations</li>
+										</ul>
+										<li>Disadvantage: Loss of flexibility</li>
+									</ul>
+								</ol>
+							</ol>
+							<hr />
+							<h3>Extent and Scope</h3>
+							<a href="#extent">
+								<h5>Extent (Lifetime)</h5>
+							</a>
+							Categories of lifetime for smiple variable data types:
+							<ol>
+								<li>
+									<a href="#static-variable">Static Variables</a>
+									<br />
+									Examples: Global variables or for a history sensitive variable inside of a subprogram
+									<ul class="procon">
+										<li class="pro">Efficiency of execution because you can use direct addressing</li>
+										<li class="con">Reduced flexibility and ability to have recursion</li>
+										<li class="con">Cannot reuse storage.</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#stack-dynamic-variable">Stack-Dynamic Variable</a>
+									<ul class="procon">
+										<li class="pro">Ability to implement recursion</li>
+										<li class="con">Runtime overhead</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#explicit-heap-dynamic-variable">Explicit Heap-Dynamic Variable</a>
+									<br />
+									Examples: C++ (<code>new</code> and <code>destroy</code>), C (<code>alloc</code> and <code>dealloc</code>)
+									<ul class="procon">
+										<li class="pro">Ability to create dynamic data structures</li>
+										<li class="con">Run-time overhead</li>
+										<li class="con">Complexity</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#implicit-heap-dynamic-variable">Implicit Heap-Dynamic Variable</a>
+									<br />
+									Examples: <a href="#js">Javascript</a>
+									<ul class="procon">
+										<li class="pro">Flexibiliity is over 9000</li>
+										<li class="con">Run-time overhead</li>
+										<li class="con">Error detection is very difficult for the translator</li>
+									</ul>
+								</li>
+							</ol>
+							<a href="#scope">
+								<h5>Scope</h5>
+								<ol>
+									<li><a href="#global-scope">Global Scope</a></li>
+									<li><a href="#non-local-scope">Non-Local Scope</a></li>
+									<li><a href="#local-scope">Local Scope</a></li>
+								</ol>
+								<h6>Scoping Rules</h6>
+								<ol>
+									<li>
+										Static Scoping Rule - associate with a reference to a variable the declaration of the variable occurring in the innermost block textually containing the reference
+									</li>
+									<div class="example">
+<pre><code>
+main{
+	temp:integer
+	a{
+		temp:char
+		b{
+			use temp  //temp = char
+		}
+	}
+	c{
+		use temp	//temp = int
+	}
+}
+</code></pre>
+									</div>
+									<li>
+										Dynamic Scoping Rule - associate with a reference to a variable the declaration of the variable in the most recently invoked, not yet terminated subprogram.
+									</li>
+									<div class="example">
+<pre>
+Main declares: a,b,c
+   X declares: b,c,d
+   Y declares: a,e
+   Z	 uses: a (Which a?)
+	  	 if (Main->Y->X->Z)
+	  	   Z => Uses a from Y
+	  	 if (Main->X->Z)
+	  	   Z => Uses a from Main
+<hr />
+<code>
+begin
+	boolean b := true
+	procedure P{
+		print(b)
+	}
+	main{
+		boolean b := false
+		P()
+	}
+end
+</code></pre>
+<table class="table table-bordered">
+	<tr>
+		<th>Rule</th>
+		<th>Prints</th>
+	</tr>
+	<tr>
+		<td>Static Scoping Rule</td>
+		<td>True</td>
+	</tr>
+	<tr>
+		<td>Dynamic Scoping Rule</td>
+		<td>False</td>
+	</tr>
+</table>
+									</div>
+								</ol>
+								<a href="#referencing-envrionment">Referencing Envrionment</a>
+<pre><code>
+main(){
+	x:real
+	procedure A{
+		x:char
+		x:='A'
+	}
+	procedure B{
+		procedure C{
+
+		}
+	}
+}
+</code></pre>
+							<h5>Problems When Scope and Extent Don't Match</h5>
+							<ol>
+								<li>Extent exceeds scope</li>
+								<li>Scope exceeds extent (Example: Dangling pointers)</li>
+							</ol>
+						</div>
+						<hr />
+						<div class="chapter" id="chapter8">
+							<h1>Data Types</h1>
+							<h3>October 10, 2013</h3>
+							<h2>Language Supplied Data Types</h2>
+							<h5>Categories According to Size:</h5>
+							<ol>
+								<li>Elementary (Primitive) - Data object holds only a single value</li>
+								<li>Structured (Composite) - Data object holds multiple values (Struct, record, set, array, etc.). Usually made up of Primitives.</li>
+							</ol>
+							<h5>Elementary Data Types</h5>
+							<ol>
+								<li>
+									Integer - Easiest to implement internally.
+									<br />
+									May be implemented:
+									<ol>
+										<li>No runtime descriptor, making use of hardware operations on integer directly.</li>
+										<li>Separate runtime descriptor (From the data object)</li>
+										<li>Runtime descriptor is stored inside the data object (Disables hardware operations)</li>
+									</ol>
+								</li>
+								<li>
+									Subrange of Integers - Sequential subset of the integers
+									<ol>
+										<li>For memory management (fit to the size)</li>
+										<li>For type checking out of range</li>
+									</ol>
+								</li>
+								<li>
+									Floating Point or Real
+								</li>
+								<li>
+									Fixed Point - Digit sequence of fixed length, with a fixed number of decimal places. (<code>.5 &rarr; .50</code> If it's fixed to two points.)
+									<br />
+									<small>Could be implemented with hardware or software simulated.</small>
+								</li>
+								<li>
+									Boolean (Logical)
+									<h6>Important Traits of Booleans</h6>
+									<ol>
+										<li>Values</li>
+										<li>
+											Operations
+											<code>
+												AND
+												OR
+												NOT
+												XOR
+												&&
+												||
+											</code> Etc.
+										</li>
+										<li>Method of Implementation</li>
+									</ol>
+								</li>
+								<li>
+									Rational Number - Maintain a numerator and a denominator
+								</li>
+								<li>
+									Complex Number - Represented as a pair of real numbers (a,b)
+								</li>
+								<li>
+									Character - One byte represented using a coding sequence
+								</li>
+								<li>
+									Enumerations - Ordered finite list of distinct values
+									<ol>
+										<li>
+											Operations:
+											<ul>
+												<li>Comparison</li>
+												<li>Assignment</li>
+												<li>Successor</li>
+												<li>Predecessor</li>
+											</ul>
+										</li>
+									</ol>
+								</li>
+							</ol>
+							<h5>Composite Data Types</h5>
+							<ol>
+								<li>
+									Character String - Sequence of characters.
+									<br>
+									<h6>Three possible approaches:</h6>
+									<ol>
+										<li>Fixed declared length</li>
+										<ul class="procon">
+											<li class="pro">Efficient</li>
+											<li class="con">Restrictive</li>
+											<li class="con">Usually forces programmer to pad strings with blanks.</li>
+										</ul>
+										<li>Max length declared, but variable within the max</li>
+										<ul class="procon">
+											<li class="pro">Efficient</li>
+											<li class="pro">Flexible</li>
+											<li class="con">Often end up wasting memory with stringst that don't hit the max.</li>
+										</ul>
+										<li>No declared length (Unbounded Length)</li>
+										<ul class="procon">
+											<li class="pro">Very flexible</li>
+											<li class="con">Memory management takes a big hit</li>
+										</ul>
+									</ol>
+									<h6>Operations:</h6>
+									<ul>
+										<li>Concatenation</li>
+										<li>Pattern Matching</li>
+										<li>Substring Extraction</li>
+										<li>Relational</li>
+									</ul>
+								</li>
+								<li>
+									Pointer - (Reference or Access Type) A data object which holds the memory address of another data object
+									<h6>Operations:</h6>
+									<ul>
+										<li>Assignment</li>
+										<li>Dereferencing</li>
+									</ul>
+									<h6>Two approcahes to pointers:</h6>
+									<ol>
+										<li>A pointer always points to the same type of data object</li>
+										<li>A pointer may point to any type</li>
+									</ol>
+								</li>
+							</ol>
+							<div class="aside">
+								We may also categorize elementary data types as whether they are ordinal or not. An ordinal type is one which can be associated one-to-one with a set of integers: <br>
+								Ex: Integer, character, boolean, enumerated types, etc.
+							</div>
+						</div>
+						</section>
+						<a id="current-location" title="current-location"></a>
+						<hr />
+						<section id="glossary">
+							<h1>Glossary</h1>
+							<dl>
+								<dt id="readability">
+									Readability
+								</dt>
+									<dd>
+										Clarity of a program in a language
+									</dd>
+								<dt id="writeability">
+									Writeability
+								</dt>
+									<dd>
+										Ease of creating a program in a programming language
+									</dd>
+								<dt id="reliability">
+									Reliability
+								</dt>
+									<dd>
+										A program performs to specifications under all conditions
+									</dd>
+								<dt id="portability">
+									Portability
+								</dt>
+									<dd>
+										The ease of moving a program written in one environment into another environment
+									</dd>
+								<dt id="orthogonality">
+									Orthogonality
+								</dt>
+									<dd>
+										Attribute where the user has the ability to combine various features of a language with all possible combinations being meaningful
+									</dd>
+								<dt id="keyword">
+									Keyword
+								</dt>
+									<dd>
+										Keywords are special identifiers which are available to be used for variable names as well.
+									</dd>
+								<dt id="reserveWord">
+									Reserve Word
+								</dt>
+									<dd>
+										Reserved words are special identifiers which <strong>cannot</strong> be redefined by the user
+									</dd>
+								<dt id="noiseWord">
+									Noise Words
+								</dt>
+									<dd>
+										Words which are not necessary but can be included to enhance readability
+									</dd>
+								<dt id="identifier">
+									Identifiers
+								</dt>
+									<dd>
+										Strings used to identify variables, constants, subprograms, etc.
+									</dd>
+								<dt id="expressivity">
+									Expressivity
+								</dt>
+									<dd>
+										Powerful operators and convenient methods for expressing common computation
+									</dd>
+								<dt id="exception">
+									Exception
+								</dt>
+									<dd>
+										A rare event which needs special consideration
+									</dd>
+								<dt id="aliasing">
+									Aliasing
+								</dt>
+									<dd>
+										The process of allowing two or more distinct names to refer to the same storage location
+									</dd>
+								<dt id="generality">Generality</dt>
+									<dd>
+										Appropriate to use within a wide variety of applications
+									</dd>
+								<dt id="implementation">
+									Implemntation
+								</dt>
+									<dd>
+										The process of constructing a translator for a language.
+									</dd>
+								<dt id="static-binding">Static Binding</dt>
+									<dd>
+										Occurs at compile time and is fixed.
+									</dd>
+								<dt id="dynamic-binding">Dynamic Binding</dt>
+									<dd>
+										Occurs during run time and changes.
+									</dd>
+								<dt id="declaration">Declaration</dt>
+									<dd>Statement which "fixes" types with variables</dd>
+								<dt id="type-checking">Type Checking</dt>
+									<dd>
+										Determining whether operations are receiving the correct type operands.
+									</dd>
+								<dt id="extent">Extent</dt>
+									<dd>
+										Time between allocation and deallocation of the storage bound to a data object
+									</dd>
+								<dt id="static-variable">Static Variable</dt>
+									<dd>
+										Allocate storage before execution begins and deallocate when the program terminates
+									</dd>
+								<dt id="stack-dynamic-variable">Stack-Dynamic Variable</dt>
+									<dd>
+										Allocate storage when a declaration is elaborated but the type is static and then deallocated when the subprogram or blcok containing the declaraion terminated. Allocation takes place from a run-time stack
+									</dd>
+								<dt id="elaboration">Elaboration</dt>
+									<dd>
+										When execution reached the code to which a declaration is attached	
+									</dd>
+								<dt id="explicit-heap-dynamic-variable">Explicit Heap-Dynamic Variable</dt>
+									<dd>
+										Nameless memory cells allocated and deallocated from the heap section of memory set aside for the program, referenced by pointers with some instruction or function supplied by the language to allocate (new or alloc) and to deallocate (free or dispose)
+									</dd>
+								<dt id="implicit-heap-dynamic-variable">Implicit Heap-Dynamic Variable</dt>
+									<dd>
+										Allocation occurs when a value is assigned to a variable
+									</dd>
+								<dt id="scope">Scope</dt>
+									<dd>
+										Range of statements where a variable is known (visible) and hence useable (can be referenced)
+									</dd>
+								<dt id="global-scope">Global Scope</dt>
+									<dd>
+										Declared within the main program and visible to entire program.
+									</dd>
+								<dt id="non-local-scope">Non-Local Scope</dt>
+									<dd>
+										Variable which is not global and not declared within a subprogram, but visible to the subprogram
+									</dd>
+								<dt id="local-scope">Local Scope</dt>
+									<dd>
+										Variable declared within the currently executing block.
+									</dd>
+								<dt id="referencing-environment">Referencing Environment</dt>
+									<dd>
+										Set of all variables visible (having scope) for an executing statement
+									</dd>
+							</dl>
+						</section>
+						<hr />
+						<section id="languages">
+							<h1>Languages</h1>
+							<dl>
+								<dt id="basic">BASIC</dt>
+									<dd>
+										<ul>
+											<li>Created for non-programmer students at Dartmouth in 1964.</li>
+											<li>Acronym for Beginnerss All-purpose Symbolic Instruction Code.</li>
+										</ul>
+									</dd>
+								<dt id="snobol">SNOBOL</dt>
+									<dd>
+										
+									</dd>
+								<dt id="cobol">COBOL</dt>
+									<dd>
+										
+									</dd>
+								<dt id="fortran">FORTRAN</dt>
+									<dd>
+										<ul>
+											<li>First high-level language to become widely used.</li>
+											<li>Fortran ignores blanks</li>
+										</ul>
+									</dd>
+								<dt id="pascal">Pascal</dt>
+									<dd>
+										<ul>
+											<li><u>Good teaching language</u>; designed to be easy to learn</li>
+										</ul>
+									</dd>
+							</dl>
+						</section>
+						<hr />
+						<section id="sources">
+							<h1>Need some resources?</h1>
+							<p>Check your accounts at <a href="dl.acm.org">ACM Digital Library</a> and <a href="http://library.books24x7.com/login.asp?ic=0">Books 24x7</a>. You already have some sources in your bookshelves.</p>
+							<ul>
+								<li><a href=""></a></li>
+							</ul>
+							<div id="mdSources">
+								
+							</div>
+							<script>
+								$('#mdSources').load('sources.mdown');
+								// var showdown = require(['showdown'], function (showdown){});
+								var converter = new Showdown.converter();
+								// var markdown = converter.makeHtml($('#mdSources').text());
+								$('#mdSources').html(converter.makeHtml($('#mdSources').text()));
+								console.log('You got it!');
+								$('#mdSources').html(converter.makeHtml($('#mdSources').text()));
+							</script>
+							<script>
+								$('.question').parent().addClass('text-danger');
+								$('.question').removeClass('question');
+							</script>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/bootstrap.js"></script>
+
+</html>
