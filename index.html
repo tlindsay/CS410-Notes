@@ -1278,6 +1278,33 @@ main(){
 								<li>Extent exceeds scope</li>
 								<li>Scope exceeds extent (Example: Dangling pointers)</li>
 							</ol>
+							<h5>Methods for implementing the Static Scoping Rule</h5>
+							<ol>
+								<li>
+									Static Pointer Method
+									<p>
+										Replace the reference to a variable with an ordered pair <code>(I,J)</code> where <code>I = </code> number of pointer traversals (within the stack of actiation records) and <code>J = </code> offset within the block containing the declaration for the variable.
+										<br />
+										Each activation record on the stack has a pointer to the next textually containing block.
+									</p>
+								</li>
+								<li>
+									Display Method
+									<p>
+										Replace the reference to a variable with an ordered pair <code>(I,J)</code> where <code>I = [index in a display stack]</code> and <code>J = [offset within the block where the display pointer points]</code>. It also uses a hidden stack as well as the stack of activation records.
+									</p>
+								</li>
+							</ol>
+							<h5>Methods for implementing the Dynamic Scoping Rule <small>Takes place at runtime.</small></h5>
+							<ol>
+								<li>Look back throught the calling chain until the desired variable is found.</li>
+								<li>
+									Current Referencing Environment Table (CRET)
+									<p>
+										Maintain a dynamic symbol table holding symbolw, whether active, and pointer to where they are located within the stack of activation records.
+									</p>
+								</li>
+							</ol>
 						</div>
 						<hr />
 						<div class="chapter" id="chapter8">
