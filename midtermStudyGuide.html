@@ -137,6 +137,71 @@
 									</p>
 								</li>
 							</ol>
+							<h2>Chapter 3</h2>
+							<ol>
+								<li>
+									<h3>
+										Discuss the two methods for formally defining a programming language.
+									</h3>
+									<p>
+										The two methods for formally defining a programming language are a language recognizer and a language generator. A language recognizer gets fed a program and recognizes a valid sentence in the language. An example would be a syntactic analyzer or a parser. A language generator starts from scratch and builds a program. An example would be a grammar for a language.
+									</p>
+								</li>
+								<li>
+									<h3>
+										Describe the 4 elements of a grammar.
+									</h3>
+									<p>
+										A grammar is made up of a 4-tuple (N, T, P, S) where N is a set of non-terminals to be defined further, T is a set of terminals or tokens, P is a set of production rules, and S is a start symbol that is an element of N. Furthermore, a grammar is a formal method of defining the syntax of a programming language language with the rules specifying the sequence of tokens or lexemes. A grammar is also a language generator
+									</p>
+								</li>
+								<li>
+									<h3>
+										Discuss the Chomsky hierarchy.
+									</h3>
+									<p>
+										The Chomsky hierarchy was developed by Noam Chomsky in the 1950s as a means for analyzing the syntax of languages. Given a grammar with: A and B elements of N, a and b elements of T, and &alpha;, &beta;, &sigma;, and &tau; elements of N union T, the following chart can be used to described the Chomsky Hierachy. Note that type 3 is a subset of type 2 is a subset of type 1 is a subset of type 0.
+										<table class="table table-bordered">
+											<th>Language Type</th>
+											<th>Language Generator (or grammar)</th>
+											<th>Language Recognizer (or automaton)</th>
+											<th>Type of Grammar Rules</th>
+											<tr>
+												<td>3 Regular Language</td>
+												<td>Regular Grammar</td>
+												<td>Finite State Automaton (or Finite State Machine)</td>
+												<td>A -> a <br /> or <br /> A -> bB</td>
+											</tr>
+											<tr>
+												<td>2 Context Free Language</td>
+												<td>Context-Free Grammar</td>
+												<td>Push-down Automaton</td>
+												<td>A -> &alpha; <br /> A -> abB <br /> A -> aaaBa </td>
+											</tr>
+											<tr>
+												<td>1 Context Sensitive Language</td>
+												<td>Context-Sensitive Grammar</td>
+												<td>Linear Bounded Automaton</td>
+												<td>&alpha;&sigma;&beta; -> &alpha;&tau;&beta;</td>
+											</tr>
+											<tr>
+												<td>0 Recursively Enumerable</td>
+												<td>Unrestricted Grammar</td>
+												<td>Turing Machine</td>
+												<td>&alpha; -> &beta; <br /> &alpha; ≠ [empty]</td>
+											</tr>
+										</table>
+									</p>
+								</li>
+								<li>
+									<h3>
+										Discuss the methods for formally expressing the semantics of a programming language.
+									</h3>
+									<p>
+										The three methods for expressing the semantics of a programming language are operational semantics, denotational semantics (applicative), and axiomatic semantics. Operations semantics define how a program works related to a virtual machine and are useful for designing a compiler or for a programmer in general. An example would be the Vienna Definition Language. Denotational semantics construct a definition for a program and are useful for compiler designers only. Axiomatic semantics define the semantics as axioms or rules of inference and can be used to prove a program is logically correct.
+									</p>
+								</li>
+							</ol>
 						</section>
 						<hr>
 						<section id="glossary">
@@ -371,7 +436,7 @@
 									<dd>
 									 	A data structure containing the variables belonging to one particular scope (e.g. a procedure body), as well as links to other activation records.
 										<br>
-										Activation records are usually created (on the stack) on entry to a block and destroyed on exit. If a procedure or function may be returned as a result, stored in a variable and used in an outer scope then its activation record must be stored in a heap so that its variables still exist when it is used. Variables in the current scope are accessed via the frame pointer which points to the current activation record. Variables in an outer scope are accessed by following chains of links between activation records. There are two kinds of link - the static link and the dynamic link.	
+										Activation records are usually created (on the stack) on entry to a block and destroyed on exit. If a procedure or function may be returned as a result, stored in a variable and used in an outer scope then its activation record must be stored in a heap so that its variables still exist when it is used. Variables in the current scope are accessed via the frame pointer which points to the current activation record. Variables in an outer scope are accessed by following chains of links between activation records. There are two kinds of link - the static link and the dynamic link.
 
 									</dd>
 								<dt id="static-scoping-rule">Static Scoping Rule</dt>
