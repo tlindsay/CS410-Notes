@@ -1,36 +1,42 @@
-.question {
+.testquest {
   position: relative;
   padding: 45px 15px 15px;
   margin: 0 -15px 15px;
   background-color: #fafafa;
   box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
-  border-color: #b94a48 #eee #eee;
+  border-color: #d9534f #eee #eee;
   border-style: solid;
   border-width: 1px 0;
 }
-/* Echo out a label for the example */
-.question:after {
+/* Echo out a label for the testquest */
+.testquest:after {
   content: "Good Test Question";
+  color: #f9f9f9;
   position: absolute;
-  top:  15px;
-  left: 15px;
+  top: 0;
+  left: 0;
+  padding-top:  15px;
+  padding-left: 15px;
   font-size: 12px;
   font-weight: bold;
-  color: #b94a48;
+  background-color: #d9534f;
   text-transform: uppercase;
   letter-spacing: 1px;
+  width:240px;
+  border-radius-top-left:4px;
+  border-radius-bottom-right: 4px;
 }
 
-/* Tweak display of the code snippets when following an example */
-.question + .highlight {
+/* Tweak display of the code snippets when following an testquest */
+.testquest + .highlight {
   margin: -15px -15px 15px;
   border-radius: 0;
   border-width: 0 0 1px;
 }
 
-/* Make the examples and snippets not full-width */
+/* Make the testquests and snippets not full-width */
 @media screen and (min-width: 768px) {
-  .question {
+  .testquest {
     margin-left: 0;
     margin-right: 0;
     background-color: #fff;
@@ -39,7 +45,7 @@
     border-radius: 4px 4px 0 0;
     box-shadow: none;
   }
-  .question + .highlight {
+  .testquest + .highlight {
     margin-top: -16px;
     margin-left: 0;
     margin-right: 0;
@@ -49,83 +55,83 @@
   }
 }
 
-/* Tweak content of examples for optimum awesome */
-.question > p:last-child,
-.question > ul:last-child,
-.question > ol:last-child,
-.question > blockquote:last-child,
-.question > .form-control:last-child,
-.question > .table:last-child,
-.question > .navbar:last-child,
-.question > .jumbotron:last-child,
-.question > .alert:last-child,
-.question > .panel:last-child,
-.question > .list-group:last-child,
-.question > .well:last-child,
-.question > .progress:last-child,
-.question > .table-responsive:last-child > .table {
+/* Tweak content of testquests for optimum awesome */
+.testquest > p:last-child,
+.testquest > ul:last-child,
+.testquest > ol:last-child,
+.testquest > blockquote:last-child,
+.testquest > .form-control:last-child,
+.testquest > .table:last-child,
+.testquest > .navbar:last-child,
+.testquest > .jumbotron:last-child,
+.testquest > .alert:last-child,
+.testquest > .panel:last-child,
+.testquest > .list-group:last-child,
+.testquest > .well:last-child,
+.testquest > .progress:last-child,
+.testquest > .table-responsive:last-child > .table {
   margin-bottom: 0;
 }
-.question > p > .close {
+.testquest > p > .close {
   float: none;
 }
 
 /* Typography */
-.question-type .table td:last-child {
+.testquest-type .table td:last-child {
   color: #999;
   vertical-align: middle;
 }
-.question-type .table td {
+.testquest-type .table td {
   padding: 15px 0;
   border-color: #eee;
 }
-.question-type .table tr:first-child td {
+.testquest-type .table tr:first-child td {
   border-top: 0;
 }
-.question-type h1,
-.question-type h2,
-.question-type h3,
-.question-type h4,
-.question-type h5,
-.question-type h6 {
+.testquest-type h1,
+.testquest-type h2,
+.testquest-type h3,
+.testquest-type h4,
+.testquest-type h5,
+.testquest-type h6 {
   margin: 0;
 }
 
 /* Images */
-.question > .img-circle,
-.question > .img-rounded,
-.question > .img-thumbnail {
+.testquest > .img-circle,
+.testquest > .img-rounded,
+.testquest > .img-thumbnail {
   margin: 5px;
 }
 
 /* Buttons */
-.question > .btn,
-.question > .btn-group {
+.testquest > .btn,
+.testquest > .btn-group {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.question > .btn-toolbar + .btn-toolbar {
+.testquest > .btn-toolbar + .btn-toolbar {
   margin-top: 10px;
 }
 
 /* Forms */
-.question-control-sizing select,
-.question-control-sizing input[type="text"] + input[type="text"] {
+.testquest-control-sizing select,
+.testquest-control-sizing input[type="text"] + input[type="text"] {
   margin-top: 10px;
 }
-.question-form .input-group {
+.testquest-form .input-group {
   margin-bottom: 10px;
 }
-.question > textarea.form-control {
+.testquest > textarea.form-control {
   resize: vertical;
 }
 
 /* List groups */
-.question > .list-group {
+.testquest > .list-group {
   max-width: 400px;
 }
 
 /* Navbars */
-.question .navbar:last-child {
+.testquest .navbar:last-child {
   margin-bottom: 0;
 }

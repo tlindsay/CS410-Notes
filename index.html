@@ -5,8 +5,8 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/example.css" />
-		<link rel="stylesheet" href="css/question.css">
 		<link rel="stylesheet" href="css/aside.css">
+		<link rel="stylesheet" href="css/question.css">
 		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css" />
 		<script src="js/require.js"></script>
 		<script src="js/jquery-1.8.2.min.js"></script>
@@ -63,7 +63,7 @@
 						<section id="notes">
 							<div id="chapter1">
 								<h1>Why?</h1><h3>August 22, 2013</h3>
-								<div class="question">
+								<div class="testquest">
 									Why study programming languages?
 									<ul>
 										<li>To aid in learning new languages</li>
@@ -414,8 +414,8 @@
 														</ul>
 													</li>
 												</ul>
-												<div class="aside">
-													<h4 class="question">Why did FORTRAN initially succeed?</h4>
+												<div class="testquest">
+													<h4>Why did FORTRAN initially succeed?</h4>
 													<ol>
 														<li>IBM supported it</li>
 														<li>Allowed for highly optimized compilation, since nothing is delayed until runtime.</li>
@@ -1010,13 +1010,8 @@
 									</ol>
 								</ol>
 							</p>
-							<div class="aside">
-								<p class="question">
-									<ul>
-										<li>Give an example of a language with no subprograms.</li>
-										<li></li>
-									</ul>
-								</p>
+							<div class="testquest">
+								Give an example of a language with no subprograms.
 							</div>
 							<h3>Semantics</h3>
 							<p>
@@ -1437,6 +1432,103 @@ main(){
 								We may also categorize elementary data types as whether they are ordinal or not. An ordinal type is one which can be associated one-to-one with a set of integers: <br>
 								Ex: Integer, character, boolean, enumerated types, etc.
 							</div>
+							<h3>Structured Data Types (Composite Data Types)</h3>
+							<p>
+								A data object which contains other data objects (sometimes called data structures)
+							</p>
+
+							<h5>Specification</h5>
+							<ol>
+								<li>Number of Components</li>
+								<ol>
+									<li>Fixed number</li>
+									<li>Variable</li>
+								</ol>
+								<li>Type of Components</li>
+								<ol>
+									<li>Homogeneous (All components have the same type)</li>
+									<li>Heterogeneous (Mixed types)</li>
+								</ol>
+								<li>Mechanism for Selecting Components</li>
+								<ol>
+									<li><code>A[3]</code></li>
+									<li><code>A(3)</code></li>
+									<li><code>A.3</code></li>
+								</ol>
+								<li>Maximum Number of Components</li>
+								<li>Organization of Components in Memory</li>
+							</ol>
+							<h5>Operations of the Data Structures</h5>
+							<ol>
+								<li>Component Selection</li>
+								<li>Whole Structure Operations</li>
+								<li>Insertions/Deletions</li>
+								<li>Create/Destroy</li>
+							</ol>
+							<h5>Implementation in Memory</h5>
+							<ol>
+								<li>Sequentially Stored</li>
+								<li>Linked components stored in several locations</li>
+							</ol>
+							<h5>Declarations of Data Structures</h5>
+							<ol>
+								<li>Type</li>
+								<li>Number of dimensions or number of components</li>
+								<li>Subscript or Field Names</li>
+								<li>Type for Each Component</li>
+							</ol>
+							<h5>Type Checking Problems</h5>
+							<ol>
+								<li>
+									Does a compnent exist (or is subscript out of range or is there such a field by that name)?
+								</li>
+								<li>
+									Is the component of the expected type?
+								</li>
+							</ol>
+							<h5>Types of Data Structures</h5>
+							<ol>
+								<li>
+									Vector
+									<p>
+										One dimensional array. In most laguages, this is a homogeneous fixed size, fixed type data structure
+										<br>
+										Necessary attributes:
+										<ul>
+											<li>Number of components</li>
+											<li>Type of components</li>
+											<li>Subscript type and range</li>
+										</ul>
+									</p>
+								</li>
+								<li>
+									Arrays of Two or More Dimensions
+									<p>
+										Some languages view these as vectors of vectors. Most languages store the multi-dimensional arrays in row-major form (<code>ar[row][col]</code> as opposed to <code>ar[col][row]</code>).
+									</p>
+								</li>
+								<div class="testquest">
+									<strong>Consider column-major form for the midterm.</strong>
+								</div>
+								<li>
+									Records (Structs)
+									<p>
+										Heterogeneous data structures with fixed numbers of components and fixed field names.
+									</p>
+								</li>
+								<li>
+									Variant Record
+									<p>
+										A record giving differnt appearances according to the value stored within one field called a tag field.
+									</p>
+								</li>
+								<li>
+									List
+									<p>
+										Ordered sequence of data objects
+									</p>
+								</li>
+							</ol>
 						</div>
 						</section>
 						<a id="current-location" title="current-location"></a>

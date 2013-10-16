@@ -12,17 +12,16 @@ Due Tuesday, October 1
 	- Read Chapters 2 & 3
 Due Thursday, October 10
 ------------------------
-	- Pg. 236/6,7,8,9,12
 	- Read Chapter 5
-Due Sometime
-------------
-	- Implement CSS for [ul.procon]
 TEST OCTOBER 15
 ===============
 	- Review attribute grammars
 
 Done
 =====
+Due Thursday, October 10
+------------------------
+	- Pg. 236/6,7,8,9,12
 Due Thursday, October 3
 -----------------------
 	- BNF Worksheet
@@ -43,3 +42,4 @@ Due Tuesday, August 27
 Due Sometime
 ------------
 	- Get folder for class
+	- Implement CSS for [ul.procon]
