@@ -132,6 +132,7 @@
 						<hr>
 						<section id="glossary">
 							<!-- GLOSSARY GOES HERE -->
+							<h1>Glossary</h1>
 							<dl>
 								<dt id="orthogonality">
 									Orthogonality
@@ -356,6 +357,13 @@
 								<dt id="local-scope">Local Scope</dt>
 									<dd>
 										Variable declared within the currently executing block.
+									</dd>
+								<dt id="activation-record">Activation Record</dt>
+									<dd>
+									 	A data structure containing the variables belonging to one particular scope (e.g. a procedure body), as well as links to other activation records.
+										<br>
+										Activation records are usually created (on the stack) on entry to a block and destroyed on exit. If a procedure or function may be returned as a result, stored in a variable and used in an outer scope then its activation record must be stored in a heap so that its variables still exist when it is used. Variables in the current scope are accessed via the frame pointer which points to the current activation record. Variables in an outer scope are accessed by following chains of links between activation records. There are two kinds of link - the static link and the dynamic link.	
+
 									</dd>
 								<dt id="static-scoping-rule">Static Scoping Rule</dt>
 									<dd>
