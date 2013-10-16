@@ -43,7 +43,7 @@
 						</ul>
 						<a href="index.html" class="btn btn-success btn-lg btn-block">Back to Notes</a>
 					</div>
-					<div data-spy="affix" id="todo-list" class="todo affix">
+					<!-- <div data-spy="affix" id="todo-list" class="todo affix">
 						<div markdown="1">
 							<script>
 								var todoMD = $().load('Todo.mdown').text();
@@ -54,11 +54,87 @@
 								// document.write()
 							</script>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-lg-9">
 					<div class="content">
 						<section id="test-questions">
+							<h1>Test Questions</h1>
+							<h2 id="one-pointers">One Pointers</h2>
+							<h3>Costs to Use</h3>
+							<ul>
+								<li>
+									Cost to Learn or Train
+									<ul>
+										<li><span class="good">Pascal</span></li>
+										<li><span class="good">BASIC</span></li>
+										<li><span class="bad">APL</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost to Write a Program
+									<ul>
+										<li><span class="good">SmallTalk</span></li>
+										<li><span class="good">APL</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost of a Translator (Cost to Implement)
+									<ul>
+										<li><span class="good">Pascal</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost of Translation
+									<ul>
+										<li><span class="good">Pascal</span></li>
+										<li><span class="good">APL</span></li>
+										<li><span class="bad">PL/I</span></li>
+										<li><span class="bad">Ada</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost of Execution
+									<ul>
+										<li><span class="good">Fortran</span></li>
+										<li><span class="bad">COBOL</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost of Reliability
+									<ul>
+										<li><span class="good">Ada</span></li>
+										<li><span class="bad">C</span></li>
+									</ul>
+								</li>
+								<li>
+									Cost of Maintenance
+									<ul>
+										<li><span class="good">Ada</span></li>
+										<li><span class="bad">APL</span></li>
+									</ul>
+								</li>
+							</ul>
+							<h3>Characteristics of a "Good" Programming Language</h3>
+							<ul>
+								<li>Readability <span class="good">COBOL</span> </li>
+								<li>Writeability <span class="good">APL</span></li>
+								<li>Reliability <span class="good">Ada</span></li>
+								<li>Ease of Program Verification <span class="good">Prolog</span></li>
+								<li>Program Environment <span class="good">SmalTalk</span></li>
+								<li>Portability <span class="good">Java</span></li>
+								<li>Well Defined Description of Semantics and Syntax <span class="good">SNOBOL</span></li>
+							</ul>
+							<h3>Which Languages Did What</h3>
+							<ul>
+								<li>First language to be widely used: FORTRAN</li>
+								<li>Slow, functional/applicative, poor memory management: LISP</li>
+								<li>Machine independent, but lacked I/O or commercial support from large companies: ALGOL</li>
+								<li>First high-level language to have a construct for macros: COBOL</li>
+								<li>First to create concurrent tasks, psecify if a subprogram is recursive, have pointers, cross sections of arrays: PL/I</li>
+								<li>Only language to go right to left and have an "overstrike" symbol: APL</li>
+								<li>Language that was designed for string manipulation: SNOBOL</li>
+							</ul>
 							<h2 id="chapter1">Chapter 1</h2>
 							<ol>
 								<li>
@@ -496,10 +572,68 @@
 						<hr>
 						<section id="languages">
 							<!-- LANGUAGE SPECIFIIC NOTES GO HERE -->
+							<h1>Languages</h1>
+							<h2 id="fortran">FORTRAN</h2>
+							<ul>
+								<li>
+									FORTRAN 0
+									<ul>
+										<li>Variable names were 2 characters</li>
+										<li>Counter controlled loop was post-test</li>
+									</ul>
+								</li>
+								<li>
+									FORTRAN 1
+									<ul>
+										<li>10 worker years to create</li>
+										<li>Variable names were 6 characters</li>
+										<li>Implicit typing</li>
+									</ul>
+								</li>
+								<li>
+									FORTRAN 2
+									<ul>
+										<li>Independent compilation for subprograms</li>
+										<li>Explicit type declarations</li>
+										<li>Semi-fixed fields</li>
+										<li>Added logical <code>IF</code></li>
+									</ul>
+								</li>
+								<li>
+									FORTRAN 77
+									<ul>
+										<li>Added character strings and <code>IF ELSE</code></li>
+									</ul>
+								</li>
+								<li>
+									Fortran 90
+									<ul>
+										<li>Added recursion, pointers, CASE, dynamically allocated arrays, removed fixed format</li>
+									</ul>
+								</li>
+								<li>
+									Fortran 95
+									<ul>
+										<li>Added <code>FORALL</code> construct to support making parallel execution on an array</li>
+									</ul>
+								</li>
+								<li>
+									Fortran 2003
+									<ul>
+										<li>Added OO Programming and parameterized derived types procedure pointers and interoperability with C</li>
+									</ul>
+								</li>
+								<li>
+									Fortran 2010
+									<ul>
+										<li>Added blocks for local scope, co-arrays and the <code>DO CONCURRENT</code></li>
+									</ul>
+								</li>
+							</ul>
 							<!-- END LANGUAGES SECTION -->
 						</section>
 						<hr>
-						<section id="sample-test">
+						<section id="sample-test1">
 							<h1>CS 410 Midterm - Fall 2012</h1>
 							<p>
 								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
@@ -552,6 +686,231 @@
 								</li>
 								<li>
 									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code. [Sample code unavailable]
+								</li>
+							</ol>
+						</section>
+						<section id="sample-test2">
+							<h1>CS 410 Midterm - [Date Unknown]</h1>
+							<p>
+								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
+							</p>
+							<ol>
+								<li>
+									Define the following:
+									<ol>
+										<li>Syntax</li>
+										<li>Scope</li>
+										<li>Semantics</li>
+										<li>Orthogonality</li>
+										<li>Lexeme</li>
+										<li>Imperative Language</li>
+										<li>Data Object</li>
+										<li>Sentence</li>
+										<li>Derivation</li>
+										<li>Metalanguage</li>
+									</ol>
+								</li>
+								<li>
+									Give an example of a language for each of the following:
+									<ol>
+										<li>Designed for simplicity</li>
+										<li>Designed for embedded systems</li>
+										<li>Normally interpreted</li>
+										<li>Supports ease of text handling</li>
+										<li>Uses static scoping rule</li>
+										<li>Uses noise words</li>
+										<li>Applicative language</li>
+										<li>Rule based language</li>
+										<li>Descendant of ALGOL</li>
+										<li>Complex number data type</li>
+									</ol>
+								</li>
+								<li>
+									Discuss features of the syntax of a programming language which can greatly influence the readability of a program.
+								</li>
+								<li>
+									Discuss four characteristics of a "good" language and give examples of languages possessing each characterisitic.
+								</li>
+								<li>Define ambiguous grammar and give an example of a grammar which is ambiguous and demonstrate it with a sentence.</li>
+								<li>
+									Using the statement <code>X := 3 / Y</code>, discuss the different binding times within the life of a programming language.
+								</li>
+								<li>
+									Discuss the steps within the compilation process.
+								</li>
+								<li>
+									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code:
+<code><pre>
+PROGRAM A
+	PROCEDURE P
+		BEGIN (Procedure P)
+			.
+			.
+		END (Procedure P)
+		Procedure B
+			Procedure C
+					.
+					.
+					.
+				BEGIN (Procedure C)
+					.
+					CALL P
+				END (Procedure C)
+			BEGIN (Procedure B)
+				.
+				.
+				CALL P
+				CALL C
+			END (Procedure B)
+	BEGIN (Main)
+		CALL B
+	END. (Main)
+</pre></code>
+								</li>
+								<li>
+									Demonstrate the dynamic scoping rule for the following:
+<pre>
+<code>MAIN</code> calls <code>J</code> which calls <code>K</code> which calls <code>L</code> and also then calls <code>M</code>.
+<code>MAIN</code>has variables <code>a</code>, <code>b</code>, and <code>c</code>
+<code>J</code> has variables <code>b</code> and <code>d</code>
+<code>K</code> has variables <code>a</code>, <code>c</code>, and <code>e</code>
+<code>L</code> has variables <code>c</code> and <code>f</code>
+<code>M</code> has variables <code>a</code> and <code>e</code>
+</pre>
+								</li>
+								<li>
+									Given the following grammar rules, determine whether the strings <code>([x,y])</code> and <code>[y]</code> are valid strings in the language. If valid, demonstrate with a leftmost derivation and a parse tree.
+<code><pre>
+&lt;pop&gt;	::= [ &lt;bop&gt; , &lt;pop&gt; ]
+&lt;pop&gt;	::= &lt;bop&gt;
+&lt;bop&gt;	::= &lt;boop&gt;
+&lt;bop&gt;	::= ( &lt;pop&gt; )
+&lt;boop&gt;	::= x | y | z
+</pre></code>
+								</li>
+							</ol>
+						</section>
+						<section id="sample-test3">
+							<h1>CS 410 Midterm - Fall 2008</h1>
+							<p>
+								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
+							</p>
+							<ol>
+								<li>
+									Define the following:
+									<ol>
+										<li>Syntax</li>
+										<li>Scope</li>
+										<li>Semantics</li>
+										<li>Reliability</li>
+										<li>Extent</li>
+										<li>Ambiguous Grammar</li>
+										<li>Data Object</li>
+										<li>Sentential Form</li>
+										<li>Parse Tree</li>
+										<li>Metalanguage</li>
+									</ol>
+								</li>
+								<li>
+									Give an example of a language for each of the following:
+									<ol>
+										<li>Designed for ease of learning</li>
+										<li>Orthogonality</li>
+										<li>First language to support recursion</li>
+										<li>Ease of proving programs correct</li>
+										<li>Uses prefix notation for expressions</li>
+										<li>Uses noise words</li>
+										<li>Applicative language</li>
+										<li>Imperative language</li>
+										<li>Descendant of ALGOL</li>
+										<li>Complex number data type</li>
+									</ol>
+								</li>
+								<li>
+									List five reasons for studying programming languages.
+								</li>
+								<li>
+									Discuss five characteristics of a "good" language and give examples of languages possessing each characteristic.
+								</li>
+								<li>
+									<span class="important">Discuss the problems which may occur when the scope and extent are not in the correct relationship. Give example code to demonstrate.</span>
+								</li>
+								<li>
+									List and discuss the possible binding times in the life of a programming language and give an example of something which might be bound.
+								</li>
+								<li>
+									Discuss different areas of cost within the use of a programming language and give an example of a language that has a low cost in each area.
+								</li>
+								<li>
+									Discuss the different methods for determining the type equivalence and demonstrate using the following declarations:
+<code><pre>
+TYPE
+	X = ARRAY [1..12] OF INTEGER;
+	Y = ( RED, YELLOW, GREEN, BLUE);
+	Z = Y;
+VAR
+	A,B:REAL;
+	C:REAL;
+	D,E : X;
+	F: Y;
+	G,H: ARRAY [1..12] OF INTEGER;
+	J: Z;
+</pre></code>
+								</li>
+								<li>
+									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code:
+<code><pre>
+PROGRAM MAIN
+	PROCEDURE A
+		BEGIN (Procedure A)
+			.
+			.
+		END (Procedure A)
+	PROCEDURE B
+		PROCEDURE C
+			PROCEDURE D
+				BEGIN (Procedure D)
+					.
+					.
+					CALL A
+				END (Procedure D)
+			BEGIN (Procedure C)
+				.
+				.
+				CALL D
+			END (Procedure C)
+		BEGIN (Procedure B)
+			.
+			.
+			CALL C
+		END (Procedure B)
+	BEGIN (Main)
+		CALL A
+		CALL B
+	END. (Main)
+</pre></code>
+								</li>
+								<li>
+									Demonstrate the dynamic scoping rule for the following:
+<pre>
+<code>MAIN</code> calls <code>A</code> which calls <code>B</code> which calls <code>C</code>.
+<code>MAIN</code> has variables <code>x</code>, <code>y</code>, and <code>z</code>.
+<code>A</code> has variables <code>w</code> and <code>x</code>.
+<code>B</code> has variables <code>v</code>, <code>w</code>, and <code>y</code>.
+<code>C</code> has variables <code>u</code> and <code>z</code>.
+</pre>
+								</li>
+								<li>
+									Given the following grammar rules, determine whether the strings <code>aabbbcc</code> and <code>abbc</code> are valid strings in the language. If valid, demonstrate with a leftmost derivation and a parse tree.
+<code><pre>
+&lt;A&gt; ::= a &lt;A&gt;
+&lt;A&gt; ::= b &lt;B&gt;
+&lt;A&gt; ::= a
+&lt;B&gt; ::= b &lt;B&gt;
+&lt;B&gt; ::= b &lt;C&gt;
+&lt;C&gt; ::= c &lt;C&gt;
+&lt;C&gt; ::= c
+</pre></code>
 								</li>
 							</ol>
 						</section>

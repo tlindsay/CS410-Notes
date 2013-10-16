@@ -46,6 +46,14 @@ body{
 	font-weight:bold;
 }
 
+.important{
+	color:white;
+	background-color: #f0ad4e;
+	padding:0 2px 0 2px;
+	border-radius: 2px;
+	font-weight:bold;
+}
+
 /*.aside{
 	border-radius: 5px;
 	border-style: solid;
