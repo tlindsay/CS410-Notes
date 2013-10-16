@@ -363,6 +363,78 @@ dispose(ptra);
 									</p>
 								</li>
 							</ol>
+							<h2>Chapter 5</h2>
+							<ol>
+								// Cody is working on this stuff
+							</ol>
+							<h2>Chapter 6</h2>
+							<ol>
+								<li>
+									<h3>
+										What are the different types of elementary data types?
+									</h3>
+									<p>
+										Elementary data types include integers, subranges of integers, floating point (real) numbers, fixed point numbers, booleans, rational numbers, complex numbers, characters, and enumerations.
+									</p>
+								</li>
+								<li>
+									<h3>
+										What are the different types of composite data types?
+									</h3>
+									<p>
+										The two composite data types are character strings and pointers.
+									</p>
+								</li>
+								<li>
+									<h3>
+										Discuss the specification of structured data types.
+									</h3>
+									<p>
+										The specification of a structured data type is made up of its number of components, type of components, mechanism for selecting a component, maximum number of components, and organization of components of memory. The number of components could be a fixed number or variable number. The type of components could be homogeneous or heterogeneous. Mechanisms for selecting a components could be either brackets, parenthesis, or a dot. Maximum number of components deals with, for example, how many dimensions an array could have. Organization of components in memory deals with, for example, row major vs column major storage of elements in array.
+									</p>
+								</li>
+								<li>
+									<h3>
+										Discuss the possible operations on structured data types.
+									</h3>
+									<p>
+										Possible operations on structured data types include component selection, whole structure operations, insertion/deletion of elements, and the creation and deletion of the data type
+									</p>
+								</li>
+								<li>
+									<h3>
+										What are the two ways structured data types can be implemented in memory?
+									</h3>
+									<p>
+										Structured data types can be implemented using sequential storage or linked components stored in several locations (a linked list)
+									</p>
+								</li>
+								<li>
+									<h3>
+										What is necessary for the declaration of structured data types
+									</h3>
+									<p>
+										Type of the structure, number of dimensions/components/fields, subscripts/field names, and the type of each component are all important considerations when declaring a structured data type.
+									</p>
+								</li>
+								<li>
+									<h3>
+										Describe the two type checking problems.
+									</h3>
+									<p>
+										First, does a component exist or is there such a field by the specified name. Second, is the component of the expected type.
+									</p>
+								</li>
+								<li>
+									<h3>
+										What are the different structured data types?
+									</h3>
+									<p>
+										The different structured data types are vectors(one dimensional arrays), multi-dimensional arrays, records/structs, variant records, lists, and sets.
+									</p>
+								</li>
+
+							</ol>
 						</section>
 						<hr>
 						<section id="glossary">
@@ -650,6 +722,10 @@ dispose(ptra);
 								<dt id="referencing-environment">Referencing Environment</dt>
 									<dd>
 										Set of all variables visible (having scope) for an executing statement
+									</dd>
+								<dt class="runtime-descriptor">Runtime Descriptor</dt>
+									<dd>
+										Used to keep up with possible array indices of a vector (array) and consists of the name, address, lower bound, upper bound, and data type.
 									</dd>
 							</dl>
 							<!-- END GLOSSARY SECTION -->
