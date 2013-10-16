@@ -107,3 +107,12 @@ li.con:before{
 	padding: 1px;
 	margin-right:1em;
 }
+
+.purple{
+	background-color: #463265;
+	border-color: #463265;
+}
+
+.sample-test{
+	display:none;
+}

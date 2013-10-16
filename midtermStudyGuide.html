@@ -39,8 +39,8 @@
 
 								</ul>
 							</li>
-							<li><a href="#sample-test">Sample Test</a></li>
 						</ul>
+						<a href="#sample-test" class="btn btn-success purple btn-lg btn-block" onclick="showStuff();">Pictures of Kittens!</a>
 						<a href="index.html" class="btn btn-success btn-lg btn-block">Back to Notes</a>
 					</div>
 					<!-- <div data-spy="affix" id="todo-list" class="todo affix">
@@ -246,25 +246,25 @@
 												<td>3 Regular Language</td>
 												<td>Regular Grammar</td>
 												<td>Finite State Automaton (or Finite State Machine)</td>
-												<td>A -> a <br /> or <br /> A -> bB</td>
+												<td>A &rarr; a <br /> or <br /> A &rarr; bB</td>
 											</tr>
 											<tr>
 												<td>2 Context Free Language</td>
 												<td>Context-Free Grammar</td>
 												<td>Push-down Automaton</td>
-												<td>A -> &alpha; <br /> A -> abB <br /> A -> aaaBa </td>
+												<td>A &rarr; &alpha; <br /> A &rarr; abB <br /> A &rarr; aaaBa </td>
 											</tr>
 											<tr>
 												<td>1 Context Sensitive Language</td>
 												<td>Context-Sensitive Grammar</td>
 												<td>Linear Bounded Automaton</td>
-												<td>&alpha;&sigma;&beta; -> &alpha;&tau;&beta;</td>
+												<td>&alpha;&sigma;&beta; &rarr; &alpha;&tau;&beta;</td>
 											</tr>
 											<tr>
 												<td>0 Recursively Enumerable</td>
 												<td>Unrestricted Grammar</td>
 												<td>Turing Machine</td>
-												<td>&alpha; -> &beta; <br /> &alpha; ≠ [empty]</td>
+												<td>&alpha; &rarr; &beta; <br /> &alpha; ≠ [empty]</td>
 											</tr>
 										</table>
 									</p>
@@ -633,7 +633,7 @@
 							<!-- END LANGUAGES SECTION -->
 						</section>
 						<hr>
-						<section id="sample-test1">
+						<section id="sample-test1" class="sample-test">
 							<h1>CS 410 Midterm - Fall 2012</h1>
 							<p>
 								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
@@ -689,7 +689,7 @@
 								</li>
 							</ol>
 						</section>
-						<section id="sample-test2">
+						<section id="sample-test2" class="sample-test">
 							<h1>CS 410 Midterm - [Date Unknown]</h1>
 							<p>
 								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
@@ -790,7 +790,7 @@ PROGRAM A
 								</li>
 							</ol>
 						</section>
-						<section id="sample-test3">
+						<section id="sample-test3" class="sample-test">
 							<h1>CS 410 Midterm - Fall 2008</h1>
 							<p>
 								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
@@ -919,4 +919,10 @@ PROGRAM MAIN
 			</div>
 		</div>
 	</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+	<script>
+	function showStuff(){
+		$('.sample-test').toggle();
+	}
+	</script>
 </html>
