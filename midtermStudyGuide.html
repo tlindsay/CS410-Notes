@@ -39,6 +39,7 @@
 									
 								</ul>
 							</li>
+							<li><a href="#sample-test">Sample Test</a></li>
 						</ul>
 						<a href="index.html" class="btn btn-success btn-lg btn-block">Back to Notes</a>
 					</div>
@@ -59,12 +60,352 @@
 					<div class="content">
 						<section id="test-questions">
 							<!-- TEST QUESTIONS GO HERE -->
+
+							<!-- END TEST QUESTIONS SECTION -->
 						</section>
+						<hr>
 						<section id="glossary">
 							<!-- GLOSSARY GOES HERE -->
+							<dl>
+								<dt id="orthogonality">
+									Orthogonality
+								</dt>
+									<dd>
+										Attribute where the user has the ability to combine various features of a language with all possible combinations being meaningful
+									</dd>
+								<dt id="syntax">Syntax</dt>
+									<dd>
+										The description of the structure of sentences in a language.
+									</dd>
+								<dt id="semantics">Semantics</dt>
+									<dd>
+										The description of the meaning of the sentences of a language.
+									</dd>
+								<dt id="language-def">Language</dt>
+									<dd>
+										Set of strings of finite length made up of characters from a chosen fixed set (alphabet - usually a subset from the collating sequence used to code characters)
+									</dd>
+								<dt id="character-set">Character Set</dt>
+									<dd>
+										Symbols used to create identifiers, literals, reserve words, etc.
+									</dd>
+								<dt id="lexeme">Lexeme</dt>
+									<dd>
+										Smallest recognizable unit of a programming language (numeric literals, operators, special words, identifiers).
+									</dd>
+								<dt id="token">Token</dt>
+									<dd>
+										Category of lexemes
+									</dd>
+								<dt id="grammar">Grammar <small>Don't forget the "A-R" ending!</small></dt>
+									<dd>
+										A formal method of defining the syntax of a programming language with the rules specifying the sequence of tokens or lexemes.
+									</dd>
+								<dt id="ambiguous-grammar">Ambiguous Grammar</dt>
+									<dd>
+										A grammar in which at least one <a href="#sentence">sentence</a> may be represented by two or more distinct <a href="#parse-tree">parse trees</a>
+									</dd>
+								<dt id="attribute-grammar">Attribute Grammar</dt>
+									<dd>
+										Method of describing the syntax along with the static semantics. The meaning of the program is known at compile time.
+									</dd>
+								<dt id="metalanguage">Metalanguage</dt>
+									<dd>
+										Language used to describe another language
+									</dd>
+								<dt id="syntax-diagram">Syntax Diagram</dt>
+									<dd>
+										A graphical representation of the syntax using rectangles to enclose nonterminals, rounded shapes to enclose terminals with arrow connectors
+									</dd>
+								<dt id="derivation">Derivation</dt>
+									<dd>
+										Sequence of application of grammar rules of a language, beginning with the start symbol until you reach a string 
+									</dd>
+								<dt id="sentential-form">Sentential Form</dt>
+									<dd>
+										One of the steps generated within a derivation.
+									</dd>
+								<dt id="sentence">Sentence</dt>
+									<dd>
+										The final sentential form containing only terminals.
+									</dd>
+								<dt id="parse-tree">Parse Tree</dt>
+									<dd>
+										Graphical representation or hierarchical structure of representing the steps in a derivation tree in reverse order
+									</dd>
+								<dt id="readability">
+									Readability
+								</dt>
+									<dd>
+										Clarity of a program in a language
+									</dd>
+								<dt id="writeability">
+									Writeability
+								</dt>
+									<dd>
+										Ease of creating a program in a programming language
+									</dd>
+								<dt id="reliability">
+									Reliability
+								</dt>
+									<dd>
+										A program performs to specifications under all conditions
+									</dd>
+								<dt id="portability">
+									Portability
+								</dt>
+									<dd>
+										The ease of moving a program written in one environment into another environment
+									</dd>
+								<dt id="keyword">
+									Keyword
+								</dt>
+									<dd>
+										Keywords are special identifiers which are available to be used for variable names as well.
+									</dd>
+								<dt id="reserveWord">
+									Reserve Word
+								</dt>
+									<dd>
+										Reserved words are special identifiers which <strong>cannot</strong> be redefined by the user
+									</dd>
+								<dt id="noiseWord">
+									Noise Words
+								</dt>
+									<dd>
+										Words which are not necessary but can be included to enhance readability
+									</dd>
+								<dt id="identifier">
+									Identifiers
+								</dt>
+									<dd>
+										Strings used to identify variables, constants, subprograms, etc.
+									</dd>
+								<dt id="expressivity">
+									Expressivity
+								</dt>
+									<dd>
+										Powerful operators and convenient methods for expressing common computation
+									</dd>
+								<dt id="exception">
+									Exception
+								</dt>
+									<dd>
+										A rare event which needs special consideration
+									</dd>
+								<dt id="aliasing">
+									Aliasing
+								</dt>
+									<dd>
+										The process of allowing two or more distinct names to refer to the same storage location
+									</dd>
+								<dt id="generality">Generality</dt>
+									<dd>
+										Appropriate to use within a wide variety of applications
+									</dd>
+								<dt id="support-of-abstraction">
+									Support of Abstraction
+								</dt>
+									<dd>
+										Ability to name an abstraction and then use it.
+									</dd>
+								<dt id="process-abstraction">
+									Process Abstraction
+								</dt>
+									<dd>
+										The creation and use of subprograms
+									</dd>
+								<dt id="data-abstraction">
+									The creation and use of a new data type along with the operations on that data type
+								</dt>
+								<dt id="programming-environment">
+									The programming environment can refer to any of the following which are specific to the language:
+									<ul>
+										<li>Code editor</li>
+										<li>Debugging tools</li>
+										<li>Version control</li>
+										<li>Testing packages</li>
+									</ul>
+								</dt>
+								<dt id="implementation">
+									Implementation
+								</dt>
+									<dd>
+										The process of constructing a translator for a language.
+									</dd>
+								<dt id="static-binding">Static Binding</dt>
+									<dd>
+										Occurs at compile time and is fixed.
+									</dd>
+								<dt id="dynamic-binding">Dynamic Binding</dt>
+									<dd>
+										Occurs during run time and changes.
+									</dd>
+								<dt id="declaration">Declaration</dt>
+									<dd>Statement which "fixes" types with variables</dd>
+								<dt id="type-checking">Type Checking</dt>
+									<dd>
+										Determining whether operations are receiving the correct type operands.
+									</dd>
+								<dt id="extent">
+								<dt id="lifetime">
+									Extent (Or Extent)
+								</dt>
+								</dt>
+									<dd>
+										Time between allocation and deallocation of the storage bound to a data object
+									</dd>
+								<dt id="static-variable">Static Variable</dt>
+									<dd>
+										Allocate storage before execution begins and deallocate when the program terminates
+									</dd>
+								<dt id="stack-dynamic-variable">Stack-Dynamic Variable</dt>
+									<dd>
+										Allocate storage when a declaration is elaborated but the type is static and then deallocated when the subprogram or block containing the declaration terminates. Allocation takes place from a run-time stack.
+									</dd>
+								<dt id="elaboration">Elaboration</dt>
+									<dd>
+										When execution reaches the code to which a declaration is attached	
+									</dd>
+								<dt id="explicit-heap-dynamic-variable">Explicit Heap-Dynamic Variable</dt>
+									<dd>
+										Nameless memory cells allocated and deallocated from the heap section of memory set aside for the program, referenced by pointers with some instruction or function supplied by the language to allocate (new or alloc) and to deallocate (free or dispose)
+									</dd>
+								<dt id="implicit-heap-dynamic-variable">Implicit Heap-Dynamic Variable</dt>
+									<dd>
+										Allocation occurs when a value is assigned to a variable
+									</dd>
+								<dt id="scope">Scope</dt>
+									<dd>
+										Range of statements where a variable is known (visible) and hence usable (can be referenced)
+									</dd>
+								<dt id="global-scope">Global Scope</dt>
+									<dd>
+										Declared within the main program and visible to entire program.
+									</dd>
+								<dt id="non-local-scope">Non-Local Scope</dt>
+									<dd>
+										Variable which is not global and not declared within a subprogram, but visible to the subprogram
+									</dd>
+								<dt id="local-scope">Local Scope</dt>
+									<dd>
+										Variable declared within the currently executing block.
+									</dd>
+								<dt id="static-scoping-rule">Static Scoping Rule</dt>
+									<dd>
+										Replace the reference to a variable with an ordered pair <code>(I,J</code> where <code>I = [number of pointer traversals within the stack of activation records]</code> and <code>J = [offset within the block containing the declaration for the variable]</code>. Each activation record on the stack has a pointer pointing to the next textually containing block.
+									</dd>
+								<dt id="display-method">Display Method</dt>
+									<dd>
+										Replace the reference to a variable with an ordered pair <code>(I,J)</code> where <code>I = [index in a display stack (stack of pointers)]</code> and <code>J = [offset within the block where the display pointer points]</code>. It also uses a hidden stack as well as the stack of activation records.
+									</dd>
+								<dt id="cret">CRET <small>Current Referencing Environment Table</small></dt>
+									<dd>
+										Maintain a dynamic symbol table holding symbols, whether active, and a pointer to where they are located within the stack of activation records.
+										<div class="example">
+											<small>(The way she wants it also represents the function stack.)</small>
+											<table class="table table-bordered table-striped">
+												<tr>
+													<th>Symbol</th>
+													<th>Active</th>
+													<th>Pointer to Location</th>
+												</tr>
+												<tr>
+													<td>i</td>
+													<td>T</td>
+													<td><code>&uarr; MAIN</code></td>
+												</tr>
+												<tr>
+													<td>j</td>
+													<td>T</td>
+													<td><code>&uarr; A</code></td>
+												</tr>
+												<tr>
+													<td>x</td>
+													<td>F</td>
+													<td><code>&uarr; NULL</code></td>
+												</tr>
+												<tr>
+													<td>y</td>
+													<td>T</td>
+													<td><code>&uarr; A</code></td>
+												</tr>
+												<tr>
+													<td>z</td>
+													<td>T</td>
+													<td><code>&uarr; B</code></td>
+												</tr>
+											</table>
+										</div>
+									</dd>
+								<dt id="referencing-environment">Referencing Environment</dt>
+									<dd>
+										Set of all variables visible (having scope) for an executing statement
+									</dd>
+							</dl>
+							<!-- END GLOSSARY SECTION -->
 						</section>
+						<hr>
 						<section id="languages">
 							<!-- LANGUAGE SPECIFIIC NOTES GO HERE -->
+							<!-- END LANGUAGES SECTION -->
+						</section>
+						<hr>
+						<section id="sample-test">
+							<h1>CS 410 Midterm - Fall 2012</h1>
+							<p>
+								Complete in pencil. Write only on one side of your paper. Place your name at the top of each page. Fold your papers with the answers arranged in numerical order along with this test.
+							</p>
+							<ol>
+								<li>
+									Define the following:
+									<ol>
+										<li>Syntax</li>
+										<li>Scope</li>
+										<li>Semantics</li>
+										<li>Orthogonality</li>
+										<li>Lexeme</li>
+										<li>Imperative Language</li>
+										<li>Synthesized Attribute</li>
+										<li>Sentence</li>
+										<li>Derivation</li>
+										<li>Metalanguage</li>
+									</ol>
+								</li>
+								<li>
+									Discuss features of the syntax of a programming language which can greatly influence the readability of a program.
+								</li>
+								<li>
+									Discuss five characteristics of a "good" programming language and give examples of languages possessing each characteristic.
+								</li>
+								<li>
+									Define ambiguous grammar and give an example of a grammar which is ambiguous and demonstrate with a sentence.
+								</li>
+								<li>
+									Using the statement <code>A := 7 + B</code>, discuss the different binding times within the life of a programming language.
+								</li>
+								<li>
+									Discuss the <a href="index.html#chomsky">Chomsky Hierarchy</a>.
+								</li>
+								<li>
+									Demonstrate the <a href="#dynamic-scoping-rule">Dynamic Scoping Rule</a> for the following:
+									<br>
+<pre>
+<code>MAIN</code> calls <code>X</code> which calls <code>Y</code> which calls <code>Z</code> and after <code>Z</code> terminates, also then calls <code>W</code>.
+<code>MAIN</code> has variables a, b, and c.
+<code>W</code> has variables e and f.
+<code>X</code> has variables b and d.
+<code>Y</code> has variables a, c, and e.
+<code>Z</code> has variables c and f.
+</pre>
+								</li>
+								<li>
+									Discuss the three different methods for formally describing the semantics of a programming language.
+								</li>
+								<li>
+									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code. [Sample code unavailable]
+								</li>
+							</ol>
 						</section>
 					</div>
 				</div>

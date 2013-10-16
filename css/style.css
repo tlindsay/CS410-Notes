@@ -31,12 +31,18 @@ body{
 }
 
 .good{
-	color: #5cb85c;
+	color:white;
+	background-color: #5cb85c;
+	padding:0 2px 0 2px;
+	border-radius: 2px;
 	font-weight:bold;
 }
 
 .bad{
-	color: #d9534f;
+	color:white;
+	background-color: #d9534f;
+	padding:0 2px 0 2px;
+	border-radius: 2px;
 	font-weight:bold;
 }
 
