@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Programming Languages Notes</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/example.css" />
+		<link rel="stylesheet" href="css/aside.css">
+		<link rel="stylesheet" href="css/question.css">
+		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css" />
+		<script src="js/require.js"></script>
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/showdown.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="hero-unit">
+					<h1 class="title">CS 410W - Programming Languages</h1>
+				</div>
+				<div class="col-lg-3">
+					<div data-spy="affix" class="TOContents affix" id="TOC">
+						<h1>Table of Contents</h1>
+						<ul>
+							<li><a href="#test-questions">Test Questions</a></li>
+							<li><a href="#glossary">Glossary</a></li>
+							<li>
+								<a href="#languages">Languages</a>
+								<ul>
+									
+								</ul>
+							</li>
+						</ul>
+						<a href="index.html" class="btn btn-success btn-lg btn-block">Back to Notes</a>
+					</div>
+					<div data-spy="affix" id="todo-list" class="todo affix">
+						<div markdown="1">
+							<script>
+								var todoMD = $().load('Todo.mdown').text();
+								// var todoMD = todoMD.text();
+								var converter = new Showdown.converter();
+								var todoHTML = converter.makeHtml(todoMD);
+								$('#todo-list').html(todoHTML);
+								// document.write()
+							</script>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div class="content">
+						<section id="test-questions">
+							<!-- TEST QUESTIONS GO HERE -->
+						</section>
+						<section id="glossary">
+							<!-- GLOSSARY GOES HERE -->
+						</section>
+						<section id="languages">
+							<!-- LANGUAGE SPECIFIIC NOTES GO HERE -->
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

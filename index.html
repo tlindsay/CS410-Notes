@@ -44,6 +44,8 @@
 							</li>
 						</ul>
 						<a href="#current-location" class="btn btn-primary btn-lg btn-block">Bottom of Notes &darr;</a>
+						<hr>
+						<a href="midtermStudyGuide.html" class="btn btn-warning btn-lg btn-block">Midterm Study Guide</a>
 					</div>
 					<div data-spy="affix" id="todo-list" class="todo affix">
 						<div markdown="1">
@@ -425,7 +427,7 @@
 												</div>
 											</p>
 										</li>
-										<li>
+										<li id="history-lisp">
 											<h4><a href="#lisp">LISP</a> <small>LISt Processing - <a href="http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy</a> MIT 1960</small></h4>
 											<ul>
 												<li>Not standardized for many years leading to a pethora of dialects</li>
@@ -452,7 +454,7 @@
 												<li>Equivalence of code and data. This means a program can take itself as data and change itself to learn.</li>
 											</ul>
 										</li>
-										<li>
+										<li id="history-algol">
 											<h4><a href="#algol">ALGOL</a> <small><a href="http://en.wikipedia.org/wiki/Peter_Naur">Peter Naur</a> - 1958</small></h4>
 											<p>
 												Because Europe feared that IBM was going to dominate the computer industry, an international committee led by Peter Naur was formed and a language was developed. The language was first called IAL and later changed to ALGOL.
@@ -491,7 +493,7 @@
 												<li>Lack of commercial support</li>
 											</ol>
 										</li>
-										<li>
+										<li id="history-cobol">
 											<h4><a href="#cobol">COBOL</a><small>(COmmon Business Oriented Language) - <a href="http://en.wikipedia.org/wiki/Grace_hopper">Grace Hopper</a> 1953-1955</small></h4>
 											<p>
 												Grace Hopper believed that "mathematical programs should be written in mathematical notation; data processing programs should be written in English statements."
@@ -531,7 +533,7 @@
 												<li>DoD supported</li>
 											</ol>
 										</li>
-										<li>
+										<li id="history-basic">
 											<h4><a href="#basic">BASIC</a> <small>(Beginner's All-Purpose Symbolic Instruction Code) - Dartmouth College</small></h4>
 											<p>
 												John Kemeny and Thomas Kurtz (mathematicians) developed a language for students to use in their dorm rooms with remote access, time-sharing to complete their homework.
@@ -546,7 +548,7 @@
 												The last three contribute to the time-sharing aspect of BASIC.
 											</ol>
 										</li>
-										<li>
+										<li id="history-pl1">
 											<h4><a href="pl1">PL/I</a> <small>- "Everything for Everybody"</small></h4>
 											<p>
 												Developed by IBM for all areas of application. Tried to take the best features from ALGOL, FORTRAN, and COBOL.
@@ -576,10 +578,10 @@
 												</ul>
 											</p>
 										</li>
-										<li>
+										<li id="history-apl">
 											<h1>APL GOES HERE</h1>
 										</li>
-										<li>
+										<li id="history-snobol">
 											<h4><a href="#snobol">SNOBOL 4</a> <small>- 1960s</small></h4>
 											<p>
 												<ul>
@@ -809,20 +811,7 @@
 						<div class="chapter" id="chapter6">
 							<h1>Syntax &amp; Semantics</h1>
 							<h3>September 24, 2013</h3>
-							<dl>
-								<dt id="syntax">Syntax</dt>
-									<dd>The Description of the structure of sentences in a language.</dd>
-								<dt id="semantics">Semantics</dt>
-									<dd>The description of the meaning of the sentences of a language.</dd>
-								<dt id="language-def">Language</dt>
-									<dd>Set of strings of finite length made up of characters from a chosen fixed set (alphabet - usually a subset from the collating sequence used to code characters)</dd>
-								<dt id="lexeme">Lexeme</dt>
-									<dd>Smallest recognizable unit of a programming language (numeric literals, operators, special words, identifiers).</dd>
-								<dt id="token">Token</dt>
-									<dd>Category of lexemes</dd>
-								<dt id="metalanguage">Metalanguage</dt>
-									<dd>Language used to describe another language</dd>
-							</dl>
+							<a href="#syntax-and-semantics-definitions">Syntax and Semantics Definitions</a>
 
 							<p>
 								There are two methods for formally defining a programming language:
@@ -1536,6 +1525,37 @@ main(){
 						<section id="glossary">
 							<h1>Glossary</h1>
 							<dl>
+								<dt id="orthogonality">
+									Orthogonality
+								</dt>
+									<dd>
+										Attribute where the user has the ability to combine various features of a language with all possible combinations being meaningful
+									</dd>
+								<a id=""></a>
+								<dt id="syntax">Syntax</dt>
+									<dd>
+										The Description of the structure of sentences in a language.
+									</dd>
+								<dt id="semantics">Semantics</dt>
+									<dd>
+										The description of the meaning of the sentences of a language.
+									</dd>
+								<dt id="language-def">Language</dt>
+									<dd>
+										Set of strings of finite length made up of characters from a chosen fixed set (alphabet - usually a subset from the collating sequence used to code characters)
+									</dd>
+								<dt id="lexeme">Lexeme</dt>
+									<dd>
+										Smallest recognizable unit of a programming language (numeric literals, operators, special words, identifiers).
+									</dd>
+								<dt id="token">Token</dt>
+									<dd>
+										Category of lexemes
+									</dd>
+								<dt id="metalanguage">Metalanguage</dt>
+									<dd>
+										Language used to describe another language
+									</dd>
 								<dt id="readability">
 									Readability
 								</dt>
@@ -1559,12 +1579,6 @@ main(){
 								</dt>
 									<dd>
 										The ease of moving a program written in one environment into another environment
-									</dd>
-								<dt id="orthogonality">
-									Orthogonality
-								</dt>
-									<dd>
-										Attribute where the user has the ability to combine various features of a language with all possible combinations being meaningful
 									</dd>
 								<dt id="keyword">
 									Keyword
@@ -1682,11 +1696,19 @@ main(){
 						<section id="languages">
 							<h1>Languages</h1>
 							<dl>
+								<dt id="ada">Ada</dt>
+								<dd>
+									<ul class="procon">
+										<li class="pro">Very reliable</li>
+										<li class="con">High cost to implement</li>
+									</ul>
+								</dd>
 								<dt id="basic">BASIC</dt>
 									<dd>
-										<ul>
+										<ul class="procon">
 											<li>Created for non-programmer students at Dartmouth in 1964.</li>
-											<li>Acronym for Beginnerss All-purpose Symbolic Instruction Code.</li>
+											<li>Acronym for Beginners' All-purpose Symbolic Instruction Code.</li>
+											<li class="pro">Low cost to learn and train</li>
 										</ul>
 									</dd>
 								<dt id="snobol">SNOBOL</dt>
@@ -1695,21 +1717,33 @@ main(){
 									</dd>
 								<dt id="cobol">COBOL</dt>
 									<dd>
-										
+										<ul class="procon">
+											<li class="con">High cost to execute</li>
+										</ul>
 									</dd>
 								<dt id="fortran">FORTRAN</dt>
 									<dd>
-										<ul>
+										<ul class="procon">
 											<li>First high-level language to become widely used.</li>
 											<li>Fortran ignores blanks</li>
+											<li class="pro">Low cost to execute</li>
 										</ul>
 									</dd>
 								<dt id="pascal">Pascal</dt>
 									<dd>
-										<ul>
+										<ul class="procon">
 											<li><u>Good teaching language</u>; designed to be easy to learn</li>
+											<li class="pro">Low Cost to learn and train</li>
+											<li class="pro">Low cost to translate</li>
+											<li class="pro">Low cost to implement</li>
 										</ul>
 									</dd>
+								<dt id="pl1">PL/I</dt>
+								<dd>
+									<ul class="procon">
+										<li class="con">High cost to translate a program</li>
+									</ul>
+								</dd>
 							</dl>
 						</section>
 						<hr />

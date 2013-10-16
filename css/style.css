@@ -9,6 +9,10 @@ body{
 	margin-right: auto;
 }
 
+.title{
+	margin-left:-3em;
+}
+
 .TOContents{
 	margin-left:-8em;
 }
