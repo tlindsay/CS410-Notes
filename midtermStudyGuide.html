@@ -125,7 +125,7 @@
 								<li>Portability <span class="good">Java</span></li>
 								<li>Well Defined Description of Semantics and Syntax <span class="good">SNOBOL</span></li>
 							</ul>
-							<h3>Which Languages Did What</h3>
+							<h3>Which Languages Did What?</h3>
 							<ul>
 								<li>First language to be widely used: FORTRAN</li>
 								<li>Slow, functional/applicative, poor memory management: LISP</li>
@@ -275,6 +275,91 @@
 									</h3>
 									<p>
 										The three methods for expressing the semantics of a programming language are operational semantics, denotational semantics (applicative), and axiomatic semantics. Operations semantics define how a program works related to a virtual machine and are useful for designing a compiler or for a programmer in general. An example would be the Vienna Definition Language. Denotational semantics construct a definition for a program and are useful for compiler designers only. Axiomatic semantics define the semantics as axioms or rules of inference and can be used to prove a program is logically correct.
+									</p>
+								</li>
+								<li>
+									<h3>
+										Describe syntactic elements of a programming language which is not always evident in BNF or syntax diagrams.
+									</h3>
+
+									<p>
+										There are 12 elements we have discussed for syntactic elements. The first element is the character sets which are symbols used to create identifiers, literals, reserve words, etc.. The second element is identifier rules for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with operator symbols, keywords vs reserved words, and does it have noise words. Comments are the next element where commenting is special for a line or paragraph. Blank usage and delimiters are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the formatting of lines in free, fixed, or semi-fixed. We have also discussed expressions and statement formats. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the program/subprogram structure. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (ADA), separate data and executable sections (COBOL), and unseparated (SNOBOL).
+									</p>
+								</li>
+							</ol>
+							<h2>Chapter 5</h2>
+							<ol>
+								<li>
+									<h3>
+										Discuss and list two important concepts related to binding and data objects?
+									</h3>
+
+									<p>
+										<ol>
+											<li>
+												Scope is a range of statements where a variable is known (visible) and useable (can be referenced). Scope can have global, non-local, or local variables. There are two rules associated with scope, static scoping rule and dynamic scoping rule. The static scoping rule associate with a reference to a variable the declaration of the variable occurring in the innermost block textually containing the reference, while dynamic scoping rule uses the most recently invoked, not yet terminated subprogram.
+											</li>
+											<li>
+												Lifetime or extent is the time between allocation and deallocation of the storage bound to a data object. There are four categories for lifetime we have discussed. The first category is for static variables, which allocates storage before execution begins and deallocation after termination. An advantage of static variables is efficiency of execution and a disadvantage is cannot reuse storage. The second is stack-dynamic variables or allocation of storage at declaration elaboration and then deallocated when the subprogram terminates. An advantage is the ability to implement recursion and disadvantage is runtime overhead.The third category is explicit heap-dynamic variables. This is where nameless memory cells allocated/deallocated from the heap and referenced by pointers with instruction/function supplied by the language to allocate/deallocate. An advantage is the ability to create dynamic data structures and a disadvantage would be the complexity. The final category is implicit heap dynamic variables and is defined when allocation occurs when a value is assigned to a variable. An advantage would be flexibility and disadvantage is error detection is hard for translator.
+											</li>
+										</ol>
+									</p>
+								</li>
+								<li>
+									<h3>
+										Given the following code, determine the static scoping rule and dynamic coping rule output.
+									</h3>
+									<p>
+<code><pre>
+BEGIN
+	boolean b := true
+	PROCEDURE P
+		print (b)
+END
+BEGIN
+	boolean b := false
+	CALL P
+END
+</pre></code>
+										Static Scoping prints <code>true</code>
+										<br>
+										Dynamic Scoping prints <code>false</code>
+									</p>
+								</li>
+								<li>
+									<h3>
+										List and describe two methods for implementing static scoping rule and two for dynamic scoping rule?
+									</h3>
+									<p>
+										<h4>Static Scoping</h4>
+										<ol>
+											<li>
+												Static Pointer Method - replace the reference to a variable with an ordered pair (I,J) where I = number of pointer traversals (within the stack of activation records) and J = offset within the block containing the declaration for the variable. Each activation record on the stack has a pointer to the next textually containing block.
+											</li>
+											<li>
+												Display Method - replace the reference to a variable with an ordered pair (I,J) where I = index in a display stack (stack of pointers) and J = offset within the block where the display pointer points. It also uses a hidden stack as well as the stack of activation records.
+											</li>
+										</ol>
+									</p>
+								</li>
+								<li>
+									<h3>
+										What kind of problems occur with scope and extent being different?
+									</h3>
+									<p>
+										Extent exceeds scope:
+<code><pre>
+new(ptra);
+ptra := ptrb
+</pre></code>
+									</p>
+									<p>
+										Scope exceeds extent:
+<code><pre>
+new(ptra);
+ptrb := ptra;
+dispose(ptra);
+</pre></code>
 									</p>
 								</li>
 							</ol>
