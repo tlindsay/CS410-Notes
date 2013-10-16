@@ -437,6 +437,38 @@ dispose(ptra);
 										The different structured data types are vectors(one dimensional arrays), multi-dimensional arrays, records/structs, variant records, lists, and sets.
 									</p>
 								</li>
+								<li>
+									<h3>
+										Give the the formula to find A[i,j] stored in row major form and then give the formula to find A[i,j] in column major form
+									</h3>
+									<p>
+										The formula to find A[i,j] stored in row major form can abstractly be though of as:
+										<br /><br />
+										<code>
+											Start address + [(# rows to skip)(width of each row) + (number in last row to skip)] * element size
+										</code>
+										<br /><br />
+										For A[i,j] it this would become:
+										<br /><br />
+										<code>
+											&alpha; + [(i - LB<sub>1</sub>)(UB<sub>2</sub> - LB<sub>2</sub> + 1) + (j - LB<sub>2</sub>)] * E
+										</code>
+										<br /><br />
+										<br /><br />
+										The formula to find A[i,j] stored in column major form can abstractly be though of as:
+										<br /><br />
+										<code>
+											Start address + [(# columns to skip)(length of each column) + (number in last column to skip)] * element size
+										</code>
+										<br /> <br />
+										For A[i,j] it this would become:
+										<br /><br />
+										<code>
+											&alpha; + [(j - LB<sub>2</sub>)(UB<sub>1</sub> - LB<sub>1</sub> + 1) + (i - LB<sub>1</sub>)] * E
+										</code>
+										<br /> <br />
+									</p>
+								</li>
 
 							</ol>
 						</section>
