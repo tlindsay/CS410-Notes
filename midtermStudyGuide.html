@@ -156,6 +156,7 @@
 								<li>Fortran is a language which found wide use in scientific and mathematical applications</li>
 								<li>LISP is a language which found wide use for artificial intelligence</li>
 								<li>COBOL is a language which found wide use for business applications</li>
+								<li>Java is a language designed for use in embedded systems</li>
 							</ul>
 							<h3>What did Algol contribute to the programming landscape? Firsts are marked as such (not all were firsts such as recursion).</h3>
 							<ol>
@@ -332,7 +333,7 @@
 								</li>
 								<li>
 									<h3>
-										Describe syntactic elements of a programming language which is not always evident in BNF or syntax diagrams.
+										Describe syntactic elements of a programming language which are not always evident in BNF or syntax diagrams.
 									</h3>
 									<p>
 										There are 12 elements we have discussed for syntactic elements. The first element is the character set which is a set of symbols used to create identifiers, literals, reserve words, etc.. The second element is identifier rules for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with operator symbols, keywords vs reserved words, and does it have noise words. Comments are the next element where commenting is special for a line or paragraph. Blank usage and delimiters are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the formatting of lines in free, fixed, or semi-fixed. We have also discussed expressions and statement formats. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the program/subprogram structure. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (ADA), separate data and executable sections (COBOL), and unseparated (SNOBOL).
@@ -341,6 +342,36 @@
 							</ol>
 							<h2 id="chapter5">Chapter 5</h2>
 							<ol>
+								<li>
+									<h3>
+										What are the three levels on which data types can be considered?
+									</h3>
+									 	One level is specification which consists of the attributes, possible values, and operations. A second level is implementation which consists of storage representation and the algorithm for implementing the operations. A third level is syntactic representation which consists of declarations, value representation, and operator symbols.
+								</li>
+								<li>
+									<h3>
+										Discuss binding and describe the five possible binding times.
+									</h3>
+									<p>
+										Binding is the action of fixing or setting the value of an attribute for a language component. The five possible binding times are: language design, language implementation, program translation, load time, and execution time. A language which attempts to bind very early will generally be compiled whereas a language which binds late will generally be interpreted. Static binding occurs at compile time while dynamic binding occurs at run time
+									</p>
+								</li>
+								<li>
+									<h3>
+										Describe type checking, its categories, and the advantages/disadvantages of each category.
+									</h3>
+									<p>
+										Type checking is the process of determining whether operations are receiving the correct type operands. The two categories of type checking are dynamic which is performed at runtime and static which is performed at compile time via a symbol table. The advantages of dynamic type checking are flexibility. The disadvantages are debug difficulty, requires extra storage for a type tag, each operation must implemented using a software routine, and a loss of execution efficiency. The advantages of static type checking are all paths are checked at translation, does not require type tags, execution efficiency, and the possibility of using hardware operations. The disadvantage is a loss of flexibility
+									</p>
+								</li>
+								<li>
+									<h3>
+										What must be considered when a data type is to be bound to a data object?
+									</h3>
+									<p>
+										First, what are the built-in or language supplied data types. Second, what are the operations on those types. Third, how and where are declarations made for variables.
+									</p>
+								</li>
 								<li>
 									<h3>
 										Discuss and list two important concepts related to binding and data objects?
@@ -352,7 +383,7 @@
 												Scope is a range of statements where a variable is known (visible) and useable (can be referenced). Scope can have global, non-local, or local variables. There are two rules associated with scope, static scoping rule and dynamic scoping rule. The static scoping rule associate with a reference to a variable the declaration of the variable occurring in the innermost block textually containing the reference, while dynamic scoping rule uses the most recently invoked, not yet terminated subprogram.
 											</li>
 											<li>
-												Lifetime or extent is the time between allocation and deallocation of the storage bound to a data object. There are four categories for lifetime we have discussed. The first category is for static variables, which allocates storage before execution begins and deallocation after termination. An advantage of static variables is efficiency of execution and a disadvantage is cannot reuse storage. The second is stack-dynamic variables or allocation of storage at declaration elaboration and then deallocated when the subprogram terminates. An advantage is the ability to implement recursion and disadvantage is runtime overhead.The third category is explicit heap-dynamic variables. This is where nameless memory cells allocated/deallocated from the heap and referenced by pointers with instruction/function supplied by the language to allocate/deallocate. An advantage is the ability to create dynamic data structures and a disadvantage would be the complexity. The final category is implicit heap dynamic variables and is defined when allocation occurs when a value is assigned to a variable. An advantage would be flexibility and disadvantage is error detection is hard for translator.
+												Lifetime or extent is the time between allocation and deallocation of the storage bound to a data object. There are four categories for lifetime we have discussed. The first category is for static variables, which allocates storage before execution begins and deallocation after termination. An advantage of static variables is efficiency of execution and a disadvantage is that it cannot reuse storage. The second is stack-dynamic variables or allocation of storage at declaration elaboration and then deallocation when the subprogram terminates. An advantage is the ability to implement recursion and disadvantage is runtime overhead.The third category is explicit heap-dynamic variables. This is where nameless memory cells allocated/deallocated from the heap and referenced by pointers with instruction/function supplied by the language to allocate/deallocate. An advantage is the ability to create dynamic data structures and a disadvantage would be the complexity and runtime overhead. The final category is implicit heap dynamic variables for which allocation occurs when a value is assigned to a variable. An advantage would be flexibility and disadvantage is error detection is hard for translator.
 											</li>
 										</ol>
 									</p>
@@ -380,7 +411,7 @@ END
 								</li>
 								<li>
 									<h3>
-										List and describe two methods for implementing static scoping rule and two for dynamic scoping rule.
+										List and describe two methods for implementing the static scoping rule and two for the dynamic scoping rule?
 									</h3>
 									<p>
 										<h4>Static Scoping</h4>
@@ -390,6 +421,15 @@ END
 											</li>
 											<li>
 												Display Method - replace the reference to a variable with an ordered pair (I,J) where I = index in a display stack (stack of pointers) and J = offset within the block where the display pointer points. It also uses a hidden stack as well as the stack of activation records.
+											</li>
+										</ol>
+										<h4>Dynamic Scoping</h4>
+										<ol>
+											<li>
+												Current Referencing Environment Table (CRET) - maintain a dynamic symbol table holding symbols, whether active, and pointer to where they are located within the stack of activation records.
+											</li>
+											<li>
+												Look back through the calling chain until the desired variable is found. This method has more overhead than the CRET.
 											</li>
 										</ol>
 									</p>
