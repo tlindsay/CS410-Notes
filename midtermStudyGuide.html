@@ -13,7 +13,7 @@
 		<script src="js/showdown.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<!-- <div class="container"> -->
 			<div class="row">
 				<div class="hero-unit">
 					<h1 class="title">CS 410W - Programming Languages</h1>
@@ -240,7 +240,7 @@
 										Discuss the history of FORTRAN.
 									</h3>
 									<p>
-										FORTRAN was created by a team led by John Backus who wanted to develop a high level language for the IBM 704 environment. The first version, FORTRAN 0, came out in 1954. Variable names were limited to 2 characters. It had one counter controlled loop that was post-test. FORTRAN I came about between 55-57. It took 18 worker years to create, had variable names limited to 6 characters, implicit typing, and integer and real types. FORTRAN II came out in 1958. It had independent compilation for subprograms. FORTRAN IV came out between 60-62. It had explicit type declarations, a logical IF, and a semi-fixed field format. FORTRAN 77 came out in 1978 and added complex number type, character strings, and the IF/ELSE statement. To this point, FORTRAN was semi-fixed field, non-recursive, had no dynamic storage allocation, and no pointers. However, it was very execution efficient. Fortran 90 came out in 1990 and added recursion, pointers, CASE statement, dynamically allocated arrays, and removed removed fixed format. Fortran 95 came out in 97 and added the FORALL construct to support parallel execution on arrays (parallel processing). Fortran 2003 came out in 2004 and added object-oriented programming, parametrized derived types, procedure pointers, and interoperability with C. Fortran 2008 came out in 2010 and added blocks for local scope, co-arrays for concurrency, and the DO CONCURRENT statement. FORTRAN intially succeeded because IBM backed it, it allowed for highly optimized compilation, and it had strong support for scientific functions.
+										FORTRAN was created by a team led by John Backus who wanted to develop a high level language for the IBM 704 environment. The first version, FORTRAN 0, came out in 1954. Variable names were limited to 2 characters. It had one counter controlled loop that was post-test. FORTRAN I came about between 55-57. It took 18 worker years to create, had variable names limited to 6 characters, implicit typing, and integer and real types. FORTRAN II came out in 1958. It had independent compilation for subprograms. FORTRAN IV came out between 60-62. It had explicit type declarations, a logical IF, and a semi-fixed field format. FORTRAN 77 came out in 1978 and added complex number type, character strings, and the IF/ELSE statement. To this point, FORTRAN was semi-fixed field, non-recursive, had no dynamic storage allocation, and no pointers. However, it was very execution efficient. Fortran 90 came out in 1990 and added recursion, pointers, CASE statement, dynamically allocated arrays, and removed fixed format. Fortran 95 came out in 97 and added the FORALL construct to support parallel execution on arrays (parallel processing). Fortran 2003 came out in 2004 and added object-oriented programming, parametrized derived types, procedure pointers, and interoperability with C. Fortran 2008 came out in 2010 and added blocks for local scope, co-arrays for concurrency, and the DO CONCURRENT statement. FORTRAN intially succeeded because IBM backed it, it allowed for highly optimized compilation, and it had strong support for scientific functions.
 									</p>
 								</li>
 								<li>
@@ -275,7 +275,7 @@
 										Describe the 4 elements of a grammar.
 									</h3>
 									<p>
-										A grammar is made up of a 4-tuple (N, T, P, S) where N is a set of non-terminals to be defined further, T is a set of terminals or tokens, P is a set of production rules, and S is a start symbol that is an element of N. Furthermore, a grammar is a formal method of defining the syntax of a programming language language with the rules specifying the sequence of tokens or lexemes. A grammar is also a language generator
+										A grammar is made up of a 4-tuple (N, T, P, S) where N is a set of non-terminals to be defined further, T is a set of terminals or tokens, P is a set of production rules, and S is a start symbol that is an element of N. Furthermore, a grammar is a formal method of defining the syntax of a programming language with the rules specifying the sequence of tokens or lexemes. A grammar is also a language generator
 									</p>
 								</li>
 								<li>
@@ -283,7 +283,7 @@
 										Discuss the Chomsky hierarchy.
 									</h3>
 									<p>
-										The Chomsky hierarchy was developed by Noam Chomsky in the 1950s as a means for analyzing the syntax of languages. Given a grammar with: A and B elements of N, a and b elements of T, and &alpha;, &beta;, &sigma;, and &tau; elements of N union T, the following chart can be used to described the Chomsky Hierachy. Note that type 3 is a subset of type 2 is a subset of type 1 is a subset of type 0.
+										The Chomsky hierarchy was developed by Noam Chomsky in the 1950s as a means for analyzing the syntax of languages. Given a grammar with: A and B elements of N, a and b elements of T, and &alpha;, &beta;, &sigma;, and &tau; elements of N &cup; T, the following chart can be used to described the Chomsky Hierachy. Note that type 3 is a subset of type 2 is a subset of type 1 is a subset of type 0.
 										<table class="table table-bordered">
 											<th>Language Type</th>
 											<th>Language Generator (or grammar)</th>
@@ -321,16 +321,15 @@
 										Discuss the methods for formally expressing the semantics of a programming language.
 									</h3>
 									<p>
-										The three methods for expressing the semantics of a programming language are operational semantics, denotational semantics (applicative), and axiomatic semantics. Operations semantics define how a program works related to a virtual machine and are useful for designing a compiler or for a programmer in general. An example would be the Vienna Definition Language. Denotational semantics construct a definition for a program and are useful for compiler designers only. Axiomatic semantics define the semantics as axioms or rules of inference and can be used to prove a program is logically correct.
+										The three methods for expressing the semantics of a programming language are operational semantics, denotational semantics (applicative), and axiomatic semantics. Operational semantics define how a program works related to a virtual machine and are useful for designing a compiler or for a programmer in general. An example would be the Vienna Definition Language. Denotational semantics construct a definition for a program and are useful for compiler designers only. Axiomatic semantics define the semantics as axioms or rules of inference and can be used to prove a program is logically correct.
 									</p>
 								</li>
 								<li>
 									<h3>
 										Describe syntactic elements of a programming language which is not always evident in BNF or syntax diagrams.
 									</h3>
-
 									<p>
-										There are 12 elements we have discussed for syntactic elements. The first element is the character sets which are symbols used to create identifiers, literals, reserve words, etc.. The second element is identifier rules for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with operator symbols, keywords vs reserved words, and does it have noise words. Comments are the next element where commenting is special for a line or paragraph. Blank usage and delimiters are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the formatting of lines in free, fixed, or semi-fixed. We have also discussed expressions and statement formats. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the program/subprogram structure. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (ADA), separate data and executable sections (COBOL), and unseparated (SNOBOL).
+										There are 12 elements we have discussed for syntactic elements. The first element is the character set which is a set of symbols used to create identifiers, literals, reserve words, etc.. The second element is identifier rules for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with operator symbols, keywords vs reserved words, and does it have noise words. Comments are the next element where commenting is special for a line or paragraph. Blank usage and delimiters are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the formatting of lines in free, fixed, or semi-fixed. We have also discussed expressions and statement formats. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the program/subprogram structure. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (ADA), separate data and executable sections (COBOL), and unseparated (SNOBOL).
 									</p>
 								</li>
 							</ol>
@@ -357,7 +356,7 @@
 										Given the following code, determine the static scoping rule and dynamic coping rule output.
 									</h3>
 									<p>
-<code><pre>
+<pre><code>
 BEGIN
 	boolean b := true
 	PROCEDURE P
@@ -375,7 +374,7 @@ END
 								</li>
 								<li>
 									<h3>
-										List and describe two methods for implementing static scoping rule and two for dynamic scoping rule?
+										List and describe two methods for implementing static scoping rule and two for dynamic scoping rule.
 									</h3>
 									<p>
 										<h4>Static Scoping</h4>
@@ -395,14 +394,14 @@ END
 									</h3>
 									<p>
 										Extent exceeds scope:
-<code><pre>
+<pre><code>
 new(ptra);
 ptra := ptrb
 </pre></code>
 									</p>
 									<p>
 										Scope exceeds extent:
-<code><pre>
+<pre><code>
 new(ptra);
 ptrb := ptra;
 dispose(ptra);
@@ -976,7 +975,7 @@ dispose(ptra);
 								</li>
 								<li>
 									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code:
-<code><pre>
+<pre><code>
 PROGRAM A
 	PROCEDURE P
 		BEGIN (Procedure P)
@@ -1016,7 +1015,7 @@ PROGRAM A
 								</li>
 								<li>
 									Given the following grammar rules, determine whether the strings <code>([x,y])</code> and <code>[y]</code> are valid strings in the language. If valid, demonstrate with a leftmost derivation and a parse tree.
-<code><pre>
+<pre><code>
 &lt;pop&gt;	::= [ &lt;bop&gt; , &lt;pop&gt; ]
 &lt;pop&gt;	::= &lt;bop&gt;
 &lt;bop&gt;	::= &lt;boop&gt;
@@ -1079,7 +1078,7 @@ PROGRAM A
 								</li>
 								<li>
 									Discuss the different methods for determining the type equivalence and demonstrate using the following declarations:
-<code><pre>
+<pre><code>
 TYPE
 	X = ARRAY [1..12] OF INTEGER;
 	Y = ( RED, YELLOW, GREEN, BLUE);
@@ -1095,7 +1094,7 @@ VAR
 								</li>
 								<li>
 									Discuss the different methods for implementing the static scoping rule and demonstrate one method on the following code:
-<code><pre>
+<pre><code>
 PROGRAM MAIN
 	PROCEDURE A
 		BEGIN (Procedure A)
@@ -1138,7 +1137,7 @@ PROGRAM MAIN
 								</li>
 								<li>
 									Given the following grammar rules, determine whether the strings <code>aabbbcc</code> and <code>abbc</code> are valid strings in the language. If valid, demonstrate with a leftmost derivation and a parse tree.
-<code><pre>
+<pre><code>
 &lt;A&gt; ::= a &lt;A&gt;
 &lt;A&gt; ::= b &lt;B&gt;
 &lt;A&gt; ::= a
@@ -1157,7 +1156,7 @@ PROGRAM MAIN
 					</div>
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
 	</body>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 	<script>
