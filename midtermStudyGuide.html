@@ -81,7 +81,7 @@
 									Cost of a Translator (Cost to Implement)
 									<ul>
 										<li><span class="good">Pascal</span></li>
-										<li><span class="bad">ADA</span></li>
+										<li><span class="bad">Ada</span></li>
 									</ul>
 								</li>
 								<li>
@@ -115,15 +115,31 @@
 								</li>
 							</ul>
 							<h3>Characteristics of a "Good" Programming Language</h3>
-							<ul>
+							<ul class="pull-left">
 								<li>Readability <span class="good">COBOL</span> </li>
 								<li>Writeability <span class="good">APL</span></li>
 								<li>Reliability <span class="good">Ada</span></li>
+								<li>Naturalness for Application <span class="info">Depends on application</span></li>
 								<li>Ease of Program Verification <span class="good">Prolog</span></li>
 								<li>Program Environment <span class="good">SmalTalk</span></li>
 								<li>Portability <span class="good">Java</span></li>
 								<li>Well Defined Description of Semantics and Syntax <span class="good">SNOBOL</span></li>
+								<li>Generality <span class="good">Java</span></li>
+								<li>Cost of Use</li>
 							</ul>
+							<ul class="list-unstyled pull-left border-left">
+								<li>Real</li>
+								<li>Women</li>
+								<li>Really</li>
+								<li>Need</li>
+								<li>Every</li>
+								<li>Possible</li>
+								<li>Penguin</li>
+								<li>Well</li>
+								<li>Groomed</li>
+								<li>Consistently</li>
+							</ul>
+							<br style="clear:both;">
 							<h3>Which Languages Did What?</h3>
 							<ul>
 								<li>First language to be widely used: FORTRAN</li>
@@ -134,10 +150,10 @@
 								<li>Only language to go right to left and have an "overstrike" symbol: APL</li>
 								<li>Language that was designed for string manipulation: SNOBOL</li>
 								<li>APL is an example of a language with no precedence of operators</li>
-								<li>ADA and Pascal are examples of languages which have sets built in</li>
+								<li>Ada and Pascal are examples of languages which have sets built in</li>
 								<li>APL is a language that has operators which act on entire structures (arrays)</li>
 								<li>FORTRAN is a language which stores arrays in column major form</li>
-								<li>Pascal and ADA are languages where a pointer can only point to one type</li>
+								<li>Pascal and Ada are languages where a pointer can only point to one type</li>
 								<li>SmallTalk is a language where a pointer may point to any type</li>
 								<li>SNOBOL, APL, and LISP are all languages which use the dynamic scoping rule</li>
 								<li>FOTRAN (older versions) is a language that used static variables</li>
@@ -336,7 +352,7 @@
 										Describe syntactic elements of a programming language which are not always evident in BNF or syntax diagrams.
 									</h3>
 									<p>
-										There are 12 elements we have discussed for syntactic elements. The first element is the character set which is a set of symbols used to create identifiers, literals, reserve words, etc.. The second element is identifier rules for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with operator symbols, keywords vs reserved words, and does it have noise words. Comments are the next element where commenting is special for a line or paragraph. Blank usage and delimiters are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the formatting of lines in free, fixed, or semi-fixed. We have also discussed expressions and statement formats. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the program/subprogram structure. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (ADA), separate data and executable sections (COBOL), and unseparated (SNOBOL).
+										There are 12 elements we have discussed for syntactic elements. The first element is the <b>character set</b> which is a set of symbols used to create identifiers, literals, reserve words, etc.. The second element is <b>identifier rules</b> for forming names by answering what must it begin with?, what can it contain?, and how long?. The third, fourth and fifth elements are dealing with <b>operator symbols</b>, <b>keywords vs reserved words</b>, and the inclusion of <b>noise words</b>. <b>Comments</b> are the next element where commenting is special for a line or paragraph. <b>Blank usage</b> and <b>delimiters</b> are two other elements we discussed. You can have ignored blanks, separator blanks, or operator blanks and delimiters are simply grouping symbols. Another syntactic element is the <b>formatting of lines</b> in free, fixed, or semi-fixed. We have also discussed <b>expressions</b> and <b>statement formats</b>. In expressions, you can use prefix (+ A B), infix (A + B), or postfix (A B +), in any combination. In statement formats, you can have one basic format like SNOBOL, similar but different, diverse formats, or nested statements or not. The last element of the syntactic elements we discussed is the <b>program/subprogram structure</b>. We identify separate subprogram definitions, separate data definitions, nested subprogram definitions (Pascal), separate interface definitions (Ada), separate data and executable sections (COBOL), and unseparated (SNOBOL).
 									</p>
 								</li>
 							</ol>
@@ -361,7 +377,7 @@
 										Describe type checking, its categories, and the advantages/disadvantages of each category.
 									</h3>
 									<p>
-										Type checking is the process of determining whether operations are receiving the correct type operands. The two categories of type checking are dynamic which is performed at runtime and static which is performed at compile time via a symbol table. The advantages of dynamic type checking are flexibility. The disadvantages are debug difficulty, requires extra storage for a type tag, each operation must implemented using a software routine, and a loss of execution efficiency. The advantages of static type checking are all paths are checked at translation, does not require type tags, execution efficiency, and the possibility of using hardware operations. The disadvantage is a loss of flexibility
+										Type checking is the process of determining whether operations are receiving the correct type operands. The two categories of type checking are dynamic which is performed at runtime and static which is performed at compile time via a symbol table. The advantages of <b>dynamic type checking</b> are flexibility. The disadvantages are debug difficulty, the necessity of extra storage for a type tag, that each operation must implemented using a software routine, and a loss of execution efficiency. The advantages of <b>static type checking</b> are all paths are checked at translation, that type tags are not required, execution efficiency, and the possibility of using hardware operations. The disadvantage is a loss of flexibility.
 									</p>
 								</li>
 								<li>
@@ -390,7 +406,7 @@
 								</li>
 								<li>
 									<h3>
-										Given the following code, determine the static scoping rule and dynamic coping rule output.
+										Given the following code, determine the static scoping rule and dynamic scoping rule output.
 									</h3>
 									<p>
 <pre><code>

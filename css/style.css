@@ -54,6 +54,14 @@ body{
 	font-weight:bold;
 }
 
+.info{
+	color: white;
+	background-color: #5bc0de;
+	padding:0 2px 0 2px;
+	border-radius: 2px;
+	font-weight:bold;	
+}
+
 /*.aside{
 	border-radius: 5px;
 	border-style: solid;
@@ -115,4 +123,11 @@ li.con:before{
 
 .sample-test{
 	display:none;
+}
+
+.border-left{
+	padding-left: 1em;
+	border-color: #aaa;
+	border-left-style: dashed;
+	border-width: 2px;
 }
