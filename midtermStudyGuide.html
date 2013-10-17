@@ -146,7 +146,7 @@
 								<li>Slow, functional/applicative, poor memory management: LISP</li>
 								<li>Machine independent, but lacked I/O or commercial support from large companies: ALGOL</li>
 								<li>First high-level language to have a construct for macros: COBOL</li>
-								<li>First to create concurrent tasks, psecify if a subprogram is recursive, have pointers, exception handling, cross sections of arrays: PL/I</li>
+								<li>First to create concurrent tasks, specify if a subprogram is recursive, have pointers, exception handling, cross sections of arrays: PL/I</li>
 								<li>Only language to go right to left and have an "overstrike" symbol: APL</li>
 								<li>Language that was designed for string manipulation: SNOBOL</li>
 								<li>APL is an example of a language with no precedence of operators</li>
@@ -159,7 +159,7 @@
 								<li>FOTRAN (older versions) is a language that used static variables</li>
 								<li>BASIC is a language which emphasized overall simplicity</li>
 								<li>Pascal is a language which has a lack of feature multiplicity (redundancy)</li>
-								<li>FOTRAN is a language which did not have operator overloading</li>
+								<li>FORTRAN is a language which did not have operator overloading</li>
 								<li>ALGOL68 is a language which supported orthogonality</li>
 								<li>FORTRAN is a language where whitespace was totally ignored</li>
 								<li>SNOBOL is a language which used whitespace as an operator</li>
@@ -167,18 +167,22 @@
 								<li>Pascal is a language which had unlimited length identifiers, but only a fixed length was used for differentiation</li>
 								<li>APL is a language which had expressivity</li>
 								<li>LISP was the first functional language</li>
-								<li>COBOL was the first language to implement records (Plankalkul was first to describe them</li>
+								<li>COBOL was the first language to implement records (Plankalkul was first to describe them)</li>
 								<li>C is a language which had a lack of type checking</li>
 								<li>Fortran is a language which found wide use in scientific and mathematical applications</li>
 								<li>LISP is a language which found wide use for artificial intelligence</li>
 								<li>COBOL is a language which found wide use for business applications</li>
 								<li>Java is a language designed for use in embedded systems</li>
 							</ul>
-							<h3>What did Algol contribute to the programming landscape? Firsts are marked as such (not all were firsts such as recursion).</h3>
+							<h3>
+								What did Algol contribute to the programming landscape? 
+								<br> 
+								<small>Firsts are marked as such (not all were firsts, such as recursion).</small>
+							</h3>
 							<ol>
 								<li>First to be machine independent</li>
 								<li>First to be designed by an international team</li>
-								<li>First to use BNF to specify its syntax (BNF was designed for ALGOL</li>
+								<li>First to use BNF to specify its syntax (BNF was designed for ALGOL)</li>
 								<li>First to use := as the assignment operator</li>
 								<li>First to have user defined types</li>
 								<li>Formalized the concept of a data type</li>
@@ -427,16 +431,16 @@ END
 								</li>
 								<li>
 									<h3>
-										List and describe two methods for implementing the static scoping rule and two for the dynamic scoping rule?
+										List and describe two methods for implementing the static scoping rule and two for the dynamic scoping rule.
 									</h3>
 									<p>
 										<h4>Static Scoping</h4>
 										<ol>
 											<li>
-												Static Pointer Method - replace the reference to a variable with an ordered pair (I,J) where I = number of pointer traversals (within the stack of activation records) and J = offset within the block containing the declaration for the variable. Each activation record on the stack has a pointer to the next textually containing block.
+												Static Pointer Method - replace the reference to a variable with an ordered pair <code>(I,J)</code> where <code>I = number of pointer traversals (within the stack of activation records)</code> and <code>J = offset within the block containing the declaration for the variable</code>. Each activation record on the stack has a pointer to the next textually containing block.
 											</li>
 											<li>
-												Display Method - replace the reference to a variable with an ordered pair (I,J) where I = index in a display stack (stack of pointers) and J = offset within the block where the display pointer points. It also uses a hidden stack as well as the stack of activation records.
+												Display Method - replace the reference to a variable with an ordered pair <code>(I,J)</code> where <code>I = index in a display stack (stack of pointers)</code> and <code>J = offset within the block where the display pointer points</code>. It also uses a hidden stack as well as the stack of activation records.
 											</li>
 										</ol>
 										<h4>Dynamic Scoping</h4>
@@ -466,7 +470,7 @@ ptra := ptrb
 <pre><code>
 new(ptra);
 ptrb := ptra;
-dispose(ptra);
+dispose(ptra); // ptrb now points to nothing
 </pre></code>
 									</p>
 								</li>
@@ -526,7 +530,7 @@ dispose(ptra);
 										Describe the two type checking problems.
 									</h3>
 									<p>
-										First, does a component exist or is there such a field by the specified name. Second, is the component of the expected type.
+										First, does a component exist or is there such a field by the specified name? Second, is the component of the expected type?
 									</p>
 								</li>
 								<li>
@@ -706,7 +710,7 @@ dispose(ptra);
 									Aliasing
 								</dt>
 									<dd>
-										The process of allowing two or more distinct names to refer to the same storage location
+										The practice of allowing two or more distinct names to refer to the same storage location
 									</dd>
 								<dt id="generality">Generality</dt>
 									<dd>
@@ -725,9 +729,15 @@ dispose(ptra);
 										The creation and use of subprograms
 									</dd>
 								<dt id="data-abstraction">
-									The creation and use of a new data type along with the operations on that data type
+									Data Abstraction
 								</dt>
+								<dd>
+									The creation and use of a new data type along with the operations on that data type
+								</dd>
 								<dt id="programming-environment">
+									Programming Environment
+								</dt>
+								<dd>
 									The programming environment can refer to any of the following which are specific to the language:
 									<ul>
 										<li>Code editor</li>
@@ -735,7 +745,7 @@ dispose(ptra);
 										<li>Version control</li>
 										<li>Testing packages</li>
 									</ul>
-								</dt>
+								</dd>
 								<dt id="implementation">
 									Implementation
 								</dt>
@@ -758,7 +768,7 @@ dispose(ptra);
 									</dd>
 								<dt id="extent">
 								<dt id="lifetime">
-									Extent (Or Extent)
+									Lifetime (Or Extent)
 								</dt>
 								</dt>
 									<dd>
