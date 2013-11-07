@@ -7,7 +7,16 @@ body{
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+
+	/*** WORKING ON A DARK THEME
+	background-color: #333;
+	color:white;*/
 }
+
+/*** THIS IS FOR THE DARK THEME.
+a{
+	color:#5cb85c;
+}*/
 
 .title{
 	margin-left:-3em;
@@ -90,6 +99,10 @@ ul.procon li{
 	line-height: 1.5em;
 }
 
+ul.procon li:before{
+	width: 3em;
+}
+
 li.pro:before{
 	/*content: "+ ";
 	color: #5cb85c;*/
@@ -113,6 +126,16 @@ li.con:before{
 	font-weight: bold;
 	content: "CON";
 	padding: 1px;
+	margin-right:1em;
+}
+
+li.neu:before{
+	background-color: #5bc0de;
+	border-radius: 2px;
+	color:white;
+	font-weight: bold;
+	content: "+ / -";
+	padding: 1px .3em 1px .3em;
 	margin-right:1em;
 }
 

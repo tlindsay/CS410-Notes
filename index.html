@@ -1285,7 +1285,7 @@ main(){
 								<li>
 									Current Referencing Environment Table (CRET)
 									<p>
-										Maintain a dynamic symbol table holding symbolw, whether active, and pointer to where they are located within the stack of activation records.
+										Maintain a dynamic symbol table holding symbol, whether active, and pointer to where they are located within the stack of activation records.
 									</p>
 								</li>
 							</ol>
@@ -1519,6 +1519,554 @@ main(){
 								</li>
 							</ol>
 						</div>
+						<div class="chapter" id="chapter9">
+							<h1>Arithmetic Expressions</h1>
+							<h3>October 22, 2013</h3>
+							<h4>Characteristics of Arithmetic Expressions</h4>
+							<ol>
+								<li>Arity <small>Number of Operands</small></li>
+								<ol>
+									<li>Unary - one operand (monadic)</li>
+									<li>Binary - two operands (dyadic)</li>
+									<li>Multiple Operands</li>
+								</ol>
+								<li>Order of evaluation of operators</li>
+								<ol>
+									<li>
+										Precedence of operators (from syntax rules)
+										<br>
+										Most languages use the standard mathematical precedence with multiple leves of precedence.
+									</li>
+									<li>Associativity - if operators have equal precedence, which operation is performed first</li>
+								</ol>
+								<li>
+									Operand order of evaluation (a problem may occur if side effects by functions are allowed). A side effect of a funciton results when the function either changes a global variable's value or changes the value of one of its parameters)
+									<br>
+									Solutions to the problem:
+									<ol>
+										<li>Disallow function side effects</li>
+										<ol>
+											<li>A function cannot change a global variable</li>
+											<li>A function cannot change any of its parameter values</li>
+										</ol>
+										<li>Only allow changes to a parameter but not to global variables</li>
+										<li>Require a guaranteed order of evaluation</li>
+									</ol>
+								</li>
+								<li>Overloaded operators - making an operator symbol represent more than one operation</li>
+								<ol>
+									<li>May reduce readability</li>
+									<li>Missed this one</li>
+									<li>May allow users to create their own user-defined operators</li>
+								</ol>
+								<li>How to handle mismatched types within an operation (type conversion or coercion)</li>
+								<ol>
+									<li>Types of Coercion</li>
+									<ol>
+										<li>Widening - changing from a subset to a superset (integer to float)</li>
+										<li>Narrowing - changing from a superset to a subset (float to integer)</li>
+									</ol>
+									<li>How is it performed?</li>
+									<ol>
+										<li>Explicitly (user specifies)</li>
+										<li>Implicitly (language automatically decides)</li>
+									</ol>
+									<li>Three philosophies about coercion:</li>
+									<ol>
+										<li>Never automatically coerce - Ada</li>
+										<li>Coerce as much as possible - SNOBOL</li>
+										<li>Only coerce when it uses widening and nothing is lost</li>
+									</ol>
+								</ol>
+							</ol>
+							<h3><a href="#assignment-statement">Assignment Statements</a></h3>
+							Different types or forms
+							<ol>
+								<li>Simple Assignment - viewed as a separate statement, not returning a value. The destination is restricted to one variable location</li>
+								<li>Conditional Destination</li>
+								<li>Compound Operator - introduced by ALGOL 68 <code>+=</code></li>
+								<li>Unare operators of <code>++</code> or <code>--</code></li>
+								<li>Use as an operator which can be embedded within another expression (The assignment operator returns a result which cn be used further within the expression)</li>
+								<li>Multiple targets and multiple sources</li>
+							</ol>
+							<div class="aside">
+								<p>
+									Mixed-mode assignment is handled differently in different languages.
+									<ol>
+										<li>No mixed-mode assignment</li>
+										<li>Only perform widening coercion</li>
+										<li>Whenever possible</li>
+									</ol>
+								</p>
+							</div>
+							<p>
+								<ul>
+									<li><a href="#statement-level-control">Statement Level Control</a></li>
+									<li><a href="#control-structure">Control Structure</a></li>
+								</ul>
+								Three categories of control level statements:
+								<ol>
+									<li><a href="#composition">Composition</a></li>
+									<li>
+										<a href="#selection">Selection</a> or <a href="#alternation">Alternation</a>
+										<ul>
+											<li>2-way <code>IF/ELSE</code></li>
+											<p>
+												IF Statement Issues:
+												<ol>
+													<li>What form and type of expression is used to control the selection?</li>
+													<li>How to specify the separate paths?</li>
+													<ol>
+														<li>Require <code>THEN ELSE</code> words</li>
+														<li>Make all paths compound</li>
+														<li>Using an ending word so that the end of the sequence is defined</li>
+														<li>By indenting</li>
+													</ol>
+													<li>How to handle nested selection statements? (Dangling <code>ELSE</code> Problem)</li>
+													<ol>
+														<li>Pair the <code>else</code> with the neares unpaired <code>if</code></li>
+														<li>Force each if clause to use compound notation</li>
+														<li>Make use of terminating token</li>
+														<li>Require all <code>IF</code> statements to have an <code>ELSE</code>, even if empty.</li>
+													</ol>
+													<li>Can execution flow to more than one separate sequence or path?</li>
+													<li>How are the different case values specified?</li>
+													<li>How should unrepresented selector expression values be handled?</li>
+												</ol>
+											</p>
+											<li>n-way <code>CASE/SWITCH</code></li>
+											<p>
+												N-Way Selection Statement Issues:
+												<ol>
+													<li>What is the form and type of the expression which controls the selection of the path?</li>
+													<ul>
+														<li>Integer</li>
+														<li>Character</li>
+														<li>Enumerated</li>
+														<li>Ordinal</li>
+													</ul>
+													<li>How are the different paths specified?</li>
+												</ol>
+												How to implement the n-way selection?
+												<ol>
+													<li>Make use of conditional branching</li>
+													<li>Use a jump table with linear search of the table</li>
+													<li>Hash jump table</li>
+													<li>Array using each of the integer subscripts?</li>
+												</ol>
+												<div class="aside">
+													<span class="bad">This section's kinda fucked up. You should get somebody else's notes.</span>
+												</div>
+											</p>
+										</ul>
+									</li>
+									<li><a href="#iteration">Iteration</a></li>
+									<ol>
+										Categories:
+										<li>Simple Iteration</li>
+										<li>Repetition controlled by the value of a counter</li>
+										<ol>
+											<li>What is the type and scope of the counter?</li>
+											<li>Can the loop variable be changed inside the body of the loop?</li>
+											<li>Do you evaluate the loop parameters once on entry or at each iteration?</li>
+										</ol>
+										<li>Repetition controlled by a logical condition</li>
+										<ol>
+											<li>Pretest loops <code>WHILE</code></li>
+											<li>Posttest loops <code>DO/WHILE</code></li>
+											<li>User specifies where to test the condition <code>LOOP; EXIT WHEN([condition])</code></li>
+										</ol>
+									</ol>
+									<li>Repetition based on a data structure <code>foreach</code></li>
+									<li>Indefinite Repetition <code>LOOP/FOREVER</code> or <code>LOOP/ENDLOOP</code></li>
+								</ol>
+								<p>
+									<h4><code>GOTO</code> Statements</h4>
+									<code>GOTO</code>'s don't build control structures.
+								</p>
+							</p>
+						</div>
+						<div class="chapter" id="chapter10">
+							<h1>Subprograms, Subroutines, and Functions</h1>
+							<h3>October 29, 2013</h3>
+							<p>
+								<u>Subprogram</u> - Named group of instructions which are executed by referencing the name.
+								<h4>Characteristics</h4>
+								<ol>
+									<li>Single entry point</li>
+									<li>Caller is suspended while the body of the subprogram is executing</li>
+									<li>REturn back to the caller</li>
+								</ol>
+								<h4>Terminology of Subprograms</h4>
+								<ol>
+									<li>
+										<u>Subprogram definition</u> - Specify the interface along with the actions of the subprogram
+									</li>
+									<li>
+										<u>Call</u> - request to execute
+									</li>
+									<li>
+										<u>Header</u> - Syntax of the definition indicating the name, type of subprogram, and parameters
+										<div class="example">
+<pre><code>
+PROCEDURE THIS (VAR X,Y: REAL);
+</code></pre>
+										</div>
+									</li>
+									<li>
+										<u>Body</u> - syntax for the definition of the actions of the subprogram along with any local declarations.
+										<div class="example">
+											This is not always defined at the same point as the header. Think C++ function prototypes:
+<pre><code>
+bool isEqual(int, int);
+	.
+	.
+	.
+bool isEqual(int num1, int num2){
+	bool success = false;
+	if(num1 == num2)
+		success = true;
+	return success;
+}
+</code></pre>
+										</div>
+									</li>
+									<li>
+										<u>Parameter Profile</u> - Indicates the number, the order, and the type of the formal parameters.
+									</li>
+									<li>
+										<u>Formal Parameters</u>
+									</li>
+									<li>
+										<u>Actual Parameters</u>
+									</li>
+								</ol>
+
+								<div class="testquest">
+									<h4>Forming the Correspondence Between the Formal Parameters and the Actual Parameters</h4>
+									<ol>
+										<li>
+											<u>Positional Passing</u> - the position of the actual corresponds to the position of the formal. <span class="good">C++</span>
+											<ul class="procon">
+												<li class="con">This requires knowledge of the order.</li>
+												<li class="pro">Requires less typing</li>
+											</ul>
+										</li>
+										<li>
+											<u>Keyword Passing</u> - the formal parameter is listed along with the actual <span class="good">Ada</span>
+											<ul class="procon">
+												<li class="con">This requires more typing.</li>
+												<li class="pro">Does not require knowledge of order, only name.</li>
+											</ul>
+										</li>
+										<li>
+											<u>Hybrid Passing</u> - Pass by position first, pass the remainder by keyword.
+											<ul class="procon">
+												<li class="pro">Programmer can set default values which take effect if no parameter is passed.</li>
+											</ul>
+										</li>
+									</ol>
+								</div>
+
+								<h4>Two Categories of Subprograms</h4>
+								<ol>
+									<li>
+										<u>Procedures</u> - a subprogram which does not return a value associated with its name and returns to the statement following its call. In fact, the call to the procedure is a language statement. Although the procedure does not return a value associated with its name, it can return values by:
+										<ol>
+											<li>Changing the contents of a formal parameter, passed by methods allowing change.</li>
+											<li>Changing a nonlocal variable.</li>
+										</ol>
+									</li>
+									<li>
+										<u>Function</u> - A subprogram which returns a value associated with its name and returns to the place where it was called, replacing the call with the value
+									</li>
+								</ol>
+								<h4>Issues Related to Subprograms</h4>
+								<ol>
+									<li>
+										Are local variables allocated statically or static dynamically?
+										<ol>
+											<li>
+												Static allocation
+												<ul class="procon">
+													<li class="pro">Efficient</li>
+													<li class="pro">Allows for history sensitivity</li>
+													<li class="con">Does not allow the subprogram to be recursive</li>
+												</ul>
+											</li>
+											<li>
+												Static Dynamic allocation
+												<ul class="procon">
+													<li class="pro">Gives flexibility and recursion</li>
+													<li class="pro">Allows for reuse of storage</li>
+													<li class="con">Overhead</li>
+													<li class="con">Does not support history sensitivity</li>
+												</ul>
+											</li>
+										</ol>
+									</li>
+									<li>
+										Are subprograms allowed to be nested in their definition?
+										<span class="bad">First language to allow this was ALGOL 60</span>
+										<p>
+											Nesting us used to indicate scope of where the name is visible. This makes the program more readable.
+										</p>
+									</li>
+									<li>
+										How are parameters passed?
+										<ol>
+											<li>
+												<u>Call by Value</u> - the value of the actual parameter is copied into the formal parameter. The actual is protected in the caller. This requires the attributes of the actual to be the same as the formal.
+												<ul class="procon">
+													<li class="pro">Protects the caller</li>
+													<li class="con">Takes time to copy at the point of call</li>
+													<li class="con">Requires extra storage for the formal parameter</li>
+													<li class="neu">Prevents side effects</li>
+												</ul>
+											</li>
+											<li>
+												<u>Call by Reference</u> - the location (a pointer) of the actual is copied into the formal.
+												<ul class="procon">
+													<li class="con">Caller is not protected</li>
+													<li class="pro">Does allow for side effects</li>
+													<li class="pro">May take less time and space</li>
+													<li class="con">Problem with anonymous types and type-checking</li>
+												</ul>
+											</li>
+											<li>
+												<u>Call by Value-Result (Copy-In/Copy-Out)</u> - Acts like call by value at the point of call until the subprogram gets ready to terminate and then the value in the formal is copied back out to the actual
+
+												<div class="bad">GET THE PROS AND CONS</div>
+											</li>
+											<li>
+												<u>Call by Name</u> - Evaluate the actual parameter on each reference to the formal in the environment of the caller.
+												<div class="aside">
+													<span class="bad">GET DEFINITION FOR "THUNK"</span>
+												</div>
+												<ol>
+													<li>
+														<u>Call by Subject</u> - Evaluate the actual parameter of each reference to the formal in the environment of the called routine.
+													</li>
+													<span class="bad">MISSING A FEW OF THESE (?)</span>
+													<li>
+														<u>Call by Text</u> - Evaluate the actual parameter on each reference to the formal in the environment of the called routine
+													</li>
+													<li>
+														<u>Call by Result ("Copy Out" or "Out Mode")</u>
+													</li>
+													<li>
+														<u>Call by Assignment</u> - Used by Ruby and Python
+													</li>
+												</ol>
+											</li>
+											<div class="example">
+<pre><code>
+PROCEDURE TRY(X,Y,Z)
+	BEGIN
+		X := Y + Z;
+		Y := Y + 1;
+		Z := Z + Y;
+	END;
+A := 3;
+B := 2;
+TRY(A, B, (A+B));
+WRITE(A, B)
+END.
+</code></pre>
+												<table class="table table-striped">
+													<th>Method</th>
+													<th><code>WRITE(A)</code></th>
+													<th><code>WRITE(B)</code></th>
+													<tr>
+														<td>Call by Value</td>
+														<td>3</td>
+														<td>2</td>
+													</tr>
+													<tr>
+														<td>Call by Reference</td>
+														<td>9</td>
+														<td>2</td>
+													</tr>
+													<tr>
+														<td>Call by Value-Result</td>
+														<td>4</td>
+														<td>2</td>
+													</tr>
+													<tr>
+														<td>Call by Name</td>
+														<td>9</td>
+														<td>2</td>
+													</tr>
+												</table>
+											</div>
+											<li>
+												How are the actual parameter types checked with the formal parameters?
+												<ol>
+													<li>The early languages did not perform type-checking.</li>
+													<li>Later languages performed type-checking.</li>
+													<li>The most recent languages have gone back to no type-checking. <span class="good">Perl, JS, PHP</span></li>
+												</ol>
+											</li>
+											<li>
+												Can a subprogram be passed as a parameter to another subprogram?
+												<br>
+												(If this is performed with a nested environment, what referenceing environment should be used?)
+												<ol>
+													<li>
+														<u>Shallow Binding</u> - Use the environment where the call statement using the passed subprogram occurs
+													</li>
+													<li>
+														<u>Deep Binding</u> - Use the environment of the definition of the called subprogram
+													</li>
+													<li>
+														<u>Ad-Hoc Binding</u> - use the environment of the call statment that passed the subprogram as a parameter
+													</li>
+												</ol>
+											</li>
+											<li>
+												Can subprogram names be overloaded?
+												<p>
+													If so, there must be a way of differentiating between different versions.  This is handled by having different interfaces (different parameter list in number of parameters, type of parameters, or order of parameters).
+												</p>
+											</li>
+											<li>
+												For function subprograms, are side effects allowed?
+											</li>
+											<li>
+												What type may be returned for a function?
+											</li>
+											<li>
+												How many values may be returned?
+											</li>
+											<li>
+												Are <a href="#closure">closures</a> supported?
+											</li>
+										</ol>
+									</li>
+								</ol>
+								<h5>Special Types of Subroutines</h5>
+								<ol>
+									<li>
+										<u>Coroutines</u> - special subprogram having multiple entry points, history sensitivity, and is resumed instead of called. A master unit (not a coroutine) creates coroutines which are initialized and return is passed back to the master.
+									</li>
+									<li>
+										<u>Scheduled Subprograms</u> - subprograms which are executed when:
+										<ol>
+											<li>After or before another subprogram <code>call B after A</code></li>
+											<li>When a boolean expression is true: <code>call B when(x&gt;0 and z&lt;5</code></li>
+											<li>
+												On a time value
+												<br>
+												<code>call B at time=56</code> or <code>call B at time=current+20</code>
+											</li>
+											<li>At a certain priority level <code>call B with priority 7</code></li>
+										</ol>
+									</li>
+									<li>
+										<u>Concurrent Subprograms</u> - subprograms which can execute in parallel.
+									</li>
+									<li>
+										<u>Exception Handling</u> - special subprograms whcih are executed when rare events occur.
+									</li>
+								</ol>
+							</p>
+						</div>
+						<div class="chapter" id="chapter11">
+							<h1>Subprogram Implementation</h1>
+							<p>
+								The simplest way to implement subprograms is to use the <a href="#subprogram-copy-rule">Subprogram Copy Rule</a>. The effects of calling a subprogram is the same as if the call is replaced by the body of the subprogram (while making adjustments for parameters).
+							</p>
+							<h3>Five Implicit Assumptions, and What Could Happen if the Assumptions Were Lifted:</h3>
+							<ol>
+								<li>No Recursion													- Recursion</li>
+								<li>There must be an explicity call									- Exception Handling</li>
+								<li>Must execute completely and enter at the same point each time 	- Coroutines</li>
+								<li>Immediate transfer at call										- Scheduled Subprograms</li>
+								<li>Single subprogram executing at one time 						- Concurrency</li>
+							</ol>
+							<h2>For Simple Subprograms, We Must:</h2>
+							<h3>At call:</h3>
+							<ol>
+								<li>Save the environment of the caller CEP (Current Environment Pointer</li>
+								<li>Compute and pass parameters</li>
+								<li>Save the pointer to the current instuction CIP</li>
+								<li>Transfer control to the called routine by resetting the CIP to point to the called routine's body</li>
+							</ol>
+							<h3>At return:</h3>
+							<ol>
+								<li>Restore the CEP and CIP to previous values</li>
+								<li>If there are call-by-result or call-by-value-result parameters, we must copy those values out to the caller</li>
+								<li>Transfer control back to the caller</li>
+							</ol>
+							<br>
+							<p>
+								A simple subprogram has two major components:
+								<ol>
+									<li>Body of executable statements which is static</li>
+									<li>
+										Local storage for local variables, parameters, and return address and CEP
+										<table class="table table-striped">
+											<th>Activation Record</th>
+											<tr>
+												<td>Local Var</td>
+											</tr>
+											<tr>
+												<td>Parameters</td>
+											</tr>
+											<tr>
+												<td>Housekeeping Storage</td>
+											</tr>
+										</table>
+									</li>
+								</ol>
+							</p>
+						</div>
+						<div class="chapter" id="chapter12">
+							<h1>Abstraction</h1>
+							<h3>November 5, 2013</h3>
+							<p>
+								<a href="#abstraction">Abstraction</a>
+								<h4>Two Levels of Abstraction</h4>
+								<ol>
+									<li>
+										<u>Process Abstraction</u> - Give a name to a sequence of instructions and then just use the name.
+									</li>
+									<li>
+										<u>Data Abstraction</u>	- The creation of an abstract data type.
+										<br>
+									</li>
+								</ol>
+								<h5>ADTs Must Have:</h5>
+								<ol>
+									<li>Data Structure</li>
+									<li>Operations to manipulate the data</li>
+									<li>Encapsulation - enclosing the objects of that type along witht the operations so that the users of the new type <i>(client)</i> cannot manipulate except by means of the supplied operations. (i.e. Getters/Setters)</li>
+								</ol>
+								<div class="testquest">
+									<u>Information Hiding</u> - Representation and implementation of the aDT are hidden from the client
+									<ul class="procon">
+										<li class="pro">Increased reliability</li>
+										<li class="pro">Reduces the amount of code programmers must be concerned with.</li>
+										<li class="pro">Makes name conflicts less likely (decreases scope of variables)</li>
+										<li class="pro">Change in the ADT does not break the client's code</li>
+										<li class="pro">It encourages organizing the program into logical units.</li>
+										<li class="con">Requires the ADT creator to write accessor methods (getters and setters) that allow the client to get indirect access to the hidden data</li>
+										<li class="con">May be too rigid for some needs</li>
+									</ul>
+								</div>
+								<h5>Issues Related to ADT Creation:</h5>
+								<ol>
+									<li>What syntactic unit is used to enclose the definition? (Special structure or a general structure)</li>
+									<li>
+										Are any built-in operations provided on the ADT? 
+										<br>
+										<small>The most likely would be assignment or comparison.</small>
+									</li>
+									<li>Can the ADT be parameterized?</li>
+									<li>What access controls are provided?</li>
+								</ol>
+							</p>
+						</div>
 						</section>
 						<a id="current-location" title="current-location"></a>
 						<hr />
@@ -1689,6 +2237,44 @@ main(){
 								<dt id="referencing-environment">Referencing Environment</dt>
 									<dd>
 										Set of all variables visible (having scope) for an executing statement
+									</dd>
+								<dt id="relational-expressions">Relational Expressions</dt>
+									<dd>
+										Expressions which give a Boolean value as a result making use of relational operators
+									</dd>
+								<dt id="boolean-expressions">Boolean Expressions</dt>
+									<dd>
+										Expressions which have operands which are boolean values. Use boolean operations and return a boolean value as a result
+										<br>
+										(Some languages have short circuit Boolean operators and other languages always short circuit)
+									</dd>
+								<dt id="assignment-statement">Assignment Statement</dt>
+									<dd>
+										Mechanism for changing the binding of a value to a variable.
+									</dd>
+								<dt id="statement-level-control">Statement Level Control</dt>
+									<dd>
+										Statements which effect the flow of control through the body of a program
+									</dd>
+								<dt id="control-structure">Control Structure</dt>
+									<dd>
+										Control statement along with the sequence of statements it controls.
+									</dd>
+								<dt id="composition">Composition</dt>
+									<dd>
+										Sequence of statements treated as one statement. Began with ALGOL, require a pair of beginning and ending symbols, sometimes called a compound statment or a block statment
+									</dd>
+								<dt id="selection-statement">Selection Statement</dt>
+									<dd>
+										Statement which selects from one or two or more execution paths.
+									</dd>
+								<dt id="closure">Closure</dt>
+									<dd>
+										A closure is a subprogram along witht the referencing environment for the subprogram where it was defined.
+									</dd>
+								<dt id="abstraction">Abstraction</dt>
+									<dd>
+										View of an entity while only including the necessary attributes which are significant to the user
 									</dd>
 							</dl>
 						</section>
