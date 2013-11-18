@@ -1,0 +1,340 @@
+<html>
+	<head>
+		<title>Perl Notes</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/example.css">
+		<link rel="stylesheet" href="../css/question.css">
+		<link rel="stylesheet" href="../css/aside.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<section id="notes">
+			<h1>Perl Notes</h1>
+			<hr>
+			<h2>General Notes</h2>
+			<ul>
+				<li>Interpreted. You don't create an executable, you turn on the execution bit, and it is interpreted exactly as written.</li>
+				<li>
+					<span class="info">Perl can not be parsed, and therefore, can't be compiled.</span>
+					<br>
+					&#9;<i>This means that BNF for Perl is not possible; it is Context Sensitive. This is <a target="_none" href="https://github.com/perl6/std/blob/master/STD.pm6">different in Perl 6</a>, however.</i>
+				</li>
+				<li>Purpose of Perl: To be an intermediary scripting language. More powerful than bash, but lighter-weight than C.</li>
+				<li>Uses reserved words, <cite>Wall, et al. Pg. 54</cite></li>
+				<li>Case-sensitive</li>
+				<li><span class="good">If there's one thing you can say about Perl it's that it's in no short supply of feature multiplicity. In fact, the language slogan is "There's More Than One Way to Do It."</span></li>
+			</ul>
+			<hr>
+			<h2>Language Characteristics</h2>
+			<ul>
+				<li>
+					<h3>Comments</h3>
+					<ul>
+						<li>
+							<h4>Line Comments</h4>
+							<small>Wall, et al., Pg. 49-50</small>
+							<ul>
+								<li>Begin with <code>#</code></li>
+								<li>Extend from <code>#</code> until EOL.</li>
+							</ul>
+						</li>
+						<li>
+							<h4>Block Comments</h4>
+							<ul>
+								<li>
+									<blockquote>
+										If a line begins with <code>=</code> anywhere a statement would be legal, Perl ignores everything from that line down to the next line that begins with <code>=cut</code>. The ignored text is assumed to be <i>pod</i>, or "plain old documentation". The Perl distribution has programs that will extract pod commentary from Perl modules and turn it into flat text, manpages, LaTex, HTML, or (someday soon) XML documents.
+									</blockquote>
+									<small><i>Wall, et al., Pg. 50</i></small>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Free-Form*</h3>
+					<ul>
+						<li>Whitespace is <b>allowed</b> between any two tokens.</li>
+						<li>Whitespace is <b>required</b> between between tokens that would otherwise be confused as a single token. (Any whitespace is legal.)</li>
+						<li>Newlines are differentiated inside of quoted strings, formats, and other forms of quoting.</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Identifiers</h3>
+					<ul>
+						<li>Starts with a letter or underscore.</li>
+						<li>May contain only letters, numbers and underscores.</li>
+					</ul>
+					<h4>Variables</h4>
+					<ul>
+						<li>Three types to correspond with the three data types.</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<h3>Statements</h3>
+					<ul>
+						<li>Statements are terminated with <code>;</code></li>
+						<li>Built-in functions may be used with parentheses or without.</li>
+					</ul>
+				</li>
+			</ul>
+			
+		</section>
+		<hr>
+		<section id="requirements">
+			<h1>Paper Requirements</h1>
+			<ol>
+				<li>
+					<h2>History (Including Ancestors and Descendants)</h2>
+					<ul>
+						<li>Larry Wall, 1986</li>
+						<li>Started as a CMS that worked as Version Control, built on top of B-news, an implementation of Usenet.</li>
+						<li>Actually became a language when <code>awk</code> failed him. Rather than coding a one-off tool, he made a new language that could do what he wanted.</li>
+						<cite>Wall, et al. Pg. 646</cite>
+					</ul>
+				</li>
+				<li>
+					<h2>Design Goals</h2>
+				</li>
+				<li>
+					<h2>Syntax</h2>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Operation</th>
+								<th>Symbol</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Assignment</td>
+								<td><code>=</code></td>
+							</tr>
+							<tr>
+								<td>Numeric Equality</td>
+								<td><code>==</code></td>
+							</tr>
+							<tr>
+								<td>Addition</td>
+								<td><code>+</code></td>
+							</tr>
+							<tr>
+								<td colspan="2">Variables are denoted with "Funny Characters"</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><code></code></td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+				<li>
+					<h2>Data Types, Type Checking, and Scoping</h2>
+					<h3>Built-In Data Types</h3>
+					<ul>
+						<li>
+							Three Basic Data Types
+							<ol>
+								<li>Scalars</li>
+								<li>Arrays of Scalars</li>
+								<li>Hashes of Scalars (Associative Arrays)</li>
+							</ol>
+						</li>
+						<li>
+							<h4>Scalars</h4>
+							<q>Stores a single, simple value&mdash;typically a string or a number. Elements of this simple type may be combined into either of the two aggregate types.</q>
+						</li>
+						<li>
+							<h4>Arrays</h4>
+							<ul>
+								<li>Indexing starts at 0.</li>
+								<li>
+									<b>Negative subscripts are valid!</b>
+									<br>
+									Negative subscripts count back from the end of the array.
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h4>Hashes</h4>
+							<ul>
+								<li>Unordered set of key/value pairs.</li>
+								<li>Subscript the key to retrieve the value.</li>
+							</ul>
+						</li>
+						<li>
+							<h4>Other Abstractions</h4>
+							<ul>
+								<li>
+									<h5>Filehandles</h5>
+								</li>
+								<li>
+									<h5>Directory Handles</h5>
+								</li>
+								<li>
+									<h5>Formats</h5>
+								</li>
+								<li>
+									<h5>Subroutines</h5>
+								</li>
+								<li>
+									<h5>Symbol Tables</h5>
+								</li>
+								<li>
+									<h5>Symbol Table Entries</h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h2>Data Structures</h2>
+				</li>
+				<li>
+					<h2>Control Structures</h2>
+					<ul>
+						<li>
+							<h3>
+								<code>if</code> and <code>unless</code>
+							</h3>
+							<p>
+								<code>if</code> statements are syntactically the same as they are in C-family languages: <br>
+<pre><code>
+if($var == 1){
+	print("The thing is 1!");
+}
+</code></pre>
+								An <code>elsif</code> statement also exists, as does an else: <br>
+<pre><code>
+if($var == 1){
+	print("The thing is 1!");
+}elsif($var == 2){
+	print("The thing is 2!");
+}else{
+	print("Darn. I really thought it would be 1 or 2...");
+}
+</code></pre>
+								<hr>
+								Perl strives to be readable<sup>CITATION NEEDED</sup>, and as such, includes an <code>unless</code> statement to replace the traditional <code>if($this ne true)</code> paradigm.
+<pre><code>
+unless($var == 10){
+	print("The thing is not 10!");
+}else{
+	print("The thing is 10!");
+}
+</code></pre>
+							</p>
+						</li>
+						<li>
+							<h3><code>while</code> and <code>until</code></h3>
+							<p>
+								<code>while</code> statements work just like they do in C-family languages: <br>
+<pre><code>
+while($exit eq false){
+	print("Not exiting yet!\n");
+}
+</code></pre>
+								The <code>until</code> statement is the looping counterpart to the <code>unless</code> statement. The same loop would look like this using the <code>unless</code> statment:
+<pre><code>
+unless($exit eq true){
+	print("Not exiting yet!\n");
+}
+</code></pre>
+							</p>
+						</li>
+						<li>
+							<h3><code>for</code> and <code>foreach</code></h3>
+							<p>
+								The <code>for</code>-loop in Perl works just like a C-family <code>for</code>-loop: <br>
+<pre><code>
+for($i; $i < $max; ++$i){
+	print("I like to count... $i\n");
+}
+</code></pre>
+								The <code>foreach</code>-loop uses the length of an array or hash as the number of times it should loop: <br>
+<pre><code>
+foreach $book (@myBookshelf){
+	print("I have read $book.\n");
+}
+</code></pre>
+								The above code would print the phrase "I have read [book title]." for every book in the array <code>@myBookshelf</code>.
+							</p>
+						</li>
+						<li>
+							<h3>Other Elements of Control Structures</h3>
+							<p>
+								Perl also has built into it the <code>next</code> and <code>last</code> operators to change the way the loop flows. <br>
+								The <code>next</code> operator jumps to the next iteration of your loop. The <code>last</code> operator will exit your loop. <br>
+								<code>next</code> and <code>last</code> are roughly analogous to C++'s <code>continue</code> and <code>break</code> statements, in terms of functionality.
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h2>Subprograms</h2>
+				</li>
+				<li>
+					<h2>Data Abstraction</h2>
+				</li>
+				<li>
+					<h2>Parameter Passing</h2>
+				</li>
+				<li>
+					<h2>Concurrency</h2>
+				</li>
+				<li>
+					<h2>Recursion</h2>
+				</li>
+				<li>
+					<h2>Exception Handling</h2>
+				</li>
+				<li>
+					<h2>Expressions and the Assignment Statement</h2>
+					<ul>
+						<li>Assignment is handled by the <code>=</code> operator.</li>
+					</ul>
+				</li>
+				<li>
+					<h2>Input/Output</h2>
+				</li>
+				<li>
+					<h2>Other Unusual Features</h2>
+					<ul>
+						<li>
+							Negative subscripts are allowed in Perl arrays. <br>
+							Perl: <code>ar[-1]</code> is equal to C++: <code>ar[ar.length()-1];</code>.
+						</li>
+						<li>
+							See the <code>unless</code> statement.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h2>Contributions to the Programming Language Landscape</h2>
+				</li>
+				<li>
+					<h2>A Sample Program</h2>
+				</li>
+				<li>
+					<h2>Global Issues</h2>
+				</li>
+				<li>
+					<h2>Promise for the Future</h2>
+					<ul>
+						<li>Perl 6 is in active development and is available as a development release right now. The current stable version is 5.18.1.</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<h2>Downfalls</h2>
+					<ul>
+						<li>Perl is very ambiguous, to the point of being unable to be parsed.</li>
+						<li></li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+	</body>
+</html>

@@ -33,6 +33,7 @@
 									<li><a href="#chapter6">Syntax &amp; Semantics</a></li>
 									<li><a href="#chapter7">Declarations &amp; Binding</a></li>
 									<li><a href="#chapter8">Data Types</a></li>
+									<li><a href="#chapter13">November 14,2013</a></li>
 								</ol>
 							</li>
 							<li><a href="#glossary">Glossary</a></li>
@@ -2066,6 +2067,78 @@ END.
 									<li>What access controls are provided?</li>
 								</ol>
 							</p>
+						</div>
+						<div class="chapter" id="chapter13">
+							<h1>Object-Oriented Programming</h1>
+							<h3>November 14, 2013</h3>
+							<p>
+								Object-oriented programming began in SIMULA 67, but was first fully implemented in SmallTalk-80.
+							</p>
+							<h4>Three Characteristics of OOP</h4>
+							<ol>
+								<li>Support for ADTs</li>
+								<li>Makes use of inheritance</li>
+								<li>Uses dynamic binding of method calls to method definitions</li>
+							</ol>
+							<h4>Problems arose from the reuse of ADTs</h4>
+							<ol>
+								<li>Features and capabilities might need to be somewhat different</li>
+								<li>The type definitions of ADTs were on the same level, which may not mirror the problem domain space.</li>
+							</ol>
+
+							<h3>Terminology</h3>
+							<ul>
+								<li><u>Class</u> - ADT</li>
+								<li><u>Object</u> - instance of a class</li>
+								<li><u>Derived Class (Subclass)</u> - class defined through inheritance</li>
+								<li><u>Parent Class (Superclass)</u> - class used to create the derived class</li>
+								<li><u>Method</u> - operation on an object of a class</li>
+								<li><u>Message</u> - call to a method</li>
+								<li><u>Message Protocol or Interface</u> - entire collection of methods for a class</li>
+							</ul>
+							
+							<h4>Ways in which subclasses differ from their parents:</h4>
+							<ol>
+								<li>Parent has some variables or methods declared private which would not be inherited.</li>
+								<li>Derived class can add extra variables or methods.</li>
+								<li>Derived class can modify the behavior of an inherited method. The new version 'overrides' the inherited version.</li>
+							</ol>
+							<h4>Classes have two kinds of methods and two kinds of variables:</h4>
+							<ol>
+								<li>Instance methods and instance variables (each object has its own copy which hold different values.</li>
+								<li>Class variables (one copy for the entire class)</li>
+							</ol>
+
+							<h2>Inheritance</h2>
+							<p>
+								The issue of inheritance: is it single inheritance (one parent) or is it multiple inheritance. Dhnamic Binding - the binding of the call of a method to the method's definition (dynamic dispatch) - Allows for ease of extending during development and maintenance.
+							</p>
+							<h3>Design Isses of OOP Languages</h3>
+							<ol>
+								<li>
+									<u>Exclusivity of Objects</u> - is every type an object (all the way down to simple scalar types, like integer))
+									<ol>
+										Different Options (SmallTalk-80)
+										<li>Yes, everything is an object</li>
+										<li>Retain the teraditional method for language supplied types and then just add the object model</li>
+										<li>Retain the traditional method for only scalar types and use objects for all others, icl</li>
+										<li></li>
+									</ol>
+									<li> Are subclassconsidered subtyepes?</li>
+									<li>Single or multiple inheritance?</li>
+								</li>
+							</ol>
+
+							<h2>OOP Languages</h2>
+							<ol>
+								<li>SmallTalk</li>
+								<li>C++</li>
+								<li>Obj-C</li>
+								<li>Java</li>
+								<li>C#</li>
+								<li>Ada 95</li>
+								<li>Ruby</li>
+							</ol>
 						</div>
 						</section>
 						<a id="current-location" title="current-location"></a>
