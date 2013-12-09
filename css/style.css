@@ -154,3 +154,7 @@ li.neu:before{
 	border-left-style: dashed;
 	border-width: 2px;
 }
+
+dd{
+	margin-left:1em;
+}

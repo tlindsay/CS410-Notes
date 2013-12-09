@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS410 Midterm Study Guide</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/example.css" />
+		<link rel="stylesheet" href="css/aside.css">
+		<link rel="stylesheet" href="css/question.css">
+		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css" />
+		<script src="js/require.js"></script>
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/showdown.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="hero-unit">
+					<h1 class="title">CS 410W - Programming Languages</h1>
+				</div>
+				<div class="col-lg-3">
+					<div data-spy="affix" class="TOContents affix" id="TOC">
+						<h1>Table of Contents</h1>
+						<ul>
+							<li>
+								<a href="#test-questions">Test Questions</a>
+								<ul>
+									<li><a href="#chapter7">Chapter 7</a></li>
+									<li><a href="#chapter8">Chapter 8</a></li>
+									<li><a href="#chapter9">Chapter 9</a></li>
+									<li><a href="#chapter10">Chapter 10</a></li>
+									<li><a href="#chapter11">Chapter 11</a></li>
+								</ul>
+							</li>
+							<li><a href="#glossary">Glossary</a></li>
+							<li>
+								<a href="#languages">Languages</a>
+								<ul>
+
+								</ul>
+							</li>
+						</ul>
+						<a href="index.html" class="btn btn-success btn-lg btn-block">Back to Notes</a>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div class="content">
+						<section id="chapters">
+							<div id="chapter7">
+								
+							</div>
+						</section>
+						<section id="glossary">
+							<h1>Glossary</h1>
+							<dl>
+								<dt>Assignment Statements</dt>
+								<dd>Mechanism for changing the binding of a value to a variable.</dd>
+								<dt>Statement Level Control</dt>
+								<dd>Statements which effect the flow of control through the body of a program.</dd>
+								<dt>Control Structure</dt>
+								<dd>Control statement along with the sequence of statements it controls.</dd>
+								<dt>Composition</dt>
+								<dd>Sequence of statements treated as one statement.</dd>
+								<dt>Selection Statement</dt>
+								<dd>Statement that selects from one or more execution paths.</dd>
+								<dt>Subprogram</dt>
+								<dd>Named group of instructions which are executed by referencing the name.</dd>
+								<dt>Subprogram Definition</dt>
+								<dd>Specify the interface along with the actions of the subprogram.</dd>
+								<dt>Call to a Subprogram</dt>
+								<dd>Request for execution</dd>
+								<dt>Header</dt>
+								<dd>Syntax of the definition indicating the name, the type of subprogram, and the parameters, along with the resulting type if the subprogram is a function.</dd>
+								<dt>Body</dt>
+								<dd>Syntax for the definition of the actions of the subprogram, along with any local declarations.</dd>
+								<dt>Parameter Profile</dt>
+								<dd>Indicates the number, the order, and the type of the formal parameters.</dd>
+								<dt>Formal Parameters</dt>
+								<dd>Parameter names in the header indicating a placeholder.</dd>
+								<dt>Actual Parameters</dt>
+								<dd>Parameter names found in the call to the subprogram.</dd>
+								<dt>Procedure</dt>
+								<dd>A subprogram which does not return a value associated with its name and returns to the statement following its call. The call to the procedure is a language statement.</dd>
+								<dt>Function</dt>
+								<dd>A subprogram which returns a value associated with its name and returns to the place where it was called, replacing the call with the value.</dd>
+								<dt>Call-By-Value</dt>
+								<dd>The value of the actual parameter is copied into the formal parameter.</dd>
+								<dt>Call-By-Reference</dt>
+								<dd>The location (a pointer) of the actual parameter is copied into the formal parameter.</dd>
+								<dt>Call-By-Value-Result</dt>
+								<dd>Copy in, copy out.</dd>
+								<dt>Call-By-Name</dt>
+								<dd>Evaluate the actual parameter on each reference to the formal in the environment of the caller.</dd>
+								<dt>Call-By-Text</dt>
+								<dd>Evaluate the actual parameter on each reference to the formal in the environment of the called routine.</dd>
+								<dt>Call-By-Result</dt>
+								<dd>Copy out (Out Mode)</dd>
+								<dt>Shallow Binding</dt>
+								<dd>Use the environment where the call statement using the passed subprogram occurs.</dd>
+								<dt>Deep Binding</dt>
+								<dd>Use the environment of the definition of the called subprogram.</dd>
+								<dt>Ad-Hoc Binding</dt>
+								<dd>Use the environment of the call statement that passed the subprogram as a parameter.</dd>
+								<dt>Coroutine</dt>
+								<dd>Special subprogram having multiple entry points, history sensitivity and is resumed instead of called.</dd>
+								<dt>Scheduled Subprograms</dt>
+								<dd>Subprograms which are executed when they adhere to certain conditions.</dd>
+								<dt>Concurrent Subprograms</dt>
+								<dd>Subprograms which can execute in parallel.</dd>
+								<dt>Abstraction</dt>
+								<dd>View of an entity while only including the necessary attributes which are significant to the user.</dd>
+								<dt>Process Abstraction</dt>
+								<dd>Give a name to a sequence of instructions and then just use the name.</dd>
+								<dt>Data Abstraction</dt>
+								<dd>The creation of an abstract data type.</dd>
+								<dt>Information Hiding</dt>
+								<dd>Representation and implementation of the ADT are hidden from the client.</dd
+								>
+								<dt>Class</dt>
+								<dd>ADT</dd>
+								<dt>Object</dt>
+								<dd>An instance of a class.</dd>
+								<dt>Derived Class (Subclass)</dt>
+								<dd>Class defined through inheritance.</dd>
+								<dt>Parent Class (Superclass)</dt>
+								<dd>Class used to create the derived class.</dd>
+								<dt>Method</dt>
+								<dd>Operation on an object of a class.</dd>
+								<dt>Message</dt>
+								<dd>Call to a method.</dd>
+								<dt>Message Protocol or Message Interface</dt>
+								<dd>Entire collection methods for a class.</dd>
+								<dt>Instance Methods and Instance Variables</dt>
+								<dd>Each object has its own copy which hold different values.</dd>
+								<dt>Class Variables and Class Methods</dt>
+								<dd>One copy for the entire class.</dd>
+								<dt>Dynamic Binding</dt>
+								<dd>The binding of the call of a method to the method's definitions (dynamic dispatch) &ndash; allows for the ease of extending during development and maintenance.</dd>
+								<dt>Scalable</dt>
+								<dd>A concurrent algorithm whose speed of its execution increases as the number of processors available increases.</dd>
+								<dt>Physical Concurrency</dt>
+								<dd>Several Program units from the same program executing at the same time (on different processors).</dd>
+								<dt>Logical Concurrency</dt>
+								<dd>Programmer and the application software assume multiple processors where in fact there is only one processor actually executing the concurrently defined units.</dd>
+								<dt>Task</dt>
+								<dd>A unit of a program that can be executed concurrently with other program units.</dd>
+								<dt>Heavyweight Task</dt>
+								<dd>Task which executes within its own address space.</dd>
+								<dt>Lightweight Task</dt>
+								<dd>Shares the same address space with other tasks.</dd>
+								<dt>Disjoint Task</dt>
+								<dd>Task which does not communicate with or affect the execution of any other task.</dd>
+								<dt>Synchronizing</dt>
+								<dd>Process of controlling the order in which tasks execute.</dd>
+								<dt>Semaphore</dt>
+								<dd>Protected variable having only two operations on that variable: P(wait) and V(release).</dd>
+								<dt>Exception</dt>
+								<dd>An unusual or rare event (detectable by either hardware or software) which may require special processing.</dd>
+								<dt>Exception Handling</dt>
+								<dd>Special subprograms which are executed when rare events occur.</dd>
+								<dt>Event</dt>
+								<dd>Notification that something specific has occurred.</dd>
+								<dt>Event Handler</dt>
+								<dd>Segment of code executed in response to the appearance of an event.</dd>
+							</dl>
+						</section>
+						<section id="languages">
+							
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

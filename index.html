@@ -47,6 +47,7 @@
 						<a href="#current-location" class="btn btn-primary btn-lg btn-block">Bottom of Notes &darr;</a>
 						<hr>
 						<a href="midtermStudyGuide.html" class="btn btn-warning btn-lg btn-block">Midterm Study Guide</a>
+						<a href="finalStudyGuide.html" class="btn btn-danger btn-lg btn-block">Final Study Guide</a>
 					</div>
 					<div data-spy="affix" id="todo-list" class="todo affix">
 						<div markdown="1">
@@ -1175,6 +1176,7 @@
 							</ol>
 							<a href="#scope">
 								<h5>Scope</h5>
+							</a>
 								<ol>
 									<li><a href="#global-scope">Global Scope</a></li>
 									<li><a href="#non-local-scope">Non-Local Scope</a></li>
@@ -1696,7 +1698,7 @@ main(){
 								<ol>
 									<li>Single entry point</li>
 									<li>Caller is suspended while the body of the subprogram is executing</li>
-									<li>REturn back to the caller</li>
+									<li>Return back to the caller</li>
 								</ol>
 								<h4>Terminology of Subprograms</h4>
 								<ol>
@@ -2139,6 +2141,95 @@ END.
 								<li>Ada 95</li>
 								<li>Ruby</li>
 							</ol>
+						</div>
+						<div class="chapter" id="chapter14">
+							<h1>Concurrency</h1>
+							<h3>November 19, 2013</h3>
+							<h3>Four Levels of Concurrency</h3>
+							<ol>
+								<li><span class="info">Hardware</span>Instruction Level - executing 2 or more machine instructions at the same time</li>
+								<li><span class="info">Software</span>Statement level - executing 2 or more high level language instructions at the same time</li>
+								<li><span class="info">Software</span>Unit Level - Executing 2 or more program units (subprograms) at the same time</li>
+								<li><span class="info">OS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Program Level - Executing 2 or more programs at the same time</li>
+							</ol>
+							<p>
+								<u>Scalable</u> - a concurrent algorithm whose speed of its execution increases as the number of processors available increases.
+								
+							</p>
+							<h4>Categories of unit level concurrency:</h4>
+							<ul>
+								<li>Physical Concurrency - several program units from the same program executing at the same time (on different processors).</li>
+								<li>Logical Concurrency - Programmer and application software assume multiple processors where in fact ther is only one processor actually executing the concurrently defined units.</li>
+							</ul>
+							<h4>Four Reasons to Desgin Concurrent Software</h4>
+							<ol>
+								<li>Speed of execution using multiple processorsis increased.</li>
+								<li>Execution of concurrent written software may in fact run fasterk even on one processor</li>
+								<li>Provides a different manner to coneptualize the solution to a problem.</li>
+								<li> Program application may be distributed across severl different machines.</li>
+							</ol>
+							<p>
+								<u>Task</u> - a unit of a program that can be executed with other program units.
+							</p>
+							<h4>Three Characteristics of a Task, Making it Different from a Subprogram</h4>
+							<ol>
+								<li>Tasks are implicitly started, while the subprogram must be explicitly stated</li>
+								<li>When a program unit ends, it invokes a task.</li>
+								<li>When a task is complete, it may or may not return to where it was invokdc</li>
+							</ol>
+							<h3>Categories of Tasks</h3>
+							<ol>
+								<li>Heavyweight Task - task which executes within its own address space</li>
+								<li>Lightweight Task - task which shares the samy adder</li>
+							</ol>
+							<h4>Tasks Communicate in One of Three Manners></h4>
+							<ol>
+								<li>Shared nonlocal variables</li>
+								<li>Message parsing</li>
+								<li>Passi parameters</li>
+							</ol>
+							<p>
+								<u>Disjoint Task</u> - Task, which does not communicate with or affect the execution of any other task
+								<br>
+								<u>Synchronizing</u> - process of controlling the order in which tasks execute
+							</p>
+							<h4>Types of Execution</h4>
+							<ol>
+								<li>Cooperation - task A must wait for task B to complete some activity before task. A can begin or tontinue</li>
+								<li>Competition - both tasks want to access a shared resource which must be used mutually exclusive</li>
+							</ol>
+							<h3>Three Methods for Handling Competition</h3>
+							<ol>
+								<li>
+									<h5>Semaphore</h5>
+									<p>
+										Protected variable having only two operations on that variable: <code>wait</code> or <code>P</code> and <code>release</code> or <code>V</code>.  
+										<br>
+										<code>wait</code> - When applied to a semaphore, <code>wait</code> first looks at the value of the variable. If it is zero, that means the shared resource is unavailable and you must wait. This is handled by placing the the request on a waiting queue. If the variable is not zero, then it is decremented bny one and the shared resource is given to the requesting task.
+										<br>
+										<code>release</code> - When applied to a semaphore, <code>release</code> first checks the wait queue. If the wait queue is not empty, give the resource to the next task in the queue; otherwise, increment the semaphore by one.
+									</p>
+								</li>
+								<li>
+									<h5>Monitor</h5>
+									<p>
+										Program construct which places all synchronization operations and shared data in one structure.
+									</p>
+								</li>
+								<li>
+									<h5>Message Passing</h5>
+								</li>
+							</ol>
+							<h3>Concurrent Languages</h3>
+							<ul>
+								<li>Ada uses message passing and the tasks are heavyweight</li>
+								<li>Java uses lightweight "threads"</li>
+								<li>C# uses lightweight tasks</li>
+								<li>Multilisp</li>
+								<li>Concurrent ML</li>
+								<li>F#</li>
+							</ul>
+							<h3>Statement Level Concurrency - High Performance Fortran (Extension of Fortran 90)</h3>
 						</div>
 						</section>
 						<a id="current-location" title="current-location"></a>

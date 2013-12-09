@@ -47,7 +47,7 @@ sub good_word {
     } elsif (($words{$somename} || "groucho") eq $someguess) {
         return 1; # return value is true
     } else {
-        open (MAIL, "|mail YOUR_ADDRESS_HERE");
+        open (MAIL, "|mail tlindsay@una.edu");
         print MAIL "bad news: $somename guessed $someguess\n";
         close MAIL;
         return 0; # return value is false
