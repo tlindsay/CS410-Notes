@@ -14,18 +14,22 @@
 		<script src="js/questions.js"></script>
 		<style type="text/css">
 			.answer{
-				display:none;
+				/*display:none;*/
+			}
+			#good-languages td.mnemonic:first-letter{
+				font-weight: bold;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<!-- <div class="container"> -->
 			<div class="row">
 				<div class="hero-unit">
 					<h1 class="title">CS 410W - Programming Languages</h1>
 				</div>
 				<div class="col-lg-3">
-					<div data-spy="affix" class="TOContents affix" id="TOC">
+					<!-- <div data-spy="affix" class="TOContents affix" id="TOC"> -->
+					<div class="TOContents" id="TOC">
 						<h1>Table of Contents</h1>
 						<ul>
 							<li>
@@ -81,184 +85,381 @@
 						<section id="test-questions">
 							<h1>Practice Questions</h1>
 							<h2>Midterm Questions</h2>
+							<button class="btn btn-lg btn-block btn-success" onclick="$('.answer').toggle();">Toggle All Answers</button>
 							<ol>
 								<li>
 									<h3 class="question">What are the attributes of a "good" programming language? Discuss the details of each attribute.</h3>
-									<button onclick="$('#answer1').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo, omnis, facere, repellat aliquam enim deserunt ab laudantium reprehenderit dolorum quo aspernatur fugiat. Veniam, ex quae eaque dolorum suscipit aspernatur.</p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer1, #good-languages').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer1">
+										The attributes of a good programming language are readability/clarity, write-ability, reliability, naturalness for the application, ease of program verification, a good programming environment, portability, a well-defined description of the syntax and semantics, generality, and low cost of use. Readability is supported by overall simplicity (small set of language construct), lack of feature multiplicity (redundancy), lack of operator overloading, orthogonality, adequate data structures and data types provided by the language, and a syntax which is readable. Syntax features which increase usability are the use of reserved words and the inclusion of noise words. Write-ability or the ease of creating a program is supported by simplicity, orthogonality, support of abstraction, and expressivity. Reliability is supported by type checking at compile time, the support of exception handling, and a lack of aliasing. Naturalness for the application means the language provides appropriate data structures and control structures. Ease of program verification means that it can be proven correct easily. A good programming environment is supported by special editors, debugging tools, version control, and testing packages. Portability means a program written in one environment can be easily move to another environment. A well-defined description of the syntax and semantics would be supported by a good user manual. Generality means it is appropriate to use within a wide variety of applications. Cost to use depends upon the costs to: learn and train, create/write a program (time and labor), create a compiler (translator), compile the program, execute the program, and maintain a program. In addition, you must consider the cost of poor reliability.
+
+										<table class="table table-striped answer" id="good-languages">
+											<tr>
+												<th>Language</th>
+												<th>Quality</th>
+												<th>Mnemonic</th>
+											</tr>
+											<tr>
+												<td>COBOL</td>
+												<td>Readability</td>
+												<td class="mnemonic">Real</td>
+											</tr>
+											<tr>
+												<td>APL</td>
+												<td>Writeability</td>
+												<td class="mnemonic">Women</td>
+											</tr>
+											<tr>
+												<td>Ada</td>
+												<td>Reliability</td>
+												<td class="mnemonic">Really</td>
+											</tr>
+											<tr>
+												<td>Naturalness for Application</td>
+												<td>None (Depends upon the application)</td>
+												<td class="mnemonic">Need</td>
+											</tr>
+											<tr>
+												<td>Ease of Program Verification</td>
+												<td>Prolog</td>
+												<td class="mnemonic">Every</td>
+											</tr>
+											<tr>
+												<td>Program Environment</td>
+												<td>SmallTalk</td>
+												<td class="mnemonic">Possible</td>
+											</tr>
+											<tr>
+												<td>Portability</td>
+												<td>Java</td>
+												<td class="mnemonic">Penguin</td>
+											</tr>
+											<tr>
+												<td>Well-Defined Description of Semantics and Syntax</td>
+												<td>SNOBOL</td>
+												<td class="mnemonic">Well</td>
+											</tr>
+											<tr>
+												<td>Generality</td>
+												<td>Java</td>
+												<td class="mnemonic">Groomed</td>
+											</tr>
+											<tr>
+												<td>Cost of Use</td>
+												<td></td>
+												<td class="mnemonic">Consistently</td>
+											</tr>
+										</table>
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Why should someone study programming languages?</h3>
-									<button onclick="$('#answer2').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer2"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer2').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer2">
+										Studying programming languages is beneficial in that it aids in learning new languages, increases our language vocabulary, improves our algorithm development, aids in the design of new languages, aids in the choice of a language to use to implement a project, increases our understanding of the languages we currently use, and encourages the survival of "good" languages and the extinction of "bad" languages
+
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the four language categories? Describe each.</h3>
-									<button onclick="$('#answer3').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer3"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer3').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer3">
+										The four language categories are imperative, functional, logic, and object-oriented. Imperative languages depend on changes to the contents of memory. Functional languages depend on the application of functions. Logic languages depend on the application of programming logic. Object-oriented languages depend on the definition and creation of instances of objects along with messages sent to those objects,
+
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are three methods for implementing the storage of the integer data type?</h3>
-									<button onclick="$('#answer4').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer4"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer4').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer4">
+										First, use a runtime descriptor which makes use of hardware primitives. Second, have a runtime descriptor point to a fullword. This can still make use of hardware primitives, but is slower because you have to follow a pointer to the fullword. Third, take a full word and partition it into a descriptor and a value. The runtime descriptor is incorporated inside the fullword, but the value can’t get as large because you don’t have as many bits.
+									</p>
 								</li>
 							</ol>
 							<h2>Post-Midterm Questions</h2>
 							<ol>
 								<li>
 									<h3 class="question">What three characteristics of a task make it different from a subprogram?</h3>
-									<button onclick="$('#answer5').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer5"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer5').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer5">
+										One, tasks are implicitly started while the subprogram must be explicitly started. Two, when a program unit invokes a task, it may not wait for the task to complete before the program unit continues. Three, when a task is complete, it may or may not return to where it was invoked.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss abstraction and its two levels. (Include pros and cons of information hiding.)</h3>
-									<button onclick="$('#answer6').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer6"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer6').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer6">
+										Abstraction is the view of an entity while only including the necessary attributes which are significant to the user. One level is process abstraction in which a names is given to a sequence of instructions allowing the name to be used to invoke the instructions. A second level is data abstraction which entails the creation of an abstract data type with three components: data structure, operations to manipulate the data, and encapsulation. Encapsulation is the practice of enclosing an object along with its operations so that users of the object cannot manipulate it except by means of supplied operations. Information hiding is making sure the representation and implementation of an ADT are hidden from the client. Advantages of information hiding include increased reliability, less code to worry about, decreased likelihood of name conflicts, and encouragement for organizing the program into logical units. In addition, changes in the ADT do not require changes by the client. Disadvantages are that the ADT creator must write accessor methods and it may be too rigid for some needs.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the correspondence between formal parameters and actual parameters.</h3>
-									<button onclick="$('#answer7').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer7"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer7').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer7">
+										First, there is positional passing in which the position of the actual corresponds to the position of the formal. This requires less typing, but requires knowledge of the order. Second is keyword passing in which the formal parameter is listed along with the actual. It does not required knowledge or order, but does require knowledge of parameter names and more typing. Third is hybrid passing in which it passes by position first and passes the remainder by keyword. It allows for reduced typing and for setting default values for parameters not passed.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the characteristics of arithmetic expressions.</h3>
-									<button onclick="$('#answer8').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer8"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer8').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer8">
+										One characteristic is arity or the number of operands. The arity can be unary, binary, or multiple. A second characteristic is the order of evaluation of operators which deals with precedence (what is evaluated first) and associativity (what is evaluated when precedence is equal). A third characteristic is operand order of evaluation. A Problem can occur with operand evaluation if side effects are allowed. Possible solutions to are to disallow function side effects, only allow changes to a parameter but not global variables, and to require a guaranteed order of evaluation. A fourth characteristic is whether operators can be overloaded or whether users can create their own user defined operators. Overloaded operators may reduce readability and make compilation more difficult. A fifth characteristic is how to handle mismatched types within an operation. One method would be to not allow it and another would be to employ type coercion (type conversion). Coercion can widen the type (nothing is lost) or narrow the type (something is usually lost). Coercion may be performed explicitly (user specified) or implicitly (language automatically decides). Three philosophies on coercion are to never automatically coerce, coerce as much as possible, or only coerce when widening a type.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the assignment statement and its various types and forms.</h3>
-									<button onclick="$('#answer9').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer9"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer9').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer9">
+										The assignment statement is a mechanism for changing the binding of a value to a variable. One type is the simple assignment which is viewed as a separate statement, not returning a value. The destination is restricted to one variable location. A second is the conditional destination (i.e n := 5). A second type is the conditional destination assignment. An example is ( $flag ? $count1 : $count2) = 0). A third is the compound operator assignment (i.e. +=  *=  /=). A fourth is unary operators such as ++ or --. A fifth is the assignment as an operator which can be embedded within another expression and returns a result which can be used within the expression. Advantages are that more than one assignment can be used in a statement. A disadvantage is that it hurts readability and reliability. A sixth type is assignments with multiple targets and multiple sources i. e. ($x, $y, $z) = (7, 3, 5).  The three philosophies on coercion also apply to assignment statements (never, only when widening, whenever possible).
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the three categories of control level statements.</h3>
-									<button onclick="$('#answer10').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer10"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer10').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer10">
+										The three categories of control level statements are composition, selection, and iteration. Composition is a sequence of statements that are treated as one statement. It requires a pair of beginning and ending symbols and is sometimes called a compound statement or block statement. A selection consists of a statement which selects from one or two or more execution paths. An iteration consists of a statement which controls the repeated execution of statements.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss issues with if statements.</h3>
-									<button onclick="$('#answer11').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer11"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer11').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer11">
+										First, what form and type of expression is used to control the selection? Second, how are separate paths specified? Is it by requiring THEN ELSE words, making all paths compound, using an ending word, or indenting? Third, How are nested selection statements handled (deals with dangling else problem)? Is it by pairing the else with the nearest unpaired if, forcing each clause to use compound notation, making use of a terminating token, or by requiring all if statements to have an else even if empty.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss issues with n-way selection statements.</h3>
-									<button onclick="$('#answer12').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer12"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer12').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer12">
+										First, what is the form and type of the expression which controls the selection of the path (ie. integer, character, enumerated, ordinal)? Second, how are the different paths specified? Third, Can execution flow to more than one separate sequence or path? Fourth, how are the different case values specified? Fifth, how should unrepresented selector expression values by handled (if at all)? Is there a default case statement. Sixth, how is it implemented? Is it by using conditional branching, a jump table with linear search of the table, hash jump table, or an array using each of the integer subscripts.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the different categories of iteration.</h3>
-									<button onclick="$('#answer13').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer13"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer13').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer13">
+										One category is simple iteration in which a loop is repeated a specified number of times. A second category is repetition controlled by the value of a counter. Important questions for this category include: what is the type & scope of the counter? can the loop variable be changed inside the body of the loop? do you evaluate the loop parameters once on entry or at each iteration. A third category is iteration controlled by a logical condition. These include pretest and posttest loops (while, repeat/until) as well as loops where the user specifies where to test the condition. A fourth category is repetition based on a data structure such as a for every or for each loop. A fifth type is an indefinite loop such as LOOP FOREVER.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the two categories of subprograms.</h3>
-									<button onclick="$('#answer14').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer14"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer14').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer14">
+										One is procedures which are subprograms which do not return a value and return to the statement following the procedure call. The call to the procedure is considered a language statement. Procedures can still return values by changing the contents of a formal parameter passed in a way to allow change or by changing a non-local variable. Second is functions which are subprograms that return a value in place of where the procedure was called by name.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the special types of subprograms.</h3>
-									<button onclick="$('#answer15').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer15"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer15').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer15">
+										One is the coroutine which is a special subprogram having multiple entry points, history sensitivity, and is resumed instead of called. A master unit created the coroutines which are initialized and passed back to the master on return. A second is scheduled subprograms which are executed: after or before another subprogram; when a boolean expression is true; on a time value; or at a certain priority level. A third is concurrent subprograms which can execute in parallel. A fourth is exception handling which are special subprograms which are executed when rare events occur.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are some issues related to subprograms? (Include parameter passing.)</h3>
-									<button onclick="$('#answer16').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer16"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer16').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer16">
+										First, are local variables allocated statically or static dynamically? Static allocation is efficient and allows for history sensitivity but does not allow recursion. Static dynamic allocation gives flexibility and recursion but requires more overhead and does not support history sensitivity. It addition, it allows for re-use of storage. Second, are subprograms allowed to be nested in their definition? Nesting is used to indicate scope of subprograms aids readability. Third how are parameters passed? One method is call by value in which the value of the actual parameter is copied into the formal parameter. The actual is protected in the caller (requires the attributes of the actual to be the same as the formal). This method protects the caller and prevents side effects, but requires extra storage for the formal parameter and takes time to copy at the point of the call. A second method is call by reference in which the location (a pointer) of the actual is copied into the formal. This method may require less time and space and does not allow side effects, but the caller will not be protected and problems can aries with anonymous types. A third method is call by value-result (copy-in - copy-out) which acts like call by value at the point of the call until the subprogram gets ready to terminate. At this point, the value in the formal is copied back out to the actual. A fourth method is call by name in which the actual parameter is evaluated in the environment of the caller on each reference to the formal parameter. A thunk is a sequence of code inserted for this parameter type. Back to issues, a fourth is how are the actual parameter types checked with the formal parameter types? Early languages like FORTRAN and C did not perform type checking but later languages like C++ and ADA did. Recently, languages such as Perl, javascript and PHP have gone back to no type checking. Fifth, can a subprogram be passed as a parameter to another subprogram and what referencing environment should nested subprograms use? One solution is shallow binding which uses the environment where the call statement using the passed subprogram occurs. A second solution is deep binding which uses the environment of the definition of the called subprogram. A third solution is ad hoc binding which uses the environment of the call statement that passes the subprogram as a parameter. Sixth, can subprogram names be overloaded? If allowed, there must be a way of differentiating between the different versions. This is handled by having different interfaces (different parameter lists in number, type, or order of parameters). Seventh, Are generic subprograms supported which allows parametric polymorphism?  Eighth, for functions, are side effects allowed? Ninth, what type may be returned for a function? Tenth, how many values may be returned? Eleventh, are closures supported?
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the four levels of concurrency?</h3>
-									<button onclick="$('#answer17').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer17"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer17').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer17">
+										First, instruction level which executes 2 or more machine instructions at the same time at the hardware level. Second, statement level which executes two or more high level language instructions at the same time at the software level. Third, unit level which executes 2 or more program units at the same time at the software level. Fourth, program level which executes 2 or more programs at the same time at the operating system level.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the categories of unit level concurrency?</h3>
-									<button onclick="$('#answer18').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer18"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer18').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer18">
+										One is physical concurrency where several program units from the same program execute at the same time on different processors. A second is logical concurrency in which programmer and application software assume multiple processors where in fact there is only one processor actually executing concurrently defined units. 
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the four reasons to design concurrent software?</h3>
-									<button onclick="$('#answer19').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer19"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer19').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer19">
+										One, speed of execution using multiple processors is increased. Two, execution of concurrent software can sometimes run faster even on one processor. Three, it provides a different manner to conceptualize the solution to a problem. Four, program application may be distributed across several different machines.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the advantages of having built-in exception handling.</h3>
-									<button onclick="$('#answer20').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer20"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer20').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer20">
+										One, it removes the clutter required for languages without exception handling. Two, the ability to propagate exceptions allows an exception raised in one program unit to be handled in another generally at runtime. Three, it simplifies programs by increasing readability, write-ability, and maintainability.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss design issues related to exception handling.</h3>
-									<button onclick="$('#answer21').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer21"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer21').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer21">
+										One, what is the scope of exceptions and handlers and how do you specify them? Two, are there predefined or user defined exceptions? Three, where is control returned after the exception is handled. Four, can exceptions be disabled? Five, can there be predefined handlers for hardware detected exceptions and can they by overridden or explicitly raised? Six, when are exceptions bound to handlers?
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the three methods for handling competition for mutually exclusive shared resources.</h3>
-									<button onclick="$('#answer22').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer22"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer22').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer22">
+										One method is using semaphores which are protected variables having only two operations: wait and release. The wait operation first looks at the value of the variable. If it is zero (resource unavailable), the request to use the shared resource is placed on a waiting queue. If the variable is not zero (resource available), then it is decremented by one and the shared resource is given to the requesting task. A second method is a monitor which is a program construct which places all synchronization operations and shared data in one structure. A third method is message passing.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss possible solutions for handling type compatibility.</h3>
-									<button onclick="$('#answer23').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer23"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer23').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer23">
+										One is name equivalence in which two variables will be recognized as having the same type if and only if they are declared together or they are declared using the same type identifier name. Most strongly typed languages use name equivalence. A second is structural equivalence in which two variables will be recognized as having the same type if and only if the components of the type are structurally exactly the same in all respects. A third is declaration equivalence in which two variables will be recognized as having the same type if and only if they are declared together or can be traced back to a common type.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Given the following Declarations, list which variables would be considered equivalent under the different types of type-compatibility.</h3>
-									<button onclick="$('#answer24').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer24"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer24, #code24').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer24">
+<pre class="answer" id="code24"><code>
+TYPE
+	T:(car, van, bus);
+	TA: T;
+VAR
+	x,y : ARRAY[1..10] OF REAL;
+	z	: ARRAY[1..10] OF REAL;
+	s,u : REAL;
+	v	: REAL;
+	w	: T;
+	r	: TA;
+</code></pre>
+										<ol>
+											<li>
+												<h4>Name</h4>
+												<ul>
+													<li>x and y</li>
+													<li>s and u and v</li>
+												</ul>
+											</li>
+											<li>
+												<h4>Structural</h4>
+												<ul>
+													<li>x and y</li>
+													<li>s and u and v</li>
+													<li>w and r</li>
+												</ul>
+											</li>
+											<li>
+												<h4>Declaration</h4>
+												<ul>
+													<li>x and y</li>
+													<li>s and u and v</li>
+													<li>w and r</li>
+												</ul>
+											</li>
+										</ol>
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Demonstrate problems that can occur with operand evaluation and side effects.</h3>
-									<button onclick="$('#answer25').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer25"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer25, #op-eval-probs').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer25">
+										The following table demonstrates how operand evaluation can affect a statement. <br>
+										<div class="example">
+											Assume <code>A</code> is initially 1, <code>FUN(X)</code> returns 3, and has a side effect of incrementing A by 1. Now consider the arithmetic expression: <code>A + FUN(X) &times; A</code>
+											<table class="answer" id="op-eval-probs">
+												<tr>
+													<th>Order of Evaluation, Operand</th>
+													<th><code>A + FUN(X) &times; A</code></th>
+													<th>Value</th>
+												</tr>
+												<tr>
+													<td>Left to Right</td>
+													<td><code>1 + 3 &times; 2</code></td>
+													<td>7</td>
+												</tr>
+												<tr>
+													<td>Right to Left</td>
+													<td><code>2 + 3 &times; 1</code></td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>All Simple Variables First</td>
+													<td><code>1 + 3 &times; 1</code></td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>All Function Calls First</td>
+													<td><code>2 + 3 &times; 2</code></td>
+													<td>8</td>
+												</tr>
+											</table>
+										</div>
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the implementation of subprograms.</h3>
-									<button onclick="$('#answer26').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer26"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer26').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer26">
+										The simplest way to implement subprograms is with the subprogram copy rule in which the effects of calling a subprogram are the same as if the call is replaced by the body of the subprogram (with adjustments for parameters). There are five implicit assumptions with this method. One, no recursion (if lifted could have recursion). Two, there must be an explicit call (if lifted could have exception handling). Three, must execute completely and enter at the same point each time (if lifted could have coroutines). Four, there is immediate transfer at call (if lifted could have scheduled subprograms). Five, a single subprogram executes at a time (if lifted could have concurrency). 
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss what happens at call and at return for a simple subprogram.</h3>
-									<button onclick="$('#answer27').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer27"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer27').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer27">
+										At call the following occurs: environment of the caller is saved using a CEP (current environment pointer); parameters are computed and passed; pointer to the CIP (current instruction pointer) is saved; control is transferred to the called routine by resetting the CIP to point to the called routine’s body. At return the following occurs: CEP and CIP are restored to previous values; Call-by-result and call-by-value-result parameters are copied out to the caller if there are any; control is transferred back to the caller.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the two major components of a simple subprogram?</h3>
-									<button onclick="$('#answer28').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer28"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer28').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer28">
+										The two components are a body of executable statements which are static and local storage for local variables, parameters, return address, and CEP.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss issues related to ADT creation.</h3>
-									<button onclick="$('#answer29').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer29"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer29').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer29">
+										One, what syntactic unit is used to enclose the definition (special or general structure)? Two, are any built-in operations provided for the ADT such as assignment or comparison? Three, can the ADT be parameterized? Four, what access controls are provided?
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the three characteristics of OO Programming?</h3>
-									<button onclick="$('#answer30').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer30"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer30').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer30">
+										The three characteristics of OO programming are support for ADTs, inheritance, and the use of dynamic binding of method calls to method definitions.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What problems arose from the reuse of ADTs?</h3>
-									<button onclick="$('#answer31').toggle();">Toggle Answer</button>
-									<p class="answer" id="answer31"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer31').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer31">
+										One problem is that features and capabilities might need to be somewhat different (not a perfect fit). A second problem is that type definitions of ADTs might be on the same level which does not mirror problem domain space.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the different manners in which a derived class can differ from its parent?</h3>
-									<button onclick="$('#answer32').toggle()">Toggle Answer</button>
-									<p class="answer" id="answer32"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer32').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer32">
+										The parent may have some variables or methods declared private. The derived class might add extra variables or methods. The derived class might override and change the behavior of an inherited method.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">What are the two kinds of method and variables a class can have?</h3>
-									<button onclick="$('#answer33').toggle()">Toggle Answer</button>
-									<p class="answer" id="answer33"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer33').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer33">
+										First, there are instance variables and methods where every object has its own copy. Second are class variables and class methods which are shared by the entire class.
+									</p>
 								</li>
 								<li>
 									<h3 class="question">Discuss the design issues of OO Programming languages.</h3>
-									<button onclick="$('#answer34').toggle()">Toggle Answer</button>
-									<p class="answer" id="answer34"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer34').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer34">
+										One is the exclusivity of objects or whether every type is an object. Different options are to make everything an object, use traditional method for language supplied types and have new types be objects, or to retain the traditional method for only scalar types and use object for all non-scalar types. A second issue is whether subclasses are considered subtypes. A third is whether inheritance is single or multiple. 
+									</p>
 								</li>
 								<li>
 									<h3 class="question">How do tasks communicate?</h3>
-									<button onclick="$('#answer35').toggle()">Toggle Answer</button>
-									<p class="answer" id="answer35"></p>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer35').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer35">
+										Tasks communicate via shared non-local variables, message passing, or by passing parameters.
+									</p>
 								</li>
 							</ol>
 						</section>
@@ -608,6 +809,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
 	</body>
 </html>
