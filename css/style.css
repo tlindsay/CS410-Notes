@@ -158,3 +158,23 @@ li.neu:before{
 dd{
 	margin-left:1em;
 }
+
+ol ol{
+	list-style:upper-alpha;
+}
+
+ol ol ol{
+	list-style:upper-roman;
+}
+
+ol ol ol ol{
+	list-style:lower-alpha;
+}
+
+ol ol ol ol ol{
+	list-style:lower-roman;
+}
+
+ol ol ol ol ol ol{
+	list-style:circle;
+}

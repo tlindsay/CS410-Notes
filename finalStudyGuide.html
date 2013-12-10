@@ -11,6 +11,12 @@
 		<script src="js/require.js"></script>
 		<script src="js/jquery-1.8.2.min.js"></script>
 		<script src="js/showdown.js"></script>
+		<script src="js/questions.js"></script>
+		<style type="text/css">
+			.answer{
+				display:none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -24,19 +30,41 @@
 						<ul>
 							<li>
 								<a href="#test-questions">Test Questions</a>
-								<ul>
+								<!-- <ul>
 									<li><a href="#chapter7">Chapter 7</a></li>
 									<li><a href="#chapter8">Chapter 8</a></li>
 									<li><a href="#chapter9">Chapter 9</a></li>
 									<li><a href="#chapter10">Chapter 10</a></li>
 									<li><a href="#chapter11">Chapter 11</a></li>
-								</ul>
+								</ul> -->
 							</li>
 							<li><a href="#glossary">Glossary</a></li>
 							<li>
 								<a href="#languages">Languages</a>
 								<ul>
-
+									<li><a href="#prolog">Prolog</a></li>
+									<li><a href="#haskell">Haskell</a></li>
+									<li><a href="#ada">Ada</a></li>
+									<li><a href="#c">C</a></li>
+									<li><a href="#c++">C++</a></li>
+									<li><a href="#csharp">C#</a></li>
+									<li><a href="#pascal">Pascal</a></li>
+									<li><a href="#snobol">SNOBOL</a></li>
+									<li><a href="#pl1">PL/1</a></li>
+									<li><a href="#algol">ALGOL</a></li>
+									<li><a href="#fortran">FORTRAN</a></li>
+									<li><a href="#perl">Perl</a></li>
+									<li><a href="#javascript">JavaScript</a></li>
+									<li><a href="#php">PHP</a></li>
+									<li><a href="#java">Java</a></li>
+									<li><a href="#fsharp">F#</a></li>
+									<li><a href="#lua">Lua</a></li>
+									<li><a href="#lisp">LISP</a></li>
+									<li><a href="#eiffel">Eiffel</a></li>
+									<li><a href="#ruby">Ruby</a></li>
+									<li><a href="#python">Python</a></li>
+									<li><a href="#modula2">Modula-2</a></li>
+									<li><a href="#oberon">Oberon</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -45,11 +73,196 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="content">
-						<section id="chapters">
+						<!-- <section id="chapters">
 							<div id="chapter7">
 								
 							</div>
+						</section> -->
+						<section id="test-questions">
+							<h1>Practice Questions</h1>
+							<h2>Midterm Questions</h2>
+							<ol>
+								<li>
+									<h3 class="question">What are the attributes of a "good" programming language? Discuss the details of each attribute.</h3>
+									<button onclick="$('#answer1').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo, omnis, facere, repellat aliquam enim deserunt ab laudantium reprehenderit dolorum quo aspernatur fugiat. Veniam, ex quae eaque dolorum suscipit aspernatur.</p>
+								</li>
+								<li>
+									<h3 class="question">Why should someone study programming languages?</h3>
+									<button onclick="$('#answer2').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer2"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the four language categories? Describe each.</h3>
+									<button onclick="$('#answer3').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer3"></p>
+								</li>
+								<li>
+									<h3 class="question">What are three methods for implementing the storage of the integer data type?</h3>
+									<button onclick="$('#answer4').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer4"></p>
+								</li>
+							</ol>
+							<h2>Post-Midterm Questions</h2>
+							<ol>
+								<li>
+									<h3 class="question">What three characteristics of a task make it different from a subprogram?</h3>
+									<button onclick="$('#answer5').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer5"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss abstraction and its two levels. (Include pros and cons of information hiding.)</h3>
+									<button onclick="$('#answer6').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer6"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the correspondence between formal parameters and actual parameters.</h3>
+									<button onclick="$('#answer7').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer7"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the characteristics of arithmetic expressions.</h3>
+									<button onclick="$('#answer8').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer8"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the assignment statement and its various types and forms.</h3>
+									<button onclick="$('#answer9').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer9"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the three categories of control level statements.</h3>
+									<button onclick="$('#answer10').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer10"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss issues with if statements.</h3>
+									<button onclick="$('#answer11').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer11"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss issues with n-way selection statements.</h3>
+									<button onclick="$('#answer12').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer12"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the different categories of iteration.</h3>
+									<button onclick="$('#answer13').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer13"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the two categories of subprograms.</h3>
+									<button onclick="$('#answer14').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer14"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the special types of subprograms.</h3>
+									<button onclick="$('#answer15').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer15"></p>
+								</li>
+								<li>
+									<h3 class="question">What are some issues related to subprograms? (Include parameter passing.)</h3>
+									<button onclick="$('#answer16').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer16"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the four levels of concurrency?</h3>
+									<button onclick="$('#answer17').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer17"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the categories of unit level concurrency?</h3>
+									<button onclick="$('#answer18').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer18"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the four reasons to design concurrent software?</h3>
+									<button onclick="$('#answer19').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer19"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the advantages of having built-in exception handling.</h3>
+									<button onclick="$('#answer20').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer20"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss design issues related to exception handling.</h3>
+									<button onclick="$('#answer21').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer21"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the three methods for handling competition for mutually exclusive shared resources.</h3>
+									<button onclick="$('#answer22').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer22"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss possible solutions for handling type compatibility.</h3>
+									<button onclick="$('#answer23').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer23"></p>
+								</li>
+								<li>
+									<h3 class="question">Given the following Declarations, list which variables would be considered equivalent under the different types of type-compatibility.</h3>
+									<button onclick="$('#answer24').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer24"></p>
+								</li>
+								<li>
+									<h3 class="question">Demonstrate problems that can occur with operand evaluation and side effects.</h3>
+									<button onclick="$('#answer25').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer25"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the implementation of subprograms.</h3>
+									<button onclick="$('#answer26').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer26"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss what happens at call and at return for a simple subprogram.</h3>
+									<button onclick="$('#answer27').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer27"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the two major components of a simple subprogram?</h3>
+									<button onclick="$('#answer28').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer28"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss issues related to ADT creation.</h3>
+									<button onclick="$('#answer29').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer29"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the three characteristics of OO Programming?</h3>
+									<button onclick="$('#answer30').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer30"></p>
+								</li>
+								<li>
+									<h3 class="question">What problems arose from the reuse of ADTs?</h3>
+									<button onclick="$('#answer31').toggle();">Toggle Answer</button>
+									<p class="answer" id="answer31"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the different manners in which a derived class can differ from its parent?</h3>
+									<button onclick="$('#answer32').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer32"></p>
+								</li>
+								<li>
+									<h3 class="question">What are the two kinds of method and variables a class can have?</h3>
+									<button onclick="$('#answer33').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer33"></p>
+								</li>
+								<li>
+									<h3 class="question">Discuss the design issues of OO Programming languages.</h3>
+									<button onclick="$('#answer34').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer34"></p>
+								</li>
+								<li>
+									<h3 class="question">How do tasks communicate?</h3>
+									<button onclick="$('#answer35').toggle()">Toggle Answer</button>
+									<p class="answer" id="answer35"></p>
+								</li>
+							</ol>
 						</section>
+						<hr>
 						<section id="glossary">
 							<h1>Glossary</h1>
 							<dl>
@@ -164,9 +377,234 @@
 								<dd>Segment of code executed in response to the appearance of an event.</dd>
 							</dl>
 						</section>
+						<hr>
 						<section id="languages">
-							
+							<h1>Languages</h1>
+							<ul>
+								<li id="prolog">
+									<h2>Prolog</h2>
+									<ul>
+										<li>Only <i>widely</i> used logical language.</li>
+										<li>Was not standardized until 1995, so there were many dialects. Finally standardized by <abbr title="International Organization for Standardization">ISO</abbr>.</li>
+										<li>Based on first order predicate calculus.</li>
+										<li>
+											Three components:
+											<ol>
+												<li>Facts</li>
+												<li>Rules</li>
+												<li>Queries</li>
+											</ol>
+										</li>
+										<li>Relies heavily on recursion.</li>
+									</ul>
+									<h3>Common Uses</h3>
+									<ul>
+										<li class="good">Database creation.</li>
+										<li class="good">Expert systems.</li>
+										<li class="good">Natural language processes.</li>
+									</ul>
+								</li>
+								<li id="haskell">
+									<h2>Haskell</h2>
+									<ul>
+										<li>Purely functional language.</li>
+										<li>Relies heavily on abstraction.</li>
+										<li>Lazy evaluation.</li>
+										<li>Generally interpreted.</li>
+										<li>Based on lambda calculus.</li>
+									</ul>
+								</li>
+								<li id="ada">
+									<h2>Ada</h2>
+									<ul>
+										<li>Uses name equivalence for type compatibility.</li>
+										<li>Never automatically uses type coercion.</li>
+										<li>Does <b>NOT</b> support chains of assignments.</li>
+										<li>Passes parameters by Call-by-Value-Result.</li>
+										<li>Type checks actual and formal parameters.</li>
+										<li>Allows overloading of subprogram (function) names.</li>
+										<li>Supports concurrency via message passing and heavyweight tasks.</li>
+										<li>Supports exception handling.</li>
+									</ul>
+								</li>
+								<li id="c">
+									<h2>C</h2>
+									<ul>
+										<li>Uses structural and name equivalence for type compatibility.</li>
+										<li>Does <b>NOT</b> type check actual and formal parameters.</li>
+									</ul>
+								</li>
+								<li id="c++">
+									<h2>C++</h2>
+									<ul>
+										<li>Type checks actual and formal parameters.</li>
+										<li>Allows overloading of subprogram (function) names.</li>
+										<li>Supports exception handling.</li>
+									</ul>
+								</li>
+								<li id="csharp">
+									<h2>C#</h2>
+									<ul>
+										<li>Allows overloading of subrpogram (function) names.</li>
+										<li>Supports generic subprograms (can pass parameter types.</li>
+										<li>Supports concurrency wia lighweight tasks.</li>
+										<li>Supports exception handling.</li>
+									</ul>
+								</li>
+								<li id="pascal">
+									<h2>Pascal</h2>
+									<ul><li>Newest version uses declaration equivalence for type compatibility.</li></ul>
+								</li>
+								<li id="snobol">
+									<h2>SNOBOL</h2>
+									<ul><li>Uses type coercion as much as possible.</li></ul>
+								</li>
+								<li id="pl1">
+									<h2>PL/1</h2>
+									<ul>
+										<li>Uses type coercion as much as possible.</li>
+										<li>First language to have an exception flag.</li>
+									</ul>
+								</li>
+								<li id="algol">
+									<h2>ALGOL</h2>
+									<ul>
+										<li>Composition began with ALGOL.</li>
+										<li>ALGOL 60 was the first language to allow nested subprogram definitions.</li>
+										<li>ALGOL-W passes parameters by Call-by-Value-Result.</li>
+									</ul>
+								</li>
+								<li id="fortran">
+									<h2>FORTRAN</h2>
+									<ul><li>Does <b>NOT</b> type check actual and formal parameters.</li></ul>
+								</li>
+								<li id="perl">
+									<h2>Perl</h2>
+									<ul>
+										<li>Does <b>NOT</b> type check actual and formal parameters.</li>
+										<li>Scripting language created by Larry Wall in 1986.</li>
+										<li>Widely used as a text processing tool in *nix.</li>
+										<li>Every variable begins with a sigil.</li>
+										<li>Adds constructs for <code>foreach</code> and <code>until</code> loops, and <code>unless</code> statements.</li>
+										<li>Pattern matching.</li>
+										<li>Sigils denote data type.</li>
+									</ul>
+								</li>
+								<li id="javascript">
+									<h2>JavaScript</h2>
+									<ul>
+										<li>Does <b>NOT</b> type check actual and formal parameters.</li>
+										<li>Supports closures.</li>
+										<li>Created in 1990.</li>
+										<li>Originally LiveScript, became JavaScript.</li>
+										<li>Influenced by C, C++, Java, Self, and Scheme.</li>
+										<li>
+											Data Types:
+											<ol>
+												<li>Numbers</li>
+												<li>Text Strings</li>
+												<li>Boolean</li>
+											</ol>
+										</li>
+										<li>Supports integer, pointer, and float distinction.</li>
+										<li><code>NULL</code> &ne; <code>undefined</code></li>
+										<li>Loosely typed.</li>
+										<li>Heterogeneous arrays.</li>
+										<li>Gaining popularity.</li>
+									</ul>
+								</li>
+								<li id="php">
+									<h2>PHP</h2>
+									<ul><li>Does <b>NOT</b> type check actual and formal parameters.</li></ul>
+								</li>
+								<li id="java">
+									<h2>Java</h2>
+									<ul>
+										<li>Allows overloading of subprogram (function) names.</li>
+										<li>Supports generic subprograms (can pass different parameter types).</li>
+										<li>Supports concurrency via lightweight "thread" tasks.</li>
+										<li>Supports exception handling.</li>
+									</ul>
+								</li>
+								<li id="fsharp">
+									<h2>F#</h2>
+									<ul>
+										<li>Supports generic subprograms (can pass different parameter types).</li>
+										<li>Supports concurrency.</li>
+										<li>Functional language.</li>
+										<li>Based on lambda calculus.</li>
+										<li>Parents are Haskell and OCaml.</li>
+										<li>Relies a lot on recursion.</li>
+										<li>Supports exception handling.</li>
+										<li>Verbose and light syntaxes.</li>
+									</ul>
+								</li>
+								<li id="lua">
+									<h2>Lua</h2>
+									<ul><li>Supports coroutines.</li></ul>
+								</li>
+								<li id="lisp">
+									<h2>LISP</h2>
+									<ul><li>MultiLisp supports concurrency.</li></ul>
+								</li>
+								<li id="eiffel">
+									<h2>Eiffel</h2>
+									<ul><li>Supports exception handling.</li></ul>
+								</li>
+								<li id="ruby">
+									<h2>Ruby</h2>
+									<ul>
+										<li>Supports exception handling.</li>
+										<li>Purely object-oriented.</li>
+										<li>Scripting language.</li>
+										<li>Dynamic everything.</li>
+										<li>Usually interpreted.</li>
+										<li>Focus on writeability.</li>
+										<li>Ruby on Rails spurred the language's popularity.</li>
+										<li>Call-By-Assignment</li>
+										<li>"Monkey Patching" and "Duck Punching" allow the programmer to manipulate classes at any time.</li>
+										<li>Ancestors: Perl, Python, SmallTalk</li>
+										<li>Sigils determine scope.</li>
+										<li>Arrays are dynamic and heterogeneous, but there is no multi-dimensional support built in.</li>
+										<li>Hashes = Associative Arrays.</li>
+									</ul>
+								</li>
+								<li id="python">
+									<h2>Python</h2>
+									<ul>
+										<li>Guido van Rossum - 1990</li>
+										<li>Object-Oriented Language.</li>
+										<li><abbr title="Very-High-Level Language">VHLL</abbr></li>
+										<li>Has no beginning and end delimiters for blocks of statements, instead uses indentation.</li>
+										<li class="info">Data Types: <span class="good">Sets</span>, Dictionaries</li>
+										<li>Limit on depth of recursion</li>
+										<li class="info">Complex number data type.</li>
+									</ul>
+								</li>
+								<li id="modula2">
+									<h2>Modula-2</h2>
+									<ul>
+										<li>Created by Niklaus Wirth.</li>
+										<li>Ancestor is <a href="#pascal">Pascal</a>.</li>
+										<li>Uses modules.</li>
+									</ul>
+								</li>
+								<li id="oberon">
+									<h2>Oberon</h2>
+									<ul>
+										<li>Created by Niklaus Wirth - 1984.</li>
+										<li>Member of the Algol-like family.</li>
+										<li>Block structure which provides scope.</li>
+										<li>Recursion for functions and procedures.</li>
+										<li>Strict static data typing scheme.</li>
+										<li>Stripped down version of Modula-2.</li>
+										<li>Type extension like inheritance.</li>
+										<li>Added garbage collection, because there is no deallocation operator.</li>
+									</ul>
+								</li>
+							</ul>
 						</section>
+						<hr>
 					</div>
 				</div>
 			</div>
