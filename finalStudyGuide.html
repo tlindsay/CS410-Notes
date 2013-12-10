@@ -19,6 +19,14 @@
 			#good-languages td.mnemonic:first-letter{
 				font-weight: bold;
 			}
+			.btn-primary{
+				display:inline;
+				margin-bottom:.5em;
+				margin-left:.5em;
+			}
+			.question{
+				display:inline;
+			}
 		</style>
 	</head>
 	<body>
@@ -259,7 +267,7 @@
 									<h3 class="question">What are some issues related to subprograms? (Include parameter passing.)</h3>
 									<button class="btn btn-primary btn-mini" onclick="$('#answer16').toggle();">Toggle Answer</button>
 									<p class="answer" id="answer16">
-										First, are local variables allocated statically or static dynamically? Static allocation is efficient and allows for history sensitivity but does not allow recursion. Static dynamic allocation gives flexibility and recursion but requires more overhead and does not support history sensitivity. It addition, it allows for re-use of storage. Second, are subprograms allowed to be nested in their definition? Nesting is used to indicate scope of subprograms aids readability. Third how are parameters passed? One method is call by value in which the value of the actual parameter is copied into the formal parameter. The actual is protected in the caller (requires the attributes of the actual to be the same as the formal). This method protects the caller and prevents side effects, but requires extra storage for the formal parameter and takes time to copy at the point of the call. A second method is call by reference in which the location (a pointer) of the actual is copied into the formal. This method may require less time and space and does not allow side effects, but the caller will not be protected and problems can aries with anonymous types. A third method is call by value-result (copy-in - copy-out) which acts like call by value at the point of the call until the subprogram gets ready to terminate. At this point, the value in the formal is copied back out to the actual. A fourth method is call by name in which the actual parameter is evaluated in the environment of the caller on each reference to the formal parameter. A thunk is a sequence of code inserted for this parameter type. Back to issues, a fourth is how are the actual parameter types checked with the formal parameter types? Early languages like FORTRAN and C did not perform type checking but later languages like C++ and ADA did. Recently, languages such as Perl, javascript and PHP have gone back to no type checking. Fifth, can a subprogram be passed as a parameter to another subprogram and what referencing environment should nested subprograms use? One solution is shallow binding which uses the environment where the call statement using the passed subprogram occurs. A second solution is deep binding which uses the environment of the definition of the called subprogram. A third solution is ad hoc binding which uses the environment of the call statement that passes the subprogram as a parameter. Sixth, can subprogram names be overloaded? If allowed, there must be a way of differentiating between the different versions. This is handled by having different interfaces (different parameter lists in number, type, or order of parameters). Seventh, Are generic subprograms supported which allows parametric polymorphism?  Eighth, for functions, are side effects allowed? Ninth, what type may be returned for a function? Tenth, how many values may be returned? Eleventh, are closures supported?
+										First, are local variables allocated statically or static dynamically? Static allocation is efficient and allows for history sensitivity but does not allow recursion. Static dynamic allocation gives flexibility and recursion but requires more overhead and does not support history sensitivity. It addition, it allows for re-use of storage. Second, are subprograms allowed to be nested in their definition? Nesting is used to indicate scope of subprograms aids readability. Third how are parameters passed? One method is call by value in which the value of the actual parameter is copied into the formal parameter. The actual is protected in the caller (requires the attributes of the actual to be the same as the formal). This method protects the caller and prevents side effects, but requires extra storage for the formal parameter and takes time to copy at the point of the call. A second method is call by reference in which the location (a pointer) of the actual is copied into the formal. This method may require less time and space and allows side effects, but the caller will not be protected and problems can arise with anonymous types. A third method is call by value-result (copy-in - copy-out) which acts like call by value at the point of the call until the subprogram gets ready to terminate. At this point, the value in the formal is copied back out to the actual. A fourth method is call by name in which the actual parameter is evaluated in the environment of the caller on each reference to the formal parameter. A thunk is a sequence of code inserted for this parameter type. Back to issues, a fourth is how are the actual parameter types checked with the formal parameter types? Early languages like FORTRAN and C did not perform type checking but later languages like C++ and ADA did. Recently, languages such as Perl, JavaScript and PHP have gone back to no type checking. Fifth, can a subprogram be passed as a parameter to another subprogram and what referencing environment should nested subprograms use? One solution is shallow binding which uses the environment where the call statement using the passed subprogram occurs. A second solution is deep binding which uses the environment of the definition of the called subprogram. A third solution is ad hoc binding which uses the environment of the call statement that passes the subprogram as a parameter. Sixth, can subprogram names be overloaded? If allowed, there must be a way of differentiating between the different versions. This is handled by having different interfaces (different parameter lists in number, type, or order of parameters). Seventh, Are generic subprograms supported which allows parametric polymorphism?  Eighth, for functions, are side effects allowed? Ninth, what type may be returned for a function? Tenth, how many values may be returned? Eleventh, are closures supported?
 									</p>
 								</li>
 								<li>
@@ -312,8 +320,8 @@
 									</p>
 								</li>
 								<li>
-									<h3 class="question">Given the following Declarations, list which variables would be considered equivalent under the different types of type-compatibility.</h3>
-									<button class="btn btn-primary btn-mini" onclick="$('#answer24, #code24').toggle();">Toggle Answer</button>
+									<h3 class="question">Given the following declarations, list which variables would be considered equivalent under the different types of type-compatibility.</h3>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer24, #code24, #list24').toggle();">Toggle Answer</button>
 									<p class="answer" id="answer24">
 <pre class="answer" id="code24"><code>
 TYPE
@@ -327,7 +335,7 @@ VAR
 	w	: T;
 	r	: TA;
 </code></pre>
-										<ol>
+										<ol class="answer" id="list24">
 											<li>
 												<h4>Name</h4>
 												<ul>
@@ -356,39 +364,39 @@ VAR
 								</li>
 								<li>
 									<h3 class="question">Demonstrate problems that can occur with operand evaluation and side effects.</h3>
-									<button class="btn btn-primary btn-mini" onclick="$('#answer25, #op-eval-probs').toggle();">Toggle Answer</button>
+									<button class="btn btn-primary btn-mini" onclick="$('#answer25, #op-eval-probs, #example25').toggle();">Toggle Answer</button>
 									<p class="answer" id="answer25">
 										The following table demonstrates how operand evaluation can affect a statement. <br>
-										<div class="example">
+										<div class="answer example" id="example25">
 											Assume <code>A</code> is initially 1, <code>FUN(X)</code> returns 3, and has a side effect of incrementing A by 1. Now consider the arithmetic expression: <code>A + FUN(X) &times; A</code>
-											<table class="answer" id="op-eval-probs">
-												<tr>
-													<th>Order of Evaluation, Operand</th>
-													<th><code>A + FUN(X) &times; A</code></th>
-													<th>Value</th>
-												</tr>
-												<tr>
-													<td>Left to Right</td>
-													<td><code>1 + 3 &times; 2</code></td>
-													<td>7</td>
-												</tr>
-												<tr>
-													<td>Right to Left</td>
-													<td><code>2 + 3 &times; 1</code></td>
-													<td>5</td>
-												</tr>
-												<tr>
-													<td>All Simple Variables First</td>
-													<td><code>1 + 3 &times; 1</code></td>
-													<td>4</td>
-												</tr>
-												<tr>
-													<td>All Function Calls First</td>
-													<td><code>2 + 3 &times; 2</code></td>
-													<td>8</td>
-												</tr>
-											</table>
 										</div>
+										<table class="answer" id="op-eval-probs">
+											<tr>
+												<th>Order of Evaluation, Operand</th>
+												<th><code>A + FUN(X) &times; A</code></th>
+												<th>Value</th>
+											</tr>
+											<tr>
+												<td>Left to Right</td>
+												<td><code>1 + 3 &times; 2</code></td>
+												<td>7</td>
+											</tr>
+											<tr>
+												<td>Right to Left</td>
+												<td><code>2 + 3 &times; 1</code></td>
+												<td>5</td>
+											</tr>
+											<tr>
+												<td>All Simple Variables First</td>
+												<td><code>1 + 3 &times; 1</code></td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>All Function Calls First</td>
+												<td><code>2 + 3 &times; 2</code></td>
+												<td>8</td>
+											</tr>
+										</table>
 									</p>
 								</li>
 								<li>
